@@ -1,0 +1,68 @@
+{
+  "title": "The Steward Chain",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "b0d3a7eb2f56c50c",
+      "text": "# The Steward Chain\n\nThe re-derivable record of who trained this workshop's mage on what, when — the cohort's provenance as its first trainers. Verified offline with `node tools/corpus_pack.mjs --verify`. See [[hh-workshop]]."
+    },
+    {
+      "type": "markdown",
+      "id": "a8a9c889337bc8ac",
+      "text": "# steward_log.md — the chain of hands\n\nOne entry per fold. The steward of the week signs what the mage ate and the\nhash the pack re-derives to (`node tools/corpus_pack.mjs --verify` must match\nthe latest entry). This chain, bound into every book by `bind_book.mjs`, IS\nthe cohort's provenance as this mage's first trainers.\n\nHandover rite: outgoing steward runs `--verify` green in front of the room,\nreads their entry aloud, and hands the incoming steward the flight-case key.\n\n---\n\n## Week 0 · 2026-07-17 · steward: the First Person (pre-course seed)\n\n- folded: `corpus/seed-canon-note.md` (consent: ledger row 2026-07-17, scope both)\n- pack sha256: `eef33247ed29027bc729a8bd2cd0b5fad2548e840c8aef465e4eb782b637a029`\n- mage state: context-grounded (option A — retrieval; see MACHINE_SETUP.md);\n  Modelfile regenerated, base model TBD on the mage box\n- note: the zeroth fold. Everything before the cohort's first week is seed,\n  and says so.\n\n## Week 0 · fold 2 · 2026-07-18 · steward: the First Person (the 0→1 pass)\n\n- folded: `corpus/audio-note-poem-scarcity.md` (a spoken voice note →\n  local whisper transcript → consent row 2026-07-18, scope both)\n- pack sha256: `e0db8cd7ff44d51beac757e0e83867a10679c4f0be939d6b77987cdadfd707d9`\n- also this week (not corpus): triptych `artifact/t1-the-stewards-week`\n  SUBMITTED (status \"submitted\" — the register does not move until the\n  gate validates it); consent row for its export recorded\n- mage state: context re-grounded on 2 consented files; Modelfile\n  regenerated\n- note: the first non-seed input walked every pipe — voice → transcript →\n  consent → fold → the mirror deepens. The note itself asked for the\n  steward triptych; the triptych now exists and awaits the gate."
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM; the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue binding the FM specs to the agentprivacy corpus; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "The Steward Chain",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "b0d3a7eb2f56c50c",
+            "text": "# The Steward Chain\n\nThe re-derivable record of who trained this workshop's mage on what, when — the cohort's provenance as its first trainers. Verified offline with `node tools/corpus_pack.mjs --verify`. See [[hh-workshop]]."
+          },
+          {
+            "type": "markdown",
+            "id": "a8a9c889337bc8ac",
+            "text": "# steward_log.md — the chain of hands\n\nOne entry per fold. The steward of the week signs what the mage ate and the\nhash the pack re-derives to (`node tools/corpus_pack.mjs --verify` must match\nthe latest entry). This chain, bound into every book by `bind_book.mjs`, IS\nthe cohort's provenance as this mage's first trainers.\n\nHandover rite: outgoing steward runs `--verify` green in front of the room,\nreads their entry aloud, and hands the incoming steward the flight-case key.\n\n---\n\n## Week 0 · 2026-07-17 · steward: the First Person (pre-course seed)\n\n- folded: `corpus/seed-canon-note.md` (consent: ledger row 2026-07-17, scope both)\n- pack sha256: `eef33247ed29027bc729a8bd2cd0b5fad2548e840c8aef465e4eb782b637a029`\n- mage state: context-grounded (option A — retrieval; see MACHINE_SETUP.md);\n  Modelfile regenerated, base model TBD on the mage box\n- note: the zeroth fold. Everything before the cohort's first week is seed,\n  and says so.\n\n## Week 0 · fold 2 · 2026-07-18 · steward: the First Person (the 0→1 pass)\n\n- folded: `corpus/audio-note-poem-scarcity.md` (a spoken voice note →\n  local whisper transcript → consent row 2026-07-18, scope both)\n- pack sha256: `e0db8cd7ff44d51beac757e0e83867a10679c4f0be939d6b77987cdadfd707d9`\n- also this week (not corpus): triptych `artifact/t1-the-stewards-week`\n  SUBMITTED (status \"submitted\" — the register does not move until the\n  gate validates it); consent row for its export recorded\n- mage state: context re-grounded on 2 consented files; Modelfile\n  regenerated\n- note: the first non-seed input walked every pipe — voice → transcript →\n  consent → fold → the mirror deepens. The note itself asked for the\n  steward triptych; the triptych now exists and awaits the gate."
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM; the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue binding the FM specs to the agentprivacy corpus; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197494
+    }
+  ]
+}

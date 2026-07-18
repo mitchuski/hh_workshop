@@ -1,0 +1,2390 @@
+{
+  "name": "hh_workshop",
+  "derived": "every node and edge walked from the repo ledgers — re-run web/graph.mjs to re-derive; never hand-edit",
+  "conventions": "spellweb dialect: {id,type,label,domain,layer,desc} nodes · {source,target,type} snake_case verb edges",
+  "nodeTypes": [
+    "artefact",
+    "book",
+    "chronicle",
+    "claim",
+    "corpus",
+    "fold",
+    "form",
+    "law",
+    "lever",
+    "page",
+    "player",
+    "role",
+    "run",
+    "term",
+    "triptych"
+  ],
+  "edgeTypes": [
+    "appoint",
+    "binds",
+    "bound_in",
+    "carries",
+    "composed_of",
+    "fix",
+    "folds",
+    "forged_by",
+    "may_appoint",
+    "may_declare",
+    "may_file",
+    "may_fix",
+    "may_register",
+    "may_send",
+    "may_send_to",
+    "may_terminate",
+    "mirage_in",
+    "must_return",
+    "must_return_to",
+    "probed",
+    "proposed_in",
+    "renders",
+    "spooled_from",
+    "stewarded",
+    "validated_in"
+  ],
+  "tours": [
+    {
+      "id": "babblefish",
+      "emoji": "🐟",
+      "name": "The Babblefish Walk",
+      "proverb": "One truth, many tongues — the tongue you didn't polish is the lesson.",
+      "reflection": "The seed understanding renders three ways, faces the blind gate, and the frontier only moves when translation survives.",
+      "marks": [
+        {
+          "nodeId": "claim-c1",
+          "note": "A claim: one understanding, renderable across three tongues."
+        },
+        {
+          "nodeId": "triptych-seed",
+          "note": "The seed triptych — the canary that proves the exam is passable."
+        },
+        {
+          "nodeId": "form-seed-narrative",
+          "note": "The story tongue: the mechanism hidden in furniture."
+        },
+        {
+          "nodeId": "form-seed-poem",
+          "note": "The poem tongue: the scarcest carrier — compression is the hardest translation."
+        },
+        {
+          "nodeId": "form-seed-paper",
+          "note": "The paper tongue: the same truth, made checkable."
+        },
+        {
+          "nodeId": "run-live1",
+          "note": "A live round: the mage held every seat; the draw picked the tongue."
+        },
+        {
+          "nodeId": "triptych-t1-the-stewards-week",
+          "note": "A submitted triptych waits at the gate — visible at once, credited only when validated."
+        }
+      ]
+    },
+    {
+      "id": "consent",
+      "emoji": "📜",
+      "name": "The Consent Path",
+      "proverb": "Nothing is taken; everything is offered; the law proves what it makes impossible.",
+      "reflection": "From the compiling law through the roles it binds, to the corpus nothing enters without a signed line, to the fold that feeds the mirror.",
+      "marks": [
+        {
+          "nodeId": "law-workshop-consent",
+          "note": "The consent agreement as Lexon — prose a lawyer reads, structure a machine parses."
+        },
+        {
+          "nodeId": "role-first-person",
+          "note": "The First Person: the one who proffers; the agreement is bilateral."
+        },
+        {
+          "nodeId": "role-workshop-holder",
+          "note": "The Workshop Holder — to whom, provably, no clause routes anything (the absence claim)."
+        },
+        {
+          "nodeId": "term-expression",
+          "note": "The expression: simultaneously a key and food."
+        },
+        {
+          "nodeId": "corpus-audio-note-poem-scarcity-md",
+          "note": "A consented expression — no ledger line, no admission; the pipes refuse."
+        },
+        {
+          "nodeId": "corpus-seed-canon-note-md",
+          "note": "A consented expression — no ledger line, no admission; the pipes refuse."
+        },
+        {
+          "nodeId": "fold-week-0",
+          "note": "The fold: the steward feeds the mirror; the hash is read aloud."
+        }
+      ]
+    },
+    {
+      "id": "steward",
+      "emoji": "🔑",
+      "name": "The Steward's Week",
+      "proverb": "A chain nobody watches is a story; this one re-derives.",
+      "reflection": "The rotating steward holds the training for one week: admit, fold, verify in public, hand over the key. Every name ends up in the chain.",
+      "marks": [
+        {
+          "nodeId": "player-the-first-person-seed",
+          "note": "The bearer of the week — every student takes exactly one."
+        },
+        {
+          "nodeId": "fold-week-0",
+          "note": "The zeroth fold: everything before the cohort is seed, and says so."
+        },
+        {
+          "nodeId": "fold-week-0-2",
+          "note": "The second fold: the first spoken note, transcribed, consented, eaten."
+        },
+        {
+          "nodeId": "corpus-audio-note-poem-scarcity-md",
+          "note": "What the mage is made of: the room's own words."
+        },
+        {
+          "nodeId": "corpus-seed-canon-note-md",
+          "note": "What the mage is made of: the room's own words."
+        },
+        {
+          "nodeId": "law-fold",
+          "note": "The steward's duties, as a law that compiles."
+        }
+      ]
+    },
+    {
+      "id": "trust",
+      "emoji": "🪢",
+      "name": "The Earned Graph",
+      "proverb": "A trust that certifies itself is the one you cannot trust.",
+      "reflection": "Persona holons with room-scoped keys; edges minted only on verifiable events; artefacts forged from starred paths — nothing here is declared, everything is earned.",
+      "marks": [
+        {
+          "nodeId": "player-the-first-person-seed",
+          "note": "A persona holon: κ-addressed, did:key-signed, consent-gated at join."
+        },
+        {
+          "nodeId": "artefact-the-proverb-chain",
+          "note": "A forged constellation: an ordered path through the web, named and signed by its bearer."
+        },
+        {
+          "nodeId": "book-book-of-poems",
+          "note": "A bound book — the steward chain printed in its endpapers."
+        },
+        {
+          "nodeId": "book-collected-papers",
+          "note": "A bound book — the steward chain printed in its endpapers."
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "emoji": "⚖️",
+      "name": "The Gate's Verdicts",
+      "proverb": "A VALIDATED without a replayable trail is not a win.",
+      "reflection": "Rounds propose levers; the blind census assays; verdicts queue for the keystone. Every link re-derives from saved bytes, offline, forever.",
+      "marks": [
+        {
+          "nodeId": "run-auto1",
+          "note": "A recorded round — replay it: node tools/verify_run.mjs."
+        },
+        {
+          "nodeId": "run-live1",
+          "note": "A recorded round — replay it: node tools/verify_run.mjs."
+        },
+        {
+          "nodeId": "run-smoke",
+          "note": "A recorded round — replay it: node tools/verify_run.mjs."
+        },
+        {
+          "nodeId": "lever-auto1-extend-a-tongue",
+          "note": "A proposed lever with its verdict — VALIDATED queues as a candidate; only humans fold."
+        },
+        {
+          "nodeId": "lever-auto1-revise-for-fidelity",
+          "note": "A proposed lever with its verdict — VALIDATED queues as a candidate; only humans fold."
+        },
+        {
+          "nodeId": "lever-live1-extend-a-tongue",
+          "note": "A proposed lever with its verdict — VALIDATED queues as a candidate; only humans fold."
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claim-c1",
+      "type": "claim",
+      "label": "C1",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "One understanding can be rendered across three forms — sci-fi",
+      "category": "A · The babblefish recursion"
+    },
+    {
+      "id": "claim-c2",
+      "type": "claim",
+      "label": "C2",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The recursion is cyclic and plural-entry: narrative → poem → paper →",
+      "category": "A · The babblefish recursion"
+    },
+    {
+      "id": "claim-c3",
+      "type": "claim",
+      "label": "C3",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "\"Babblefish\" names the joy of the same truth speaking in many",
+      "category": "A · The babblefish recursion"
+    },
+    {
+      "id": "claim-c4",
+      "type": "claim",
+      "label": "C4",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "A rendering that is beautiful but no longer carries the mechanism is",
+      "category": "A · The babblefish recursion"
+    },
+    {
+      "id": "claim-c5",
+      "type": "claim",
+      "label": "C5",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Access to the shared mage is earned by expressing understanding,",
+      "category": "B · Understanding as key"
+    },
+    {
+      "id": "claim-c6",
+      "type": "claim",
+      "label": "C6",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The lock and the lesson are one: to go deeper into the mage you must",
+      "category": "B · Understanding as key"
+    },
+    {
+      "id": "claim-c7",
+      "type": "claim",
+      "label": "C7",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "An expression is simultaneously the participant's key and the mage's",
+      "category": "B · Understanding as key"
+    },
+    {
+      "id": "claim-c8",
+      "type": "claim",
+      "label": "C8",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Write access arrives as graduated, host-scoped permission — the",
+      "category": "B · Understanding as key"
+    },
+    {
+      "id": "claim-c9",
+      "type": "claim",
+      "label": "C9",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Proof of understanding is the room's seal made legible: the artefact",
+      "category": "B · Understanding as key"
+    },
+    {
+      "id": "claim-c10",
+      "type": "claim",
+      "label": "C10",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The mage is a shared, air-gapped local model; the room's thinking",
+      "category": "C · The shared mage and its training"
+    },
+    {
+      "id": "claim-c11",
+      "type": "claim",
+      "label": "C11",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The mage is co-held — a witness the room bears together, not any",
+      "category": "C · The shared mage and its training"
+    },
+    {
+      "id": "claim-c12",
+      "type": "claim",
+      "label": "C12",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "First-person expressions are the training corpus: the mage becomes",
+      "category": "C · The shared mage and its training"
+    },
+    {
+      "id": "claim-c13",
+      "type": "claim",
+      "label": "C13",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The good first training pass is retrieval/context-grounding; true",
+      "category": "C · The shared mage and its training"
+    },
+    {
+      "id": "claim-c14",
+      "type": "claim",
+      "label": "C14",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The mage must be portable: it travels to venues whose networks the",
+      "category": "C · The shared mage and its training"
+    },
+    {
+      "id": "claim-c15",
+      "type": "claim",
+      "label": "C15",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The loop closes on itself: understand → express → the expression",
+      "category": "C · The shared mage and its training"
+    },
+    {
+      "id": "claim-c16",
+      "type": "claim",
+      "label": "C16",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Consent is the first stake: the participant *offers* their address;",
+      "category": "D · Consent and the agreement layer"
+    },
+    {
+      "id": "claim-c17",
+      "type": "claim",
+      "label": "C17",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The trust artefact issued by the rite is a myTerms agreement (IEEE",
+      "category": "D · Consent and the agreement layer"
+    },
+    {
+      "id": "claim-c18",
+      "type": "claim",
+      "label": "C18",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "A 7012 agreement is strictly bilateral — First Person ↔ Second",
+      "category": "D · Consent and the agreement layer"
+    },
+    {
+      "id": "claim-c19",
+      "type": "claim",
+      "label": "C19",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Every agreement exists in three registers: plain language, legal,",
+      "category": "D · Consent and the agreement layer"
+    },
+    {
+      "id": "claim-c20",
+      "type": "claim",
+      "label": "C20",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Nothing a participant expresses enters the corpus or leaves the",
+      "category": "D · Consent and the agreement layer"
+    },
+    {
+      "id": "claim-c21",
+      "type": "claim",
+      "label": "C21",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Verifiable trust communities measure fidelity from *outside* the",
+      "category": "D · Consent and the agreement layer"
+    },
+    {
+      "id": "claim-c22",
+      "type": "claim",
+      "label": "C22",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Naming outsourced to venue infrastructure is a load-bearing",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c23",
+      "type": "claim",
+      "label": "C23",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Name-keyed routing turns a soft naming failure into a hard one:",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c24",
+      "type": "claim",
+      "label": "C24",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Each shared model carries ONE good name of its own; whoever holds",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c25",
+      "type": "claim",
+      "label": "C25",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Resolution must be deterministic and identical for every client:",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c26",
+      "type": "claim",
+      "label": "C26",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "An intermittent name is more dangerous than a dead one — it passes",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c27",
+      "type": "claim",
+      "label": "C27",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Shared names must never use `.localhost`: browsers force that TLD",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c28",
+      "type": "claim",
+      "label": "C28",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "The front door behind the chosen name must serve a catch-all, so a",
+      "category": "E · The naming lesson"
+    },
+    {
+      "id": "claim-c29",
+      "type": "claim",
+      "label": "C29",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Any agreement complete enough to need no one outside it has either",
+      "category": "F · The proverb (Gödel-deepened)"
+    },
+    {
+      "id": "claim-c30",
+      "type": "claim",
+      "label": "C30",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "A trust that certifies itself is the one you cannot trust.",
+      "category": "F · The proverb (Gödel-deepened)"
+    },
+    {
+      "id": "claim-c31",
+      "type": "claim",
+      "label": "C31",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "Incompleteness is the permanent, healthy condition of a living",
+      "category": "F · The proverb (Gödel-deepened)"
+    },
+    {
+      "id": "triptych-seed",
+      "type": "triptych",
+      "label": "seed",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "The Name That Died / Carry Your Own Names / The Portable Proof-of-Understanding Workshop · status canary",
+      "status": "canary",
+      "href": "canon/seed-triptych"
+    },
+    {
+      "id": "form-seed-narrative",
+      "type": "form",
+      "label": "The Name That Died",
+      "domain": "mage",
+      "layer": "narrative",
+      "desc": "narrative tongue of seed",
+      "form": "narrative"
+    },
+    {
+      "id": "form-seed-poem",
+      "type": "form",
+      "label": "Carry Your Own Names",
+      "domain": "mage",
+      "layer": "narrative",
+      "desc": "poem tongue of seed",
+      "form": "poem"
+    },
+    {
+      "id": "form-seed-paper",
+      "type": "form",
+      "label": "The Portable Proof-of-Understanding Workshop: A Specification",
+      "domain": "swordsman",
+      "layer": "narrative",
+      "desc": "paper tongue of seed",
+      "form": "paper"
+    },
+    {
+      "id": "triptych-t1-the-stewards-week",
+      "type": "triptych",
+      "label": "t1-the-stewards-week",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "The Second Fold / The Fold, Read Aloud / The Steward Protocol · status submitted",
+      "status": "submitted",
+      "href": "artifact/t1-the-stewards-week"
+    },
+    {
+      "id": "form-t1-the-stewards-week-narrative",
+      "type": "form",
+      "label": "The Second Fold",
+      "domain": "mage",
+      "layer": "narrative",
+      "desc": "narrative tongue of t1-the-stewards-week",
+      "form": "narrative"
+    },
+    {
+      "id": "form-t1-the-stewards-week-poem",
+      "type": "form",
+      "label": "The Fold, Read Aloud",
+      "domain": "mage",
+      "layer": "narrative",
+      "desc": "poem tongue of t1-the-stewards-week",
+      "form": "poem"
+    },
+    {
+      "id": "form-t1-the-stewards-week-paper",
+      "type": "form",
+      "label": "The Steward Protocol: A Working Note",
+      "domain": "swordsman",
+      "layer": "narrative",
+      "desc": "paper tongue of t1-the-stewards-week",
+      "form": "paper"
+    },
+    {
+      "id": "law-babblefish-gate",
+      "type": "law",
+      "label": "LEX Babblefish Gate",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "babblefish_gate.lex — compiles: true (10 triples)",
+      "href": "lexon/babblefish_gate.lex"
+    },
+    {
+      "id": "role-keystone",
+      "type": "role",
+      "label": "Keystone",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "a party/role bound in Babblefish Gate"
+    },
+    {
+      "id": "term-proposer",
+      "type": "term",
+      "label": "Proposer",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "term-assayer",
+      "type": "term",
+      "label": "Assayer",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "role-proposer",
+      "type": "role",
+      "label": "Proposer",
+      "domain": "mage",
+      "layer": "knowledge",
+      "desc": "a party/role bound in Babblefish Gate"
+    },
+    {
+      "id": "term-triptych",
+      "type": "term",
+      "label": "Triptych",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "term-committed",
+      "type": "term",
+      "label": "Committed",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "term-probe-form",
+      "type": "term",
+      "label": "Probe Form",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "term-drawn",
+      "type": "term",
+      "label": "Drawn",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "role-assayer",
+      "type": "role",
+      "label": "Assayer",
+      "domain": "swordsman",
+      "layer": "knowledge",
+      "desc": "a party/role bound in Babblefish Gate"
+    },
+    {
+      "id": "term-recovered",
+      "type": "term",
+      "label": "Recovered",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "term-validated",
+      "type": "term",
+      "label": "Validated",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "term-this-contract",
+      "type": "term",
+      "label": "this-contract",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Babblefish Gate"
+    },
+    {
+      "id": "law-workshop-consent",
+      "type": "law",
+      "label": "LEX Workshop Consent",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "consent_agreement.lex — compiles: true (12 triples)",
+      "href": "lexon/consent_agreement.lex"
+    },
+    {
+      "id": "role-first-person",
+      "type": "role",
+      "label": "First Person",
+      "domain": "first_person",
+      "layer": "knowledge",
+      "desc": "a party/role bound in Workshop Consent"
+    },
+    {
+      "id": "term-terms",
+      "type": "term",
+      "label": "Terms",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "term-agreement",
+      "type": "term",
+      "label": "Agreement",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "term-workshop-holder",
+      "type": "term",
+      "label": "Workshop Holder",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "term-proffered",
+      "type": "term",
+      "label": "Proffered",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "role-workshop-holder",
+      "type": "role",
+      "label": "Workshop Holder",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "a party/role bound in Workshop Consent"
+    },
+    {
+      "id": "term-accepted",
+      "type": "term",
+      "label": "Accepted",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "term-corpus-scope",
+      "type": "term",
+      "label": "Corpus Scope",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "term-export-scope",
+      "type": "term",
+      "label": "Export Scope",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "term-expression",
+      "type": "term",
+      "label": "Expression",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "role-federation",
+      "type": "role",
+      "label": "Federation",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "a recipient in Workshop Consent"
+    },
+    {
+      "id": "term-revoked",
+      "type": "term",
+      "label": "Revoked",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Workshop Consent"
+    },
+    {
+      "id": "law-fold",
+      "type": "law",
+      "label": "LEX Fold",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "steward_fold.lex — compiles: true (8 triples)",
+      "href": "lexon/steward_fold.lex"
+    },
+    {
+      "id": "term-steward",
+      "type": "term",
+      "label": "Steward",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Fold"
+    },
+    {
+      "id": "term-fold",
+      "type": "term",
+      "label": "Fold",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Fold"
+    },
+    {
+      "id": "role-steward",
+      "type": "role",
+      "label": "Steward",
+      "domain": "swordsman",
+      "layer": "knowledge",
+      "desc": "a party/role bound in Fold"
+    },
+    {
+      "id": "term-pack-hash",
+      "type": "term",
+      "label": "Pack Hash",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Fold"
+    },
+    {
+      "id": "term-fold-record",
+      "type": "term",
+      "label": "Fold Record",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Fold"
+    },
+    {
+      "id": "term-verified",
+      "type": "term",
+      "label": "Verified",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Fold"
+    },
+    {
+      "id": "term-successor",
+      "type": "term",
+      "label": "Successor",
+      "domain": "shared",
+      "layer": "knowledge",
+      "desc": "an object of Fold"
+    },
+    {
+      "id": "player-the-first-person-seed",
+      "type": "player",
+      "label": "The First Person (seed)",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "persona Privacy Guide · tongues paper, poem",
+      "kappa": "sha256:ad8e8046afdcf2257ae908d6d4910728e8ef93f22f98e3d4a528c709148a71b4",
+      "did": "did:key:z6MkvNR1UxEoTSwouf4WT68V9rZcdDTaZouL72WjRob6eLwu",
+      "persona": "Privacy Guide"
+    },
+    {
+      "id": "run-auto1",
+      "type": "run",
+      "label": "run auto1",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "COMPLETE · 2 round(s) · {\"VALIDATED\":4,\"MIRAGE\":0,\"BLOCKED\":0} · gemma3:12b",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "lever-auto1-extend-a-tongue",
+      "type": "lever",
+      "label": "extend-a-tongue",
+      "domain": "mage",
+      "layer": "chronicle",
+      "desc": "The Name That Died / Carry Your Own Names / The Portable Proof-of-Understanding Workshop · VALIDATED",
+      "status": "VALIDATED",
+      "lens": "story-forward"
+    },
+    {
+      "id": "lever-auto1-revise-for-fidelity",
+      "type": "lever",
+      "label": "revise-for-fidelity",
+      "domain": "swordsman",
+      "layer": "chronicle",
+      "desc": "The Name That Died / Carry Your Own Names / The Portable Proof-of-Understanding Workshop · VALIDATED",
+      "status": "VALIDATED",
+      "lens": "spec-forward"
+    },
+    {
+      "id": "run-live1",
+      "type": "run",
+      "label": "run live1",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "COMPLETE · 1 round(s) · {\"VALIDATED\":2,\"MIRAGE\":0,\"BLOCKED\":0} · gemma3:12b",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "lever-live1-extend-a-tongue",
+      "type": "lever",
+      "label": "extend-a-tongue",
+      "domain": "mage",
+      "layer": "chronicle",
+      "desc": "The Name That Died / Carry Your Own Names / The Portable Proof-of-Understanding Workshop · VALIDATED",
+      "status": "VALIDATED",
+      "lens": "story-forward"
+    },
+    {
+      "id": "lever-live1-revise-for-fidelity",
+      "type": "lever",
+      "label": "revise-for-fidelity",
+      "domain": "swordsman",
+      "layer": "chronicle",
+      "desc": "Carry Claims from Narrative to Paper · VALIDATED",
+      "status": "VALIDATED",
+      "lens": "spec-forward"
+    },
+    {
+      "id": "run-smoke",
+      "type": "run",
+      "label": "run smoke",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "COMPLETE · 2 round(s) · {\"VALIDATED\":0,\"MIRAGE\":4,\"BLOCKED\":0} · stub",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "lever-smoke-stub-story-forward",
+      "type": "lever",
+      "label": "stub-story-forward",
+      "domain": "mage",
+      "layer": "chronicle",
+      "desc": "stub lever through story-forward · MIRAGE",
+      "status": "MIRAGE",
+      "lens": "story-forward"
+    },
+    {
+      "id": "lever-smoke-stub-spec-forward",
+      "type": "lever",
+      "label": "stub-spec-forward",
+      "domain": "swordsman",
+      "layer": "chronicle",
+      "desc": "stub lever through spec-forward · MIRAGE",
+      "status": "MIRAGE",
+      "lens": "spec-forward"
+    },
+    {
+      "id": "run-smoke-ui",
+      "type": "run",
+      "label": "run smoke-ui",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "COMPLETE · 2 round(s) · {\"VALIDATED\":0,\"MIRAGE\":4,\"BLOCKED\":0} · stub",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "lever-smoke-ui-stub-story-forward",
+      "type": "lever",
+      "label": "stub-story-forward",
+      "domain": "mage",
+      "layer": "chronicle",
+      "desc": "stub lever through story-forward · MIRAGE",
+      "status": "MIRAGE",
+      "lens": "story-forward"
+    },
+    {
+      "id": "lever-smoke-ui-stub-spec-forward",
+      "type": "lever",
+      "label": "stub-spec-forward",
+      "domain": "swordsman",
+      "layer": "chronicle",
+      "desc": "stub lever through spec-forward · MIRAGE",
+      "status": "MIRAGE",
+      "lens": "spec-forward"
+    },
+    {
+      "id": "run-ux-click",
+      "type": "run",
+      "label": "run ux-click",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "COMPLETE · 1 round(s) · {\"VALIDATED\":2,\"MIRAGE\":0,\"BLOCKED\":0} · gemma3:12b",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "lever-ux-click-extend-a-tongue",
+      "type": "lever",
+      "label": "extend-a-tongue",
+      "domain": "mage",
+      "layer": "chronicle",
+      "desc": "Clarify the Source of the Weaver's Power · VALIDATED",
+      "status": "VALIDATED",
+      "lens": "story-forward"
+    },
+    {
+      "id": "run-w0-test",
+      "type": "run",
+      "label": "run w0-test",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "COMPLETE · 1 round(s) · {\"VALIDATED\":2,\"MIRAGE\":0,\"BLOCKED\":0} · gemma3:12b",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "lever-w0-test-extend-a-tongue",
+      "type": "lever",
+      "label": "extend-a-tongue",
+      "domain": "mage",
+      "layer": "chronicle",
+      "desc": "Addressing Narrative Gaps in the Steward Protocol's Origin · VALIDATED",
+      "status": "VALIDATED",
+      "lens": "story-forward"
+    },
+    {
+      "id": "corpus-audio-note-poem-scarcity-md",
+      "type": "corpus",
+      "label": "audio-note-poem-scarcity.md",
+      "domain": "first_person",
+      "layer": "knowledge",
+      "desc": "consented",
+      "consented": true
+    },
+    {
+      "id": "corpus-seed-canon-note-md",
+      "type": "corpus",
+      "label": "seed-canon-note.md",
+      "domain": "first_person",
+      "layer": "knowledge",
+      "desc": "consented",
+      "consented": true
+    },
+    {
+      "id": "fold-week-0",
+      "type": "fold",
+      "label": "Week 0 fold",
+      "domain": "first_person",
+      "layer": "chronicle",
+      "desc": "steward the First Person · 2026-07-17",
+      "steward": "the First Person"
+    },
+    {
+      "id": "fold-week-0-2",
+      "type": "fold",
+      "label": "Week 0 fold 2",
+      "domain": "first_person",
+      "layer": "chronicle",
+      "desc": "steward the First Person · 2026-07-18",
+      "steward": "the First Person"
+    },
+    {
+      "id": "artefact-the-proverb-chain",
+      "type": "artefact",
+      "label": "The Proverb Chain",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "forged constellation · 3 stars · by the-first-person-seed · the Godel spine: incomplete on purpose",
+      "kappa": "sha256:07feaa8bf3e62d5c6c871c1183ab4de13ceec0b732263c0f186721645fdb888f"
+    },
+    {
+      "id": "page-hh-workshop",
+      "type": "page",
+      "label": "HH Workshop",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 5 items",
+      "href": "fedwiki/out/hh-workshop.json"
+    },
+    {
+      "id": "page-law-babblefish-gate",
+      "type": "page",
+      "label": "Law — Babblefish Gate",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 5 items",
+      "href": "fedwiki/out/law-babblefish-gate.json"
+    },
+    {
+      "id": "page-law-fold",
+      "type": "page",
+      "label": "Law — Fold",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 5 items",
+      "href": "fedwiki/out/law-fold.json"
+    },
+    {
+      "id": "page-law-workshop-consent",
+      "type": "page",
+      "label": "Law — Workshop Consent",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 5 items",
+      "href": "fedwiki/out/law-workshop-consent.json"
+    },
+    {
+      "id": "page-the-chronicles",
+      "type": "page",
+      "label": "The Chronicles",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 9 items",
+      "href": "fedwiki/out/the-chronicles.json"
+    },
+    {
+      "id": "page-the-claim-register",
+      "type": "page",
+      "label": "The Claim Register",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 9 items",
+      "href": "fedwiki/out/the-claim-register.json"
+    },
+    {
+      "id": "page-the-knowledge-web",
+      "type": "page",
+      "label": "The Knowledge Web",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 4 items",
+      "href": "fedwiki/out/the-knowledge-web.json"
+    },
+    {
+      "id": "page-the-roster",
+      "type": "page",
+      "label": "The Roster",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 4 items",
+      "href": "fedwiki/out/the-roster.json"
+    },
+    {
+      "id": "page-the-steward-chain",
+      "type": "page",
+      "label": "The Steward Chain",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 4 items",
+      "href": "fedwiki/out/the-steward-chain.json"
+    },
+    {
+      "id": "page-the-workshop-law",
+      "type": "page",
+      "label": "lexon/ — the workshop's law, compiling",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 7 items",
+      "href": "fedwiki/out/the-workshop-law.json"
+    },
+    {
+      "id": "page-triptych-seed",
+      "type": "page",
+      "label": "Triptych — seed",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 6 items",
+      "href": "fedwiki/out/triptych-seed.json"
+    },
+    {
+      "id": "page-triptych-t1-the-stewards-week",
+      "type": "page",
+      "label": "Triptych — t1-the-stewards-week",
+      "domain": "shared",
+      "layer": "narrative",
+      "desc": "spooled fedwiki page · 6 items",
+      "href": "fedwiki/out/triptych-t1-the-stewards-week.json"
+    },
+    {
+      "id": "book-book-of-poems",
+      "type": "book",
+      "label": "book of poems",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "bound artefact — carries the steward chain",
+      "href": "artifact/book_of_poems.html"
+    },
+    {
+      "id": "book-collected-papers",
+      "type": "book",
+      "label": "collected papers",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "bound artefact — carries the steward chain",
+      "href": "artifact/collected_papers.html"
+    },
+    {
+      "id": "book-story-anthology",
+      "type": "book",
+      "label": "story anthology",
+      "domain": "first_person",
+      "layer": "narrative",
+      "desc": "bound artefact — carries the steward chain",
+      "href": "artifact/story_anthology.html"
+    },
+    {
+      "id": "chronicle-2026-07-17-the-fitting",
+      "type": "chronicle",
+      "label": "2026-07-17 — The Fitting",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-17_the-fitting.md",
+      "href": "chronicles/2026-07-17_the-fitting.md"
+    },
+    {
+      "id": "chronicle-2026-07-18-the-boards",
+      "type": "chronicle",
+      "label": "2026-07-18 (latest) — The Boards",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-18_the-boards.md",
+      "href": "chronicles/2026-07-18_the-boards.md"
+    },
+    {
+      "id": "chronicle-2026-07-18-the-cycles",
+      "type": "chronicle",
+      "label": "2026-07-18 (night) — The Cycles",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-18_the-cycles.md",
+      "href": "chronicles/2026-07-18_the-cycles.md"
+    },
+    {
+      "id": "chronicle-2026-07-18-the-first-inputs",
+      "type": "chronicle",
+      "label": "2026-07-18 (the line) — The First Inputs: 0→1",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-18_the-first-inputs.md",
+      "href": "chronicles/2026-07-18_the-first-inputs.md"
+    },
+    {
+      "id": "chronicle-2026-07-18-the-hand-and-the-letters",
+      "type": "chronicle",
+      "label": "2026-07-18 — The Hand, the Game, and the Letters",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-18_the-hand-and-the-letters.md",
+      "href": "chronicles/2026-07-18_the-hand-and-the-letters.md"
+    },
+    {
+      "id": "chronicle-2026-07-18-the-test-pass",
+      "type": "chronicle",
+      "label": "2026-07-18 (the test pass) — Issues Found, Fixed, and Named",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-18_the-test-pass.md",
+      "href": "chronicles/2026-07-18_the-test-pass.md"
+    },
+    {
+      "id": "chronicle-2026-07-18-the-towel-and-the-web",
+      "type": "chronicle",
+      "label": "2026-07-18 (later) — The Towel and the Web",
+      "domain": "shared",
+      "layer": "chronicle",
+      "desc": "2026-07-18_the-towel-and-the-web.md",
+      "href": "chronicles/2026-07-18_the-towel-and-the-web.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "triptych-seed",
+      "target": "form-seed-narrative",
+      "type": "renders"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c5",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c6",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c7",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c9",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c10",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c11",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c12",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c13",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c14",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c15",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c16",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c22",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c23",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c24",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c25",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c26",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c28",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c29",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c30",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-narrative",
+      "target": "claim-c31",
+      "type": "carries"
+    },
+    {
+      "source": "triptych-seed",
+      "target": "form-seed-poem",
+      "type": "renders"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c5",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c6",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c7",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c12",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c24",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c25",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c26",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c29",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c30",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-poem",
+      "target": "claim-c31",
+      "type": "carries"
+    },
+    {
+      "source": "triptych-seed",
+      "target": "form-seed-paper",
+      "type": "renders"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c1",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c2",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c3",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c4",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c5",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c6",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c7",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c8",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c9",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c10",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c11",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c12",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c13",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c14",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c15",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c16",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c17",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c18",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c19",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c20",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c21",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c22",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c23",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c24",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c25",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c26",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c27",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c28",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c29",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c30",
+      "type": "carries"
+    },
+    {
+      "source": "form-seed-paper",
+      "target": "claim-c31",
+      "type": "carries"
+    },
+    {
+      "source": "triptych-t1-the-stewards-week",
+      "target": "form-t1-the-stewards-week-narrative",
+      "type": "renders"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c5",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c7",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c11",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c12",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c13",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c15",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c16",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-narrative",
+      "target": "claim-c20",
+      "type": "carries"
+    },
+    {
+      "source": "triptych-t1-the-stewards-week",
+      "target": "form-t1-the-stewards-week-poem",
+      "type": "renders"
+    },
+    {
+      "source": "form-t1-the-stewards-week-poem",
+      "target": "claim-c6",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-poem",
+      "target": "claim-c7",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-poem",
+      "target": "claim-c11",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-poem",
+      "target": "claim-c12",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-poem",
+      "target": "claim-c15",
+      "type": "carries"
+    },
+    {
+      "source": "triptych-t1-the-stewards-week",
+      "target": "form-t1-the-stewards-week-paper",
+      "type": "renders"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c5",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c6",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c7",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c11",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c12",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c13",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c15",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c16",
+      "type": "carries"
+    },
+    {
+      "source": "form-t1-the-stewards-week-paper",
+      "target": "claim-c20",
+      "type": "carries"
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-proposer",
+      "type": "appoint",
+      "law": "law-babblefish-gate",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-assayer",
+      "type": "appoint",
+      "law": "law-babblefish-gate",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-proposer",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-proposer",
+      "target": "term-triptych",
+      "type": "may_fix",
+      "law": "law-babblefish-gate",
+      "clause": "Commit",
+      "condition": null
+    },
+    {
+      "source": "role-proposer",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-proposer",
+      "target": "term-committed",
+      "type": "may_declare",
+      "law": "law-babblefish-gate",
+      "clause": "Commit",
+      "condition": null
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-probe-form",
+      "type": "may_fix",
+      "law": "law-babblefish-gate",
+      "clause": "Draw",
+      "condition": "Committed is declared"
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-drawn",
+      "type": "may_declare",
+      "law": "law-babblefish-gate",
+      "clause": "Draw",
+      "condition": "Committed is declared"
+    },
+    {
+      "source": "role-assayer",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-assayer",
+      "target": "term-recovered",
+      "type": "may_declare",
+      "law": "law-babblefish-gate",
+      "clause": "Assay",
+      "condition": "Drawn is declared"
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-validated",
+      "type": "may_declare",
+      "law": "law-babblefish-gate",
+      "clause": "Validate",
+      "condition": "Recovered is declared"
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-triptych",
+      "type": "may_register",
+      "law": "law-babblefish-gate",
+      "clause": "Fold",
+      "condition": "Validated is declared"
+    },
+    {
+      "source": "role-keystone",
+      "target": "law-babblefish-gate",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-keystone",
+      "target": "term-this-contract",
+      "type": "may_terminate",
+      "law": "law-babblefish-gate",
+      "clause": "Close",
+      "condition": null
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-terms",
+      "type": "fix",
+      "law": "law-workshop-consent",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-agreement",
+      "type": "fix",
+      "law": "law-workshop-consent",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-workshop-holder",
+      "type": "appoint",
+      "law": "law-workshop-consent",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-proffered",
+      "type": "may_declare",
+      "law": "law-workshop-consent",
+      "clause": "Proffer",
+      "condition": null
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "term-accepted",
+      "type": "may_declare",
+      "law": "law-workshop-consent",
+      "clause": "Accept",
+      "condition": "Proffered is declared"
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-corpus-scope",
+      "type": "may_declare",
+      "law": "law-workshop-consent",
+      "clause": "Scope Corpus",
+      "condition": null
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-export-scope",
+      "type": "may_declare",
+      "law": "law-workshop-consent",
+      "clause": "Scope Export",
+      "condition": null
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "term-expression",
+      "type": "may_register",
+      "law": "law-workshop-consent",
+      "clause": "Admit",
+      "condition": "this Agreement is Consented"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "term-expression",
+      "type": "may_send",
+      "law": "law-workshop-consent",
+      "clause": "Export",
+      "condition": "Export Scope is declared"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "role-federation",
+      "type": "may_send_to",
+      "law": "law-workshop-consent",
+      "clause": "Export"
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-revoked",
+      "type": "may_declare",
+      "law": "law-workshop-consent",
+      "clause": "Revoke",
+      "condition": null
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "term-expression",
+      "type": "must_return",
+      "law": "law-workshop-consent",
+      "clause": "Withdraw",
+      "condition": "Revoked is declared"
+    },
+    {
+      "source": "role-workshop-holder",
+      "target": "role-first-person",
+      "type": "must_return_to",
+      "law": "law-workshop-consent",
+      "clause": "Withdraw"
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-workshop-consent",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-this-contract",
+      "type": "may_terminate",
+      "law": "law-workshop-consent",
+      "clause": "Close",
+      "condition": "Revoked is declared"
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-steward",
+      "type": "appoint",
+      "law": "law-fold",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-fold",
+      "type": "fix",
+      "law": "law-fold",
+      "clause": null,
+      "condition": null
+    },
+    {
+      "source": "role-steward",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-steward",
+      "target": "term-expression",
+      "type": "may_register",
+      "law": "law-fold",
+      "clause": "Admit",
+      "condition": "Consented is declared"
+    },
+    {
+      "source": "role-steward",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-steward",
+      "target": "term-pack-hash",
+      "type": "may_fix",
+      "law": "law-fold",
+      "clause": "Pack",
+      "condition": null
+    },
+    {
+      "source": "role-steward",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-steward",
+      "target": "term-fold-record",
+      "type": "may_file",
+      "law": "law-fold",
+      "clause": "Pack",
+      "condition": null
+    },
+    {
+      "source": "role-steward",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-steward",
+      "target": "term-verified",
+      "type": "may_declare",
+      "law": "law-fold",
+      "clause": "Verify",
+      "condition": "this Fold is Complete"
+    },
+    {
+      "source": "role-steward",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-steward",
+      "target": "term-successor",
+      "type": "may_appoint",
+      "law": "law-fold",
+      "clause": "Handover",
+      "condition": "Verified is declared"
+    },
+    {
+      "source": "role-first-person",
+      "target": "law-fold",
+      "type": "bound_in"
+    },
+    {
+      "source": "role-first-person",
+      "target": "term-this-contract",
+      "type": "may_terminate",
+      "law": "law-fold",
+      "clause": "Close",
+      "condition": null
+    },
+    {
+      "source": "run-auto1",
+      "target": "triptych-seed",
+      "type": "probed"
+    },
+    {
+      "source": "lever-auto1-extend-a-tongue",
+      "target": "run-auto1",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-auto1-extend-a-tongue",
+      "target": "run-auto1",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-auto1-revise-for-fidelity",
+      "target": "run-auto1",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-auto1-revise-for-fidelity",
+      "target": "run-auto1",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-auto1-extend-a-tongue",
+      "target": "run-auto1",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-auto1-extend-a-tongue",
+      "target": "run-auto1",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-auto1-revise-for-fidelity",
+      "target": "run-auto1",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-auto1-revise-for-fidelity",
+      "target": "run-auto1",
+      "type": "validated_in"
+    },
+    {
+      "source": "run-live1",
+      "target": "triptych-seed",
+      "type": "probed"
+    },
+    {
+      "source": "lever-live1-extend-a-tongue",
+      "target": "run-live1",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-live1-extend-a-tongue",
+      "target": "run-live1",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-live1-revise-for-fidelity",
+      "target": "run-live1",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-live1-revise-for-fidelity",
+      "target": "run-live1",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-smoke-stub-story-forward",
+      "target": "run-smoke",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-stub-story-forward",
+      "target": "run-smoke",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-stub-spec-forward",
+      "target": "run-smoke",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-stub-spec-forward",
+      "target": "run-smoke",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-stub-story-forward",
+      "target": "run-smoke",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-stub-story-forward",
+      "target": "run-smoke",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-stub-spec-forward",
+      "target": "run-smoke",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-stub-spec-forward",
+      "target": "run-smoke",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-story-forward",
+      "target": "run-smoke-ui",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-story-forward",
+      "target": "run-smoke-ui",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-spec-forward",
+      "target": "run-smoke-ui",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-spec-forward",
+      "target": "run-smoke-ui",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-story-forward",
+      "target": "run-smoke-ui",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-story-forward",
+      "target": "run-smoke-ui",
+      "type": "mirage_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-spec-forward",
+      "target": "run-smoke-ui",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-smoke-ui-stub-spec-forward",
+      "target": "run-smoke-ui",
+      "type": "mirage_in"
+    },
+    {
+      "source": "run-ux-click",
+      "target": "triptych-seed",
+      "type": "probed"
+    },
+    {
+      "source": "lever-ux-click-extend-a-tongue",
+      "target": "run-ux-click",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-ux-click-extend-a-tongue",
+      "target": "run-ux-click",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-ux-click-extend-a-tongue",
+      "target": "run-ux-click",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-ux-click-extend-a-tongue",
+      "target": "run-ux-click",
+      "type": "validated_in"
+    },
+    {
+      "source": "run-w0-test",
+      "target": "triptych-seed",
+      "type": "probed"
+    },
+    {
+      "source": "lever-w0-test-extend-a-tongue",
+      "target": "run-w0-test",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-w0-test-extend-a-tongue",
+      "target": "run-w0-test",
+      "type": "validated_in"
+    },
+    {
+      "source": "lever-w0-test-extend-a-tongue",
+      "target": "run-w0-test",
+      "type": "proposed_in"
+    },
+    {
+      "source": "lever-w0-test-extend-a-tongue",
+      "target": "run-w0-test",
+      "type": "validated_in"
+    },
+    {
+      "source": "fold-week-0",
+      "target": "corpus-seed-canon-note-md",
+      "type": "folds"
+    },
+    {
+      "source": "player-the-first-person-seed",
+      "target": "fold-week-0",
+      "type": "stewarded"
+    },
+    {
+      "source": "fold-week-0-2",
+      "target": "corpus-audio-note-poem-scarcity-md",
+      "type": "folds"
+    },
+    {
+      "source": "player-the-first-person-seed",
+      "target": "fold-week-0-2",
+      "type": "stewarded"
+    },
+    {
+      "source": "artefact-the-proverb-chain",
+      "target": "claim-c29",
+      "type": "composed_of"
+    },
+    {
+      "source": "artefact-the-proverb-chain",
+      "target": "claim-c30",
+      "type": "composed_of"
+    },
+    {
+      "source": "artefact-the-proverb-chain",
+      "target": "claim-c31",
+      "type": "composed_of"
+    },
+    {
+      "source": "artefact-the-proverb-chain",
+      "target": "player-the-first-person-seed",
+      "type": "forged_by"
+    },
+    {
+      "source": "page-the-steward-chain",
+      "target": "fold-week-0",
+      "type": "spooled_from"
+    },
+    {
+      "source": "page-triptych-seed",
+      "target": "triptych-seed",
+      "type": "spooled_from"
+    },
+    {
+      "source": "page-triptych-t1-the-stewards-week",
+      "target": "triptych-seed",
+      "type": "spooled_from"
+    },
+    {
+      "source": "book-book-of-poems",
+      "target": "triptych-seed",
+      "type": "binds"
+    },
+    {
+      "source": "book-book-of-poems",
+      "target": "triptych-t1-the-stewards-week",
+      "type": "binds"
+    },
+    {
+      "source": "book-collected-papers",
+      "target": "triptych-seed",
+      "type": "binds"
+    },
+    {
+      "source": "book-collected-papers",
+      "target": "triptych-t1-the-stewards-week",
+      "type": "binds"
+    },
+    {
+      "source": "book-story-anthology",
+      "target": "triptych-seed",
+      "type": "binds"
+    },
+    {
+      "source": "book-story-anthology",
+      "target": "triptych-t1-the-stewards-week",
+      "type": "binds"
+    }
+  ]
+}

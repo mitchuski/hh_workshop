@@ -1,0 +1,11 @@
+{
+  "leverId": "extend-a-tongue",
+  "status": "VALIDATED",
+  "metric": 1,
+  "gateResult": "8/8",
+  "evidence": "1. Understanding deepens as a participant expresses themselves and gains access to the shared model's training.\n2. Expressions are offered for inclusion in the corpus, requiring consent from the author recorded in a ledger.\n3. The steward manages the weekly fold, integrating consented expressions into the model’s grounding context and recording it in a log.\n4. Each expression serves as both a key for the participant and nourishment for the shared model.\n5. The cycle of understanding, expression, admission, reflection, and deepening repeats continuously.\n6. Access to the mage deepens with demonstrated understanding, acting as both a lock and a lesson.\n7.  The steward holds the process of training, not ownership of the machine; it is a shared responsibility.\n8. Training depth is staged, beginning with retrieval/context-grounding and progressing to weight fine-tuning when hardware allows.",
+  "coverage": {
+    "mode": "census",
+    "detection": "always — every claim probed"
+  }
+}

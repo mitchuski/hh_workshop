@@ -1,0 +1,9 @@
+{
+  "triptych": "t1-the-stewards-week",
+  "title": "The Second Fold / The Fold, Read Aloud / The Steward Protocol",
+  "status": "submitted",
+  "authoredWith": "0→1 first-person input pass, 2026-07-18 — faces the gate unvalidated; not counted by measure_debt until VALIDATED",
+  "narrative": ["C5", "C7", "C11", "C12", "C13", "C15", "C16", "C20"],
+  "poem": ["C6", "C7", "C11", "C12", "C15"],
+  "paper": ["C5", "C6", "C7", "C11", "C12", "C13", "C15", "C16", "C20"]
+}

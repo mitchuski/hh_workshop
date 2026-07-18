@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the workshop's 42</title>
+<style>
+:root { --bg:#0e1116; --panel:#161b22cc; --line:#2a3038; --ink:#d7dde6; --dim:#8b949e; --amber:#e0a526; --sapphire:#5b8def }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink); font:13.5px/1.5 ui-monospace,Consolas,monospace; overflow:hidden }
+header { position:fixed; inset:0 0 auto 0; z-index:5; padding:10px 16px; border-bottom:1px solid var(--line); background:#0e1116e6; display:flex; gap:14px; align-items:baseline }
+header h1 { margin:0; font-size:14px; font-weight:600 } header h1 em { color:var(--amber); font-style:normal }
+header .dim { color:var(--dim); font-size:12px }
+header a { color:var(--sapphire); text-decoration:none; font-size:12px }
+body.embed header { display:none }
+#stage { position:fixed; inset:0 }
+svg { width:100%; height:100% }
+.hud { position:fixed; z-index:6; background:var(--panel); border:1px solid var(--line); border-radius:10px; backdrop-filter:blur(6px) }
+#side { top:52px; right:14px; width:300px; max-height:calc(100vh - 80px); overflow:auto; padding:14px 16px }
+body.embed #side { top:14px }
+#side h3 { margin:0 0 6px; font-size:13px; color:var(--sapphire) }
+#side h4 { margin:14px 0 4px; font-size:11.5px; color:var(--dim); letter-spacing:.05em }
+#side .task { font-size:12.5px; margin:4px 0; padding-left:14px; text-indent:-14px }
+#side .task .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px }
+#side .cast { color:var(--dim); font-size:12.5px; margin:3px 0 }
+#side .empty { color:var(--dim); font-style:italic; font-size:12px }
+#hint { position:fixed; bottom:12px; left:50%; transform:translateX(-50%); color:var(--dim); font-size:11.5px; z-index:6; background:var(--panel); border:1px solid var(--line); border-radius:99px; padding:3px 14px }
+text { user-select:none }
+.axis-label { font-size:12px; fill:#aeb6c2 }
+.axis-glyph { font-size:17px }
+.seal-p { font-size:26px; fill:var(--amber) }
+.seal-sub { font-size:9.5px; fill:#8b949e }
+</style>
+</head>
+<body>
+<header>
+  <h1>the workshop's <em>42</em></h1>
+  <span class="dim">six axes · seven stations · every lit station a trust task the room performed — derived from the ledgers</span>
+  <span style="flex:1"></span>
+  <a href="/game/full/" title="the always-on Game of 42 — the elder sibling this board is reset from">the full game ↗</a>
+</header>
+<div id="stage"><svg id="board" viewBox="-500 -430 1000 860" preserveAspectRatio="xMidYMid meet"></svg></div>
+<div class="hud" id="side"><div class="dim">loading the board…</div></div>
+<div id="hint">click an axis to read its stations · the seal κ re-derives from the ledgers on every load</div>
+<script>
+if (location.search.includes('embed')) document.body.classList.add('embed')
+const NS = 'http://www.w3.org/2000/svg'
+const svg = document.getElementById('board')
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const [k,v] of Object.entries(attrs||{})) e.setAttribute(k, v); (parent||svg).appendChild(e); return e }
+
+// a heptad = one center + a ring of six, the axis's seven stations
+const STATION = (cx, cy, i, ringR) => {
+  if (i === 0) return [cx, cy]
+  const a = (i - 1) * Math.PI / 3 - Math.PI / 2
+  return [cx + ringR * Math.cos(a), cy + ringR * Math.sin(a)]
+}
+
+let B = null, selAxis = null
+async function load() {
+  B = await (await fetch('/api/game/board')).json()
+  draw(); side()
+}
+function draw() {
+  svg.innerHTML = ''
+  const AXR = 285, HEPT = 52, ST = 11
+  // spokes + heptads
+  B.axes.forEach((ax, i) => {
+    const ang = i * Math.PI / 3 - Math.PI / 2
+    const cx = AXR * Math.cos(ang), cy = AXR * Math.sin(ang)
+    el('line', { x1: 0, y1: 0, x2: cx, y2: cy, stroke: '#2a3038', 'stroke-width': 1, 'stroke-dasharray': '2 5' })
+    const g = el('g', { transform: `translate(${cx},${cy})`, style: 'cursor:pointer' })
+    // faint heptad outline
+    el('circle', { r: HEPT + 16, fill: 'none', stroke: selAxis === ax.id ? ax.color : '#2a3038', 'stroke-width': selAxis === ax.id ? 1.5 : 1, 'fill-opacity': 0 }, g)
+    for (let s = 0; s < 7; s++) {
+      const [sx, sy] = STATION(0, 0, s, HEPT)
+      const task = ax.stations[s]
+      const c = el('circle', { cx: sx, cy: sy, r: ST, fill: task ? ax.color : 'none', 'fill-opacity': task ? .92 : 0, stroke: task ? ax.color : '#3a4048', 'stroke-width': task ? 0 : 1.4 }, g)
+      if (task) {
+        el('circle', { cx: sx, cy: sy, r: ST + 5, fill: ax.color, 'fill-opacity': .14 }, g)
+        const tip = document.createElementNS(NS, 'title'); tip.textContent = task.label; c.appendChild(tip)
+      }
+    }
+    // glyph + label, placed outward
+    const lx = (AXR + 96) * Math.cos(ang), ly = (AXR + 96) * Math.sin(ang)
+    el('text', { x: lx, y: ly - 4, 'text-anchor': 'middle', class: 'axis-glyph' }).textContent = ax.glyph
+    el('text', { x: lx, y: ly + 15, 'text-anchor': 'middle', class: 'axis-label' }).textContent = `${ax.id} ${ax.stations.length}/7`
+    g.addEventListener('click', () => { selAxis = selAxis === ax.id ? null : ax.id; draw(); side() })
+  })
+  // the seal disc
+  el('circle', { r: 74, fill: '#161b22', stroke: '#2a3038', 'stroke-width': 1.5 })
+  el('circle', { r: 74 * Math.sqrt(B.p || 0.0001), fill: '#e0a526', 'fill-opacity': .08 })
+  el('text', { y: -6, 'text-anchor': 'middle', class: 'seal-p' }).textContent = `${B.filled}/42`
+  el('text', { y: 14, 'text-anchor': 'middle', class: 'seal-sub' }).textContent = `p = ${B.p}`
+  el('text', { y: 30, 'text-anchor': 'middle', class: 'seal-sub' }).textContent = 'κ ' + (B.kappa || '').slice(7, 23) + '…'
+}
+function side() {
+  const s = document.getElementById('side')
+  const ax = B.axes.find(a => a.id === selAxis)
+  s.innerHTML =
+    (ax
+      ? `<h3 style="color:${ax.color}">${ax.glyph} ${ax.id} — ${esc(ax.what)}</h3>` +
+        (ax.stations.length ? ax.stations.map(t => `<div class="task"><span class="dot" style="background:${ax.color}"></span>${esc(t.label)}</div>`).join('') : '<div class="empty">no stations lit yet — the course lights them</div>') +
+        `<div class="empty" style="margin-top:6px">${7 - ax.stations.length} station(s) open</div>`
+      : `<h3>the board</h3><div class="dim" style="font-size:12.5px">The cohort's Game of 42, reset for the workshop: stations light only from the ledgers — laws compiled, consent signed, folds logged, runs proven, pages spooled, artefacts bound. Nothing is placed by hand.</div>` +
+        B.axes.map(a => `<div class="task"><span class="dot" style="background:${a.color}"></span>${a.glyph} ${a.id} · ${a.stations.length}/7 — <span class="dim">${esc(a.what)}</span></div>`).join('')) +
+    `<h4>THE CAST</h4>` +
+    (B.cast.length ? B.cast.map(c => `<div class="cast">${esc(c.name)} · ${esc(c.persona || '—')} · ${(c.tongues || []).join(', ') || '—'}</div>`).join('') : '<div class="empty">the roster opens with the first cohort</div>') +
+    `<h4>THE SEAL</h4><div class="cast" style="word-break:break-all">κ ${esc(B.kappa)}</div>
+     <div class="empty" style="margin-top:4px">the room seals when the board fills — p = 1 is the course, complete</div>`
+}
+load()
+</script>
+</body>
+</html>

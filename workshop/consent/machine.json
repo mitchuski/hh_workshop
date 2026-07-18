@@ -1,0 +1,43 @@
+{
+  "$comment": "Consent — machine-readable register (C19). STUB shaped after the IEEE 7012 / MyTerms posture: the individual proposes; the agreement is strictly bilateral; agents and devices are fabric, not parties. A production deployment should map these fields onto the Customer Commons roster terms and W3C DPV vocabulary.",
+  "standard": "IEEE-7012-2025 (MyTerms) — posture stub",
+  "agreement": {
+    "type": "bilateral",
+    "proposer": "first-person",
+    "parties": ["first-person", "workshop-holder"],
+    "nonParties": ["the mage (local model)", "software agents", "devices", "trust communities"],
+    "counterOffers": 1
+  },
+  "perExpression": {
+    "ledger": "corpus/CONSENT_LEDGER.md",
+    "scopes": {
+      "corpus": "local machine-reading/grounding on air-gapped hardware within the workshop",
+      "export": "inclusion in bound artefacts and/or federated wiki publication",
+      "both": "corpus + export"
+    },
+    "revocable": true,
+    "revocationEffect": "delete corpus copy; strike ledger row visibly; rebuild context pack without it"
+  },
+  "promises": {
+    "airGapped": "the room's thinking never leaves the room (C10)",
+    "noPersonGrading": "machine outputs are never the assessment of record of the person",
+    "noProbing": "addresses are offered, never scanned (C16)",
+    "inspectable": ["corpus/CONSENT_LEDGER.md", "mage/steward_log.md"]
+  },
+  "registers": {
+    "plainLanguage": "workshop/consent/plain-language.md",
+    "legal": "workshop/consent/legal-stub.md",
+    "machine": "workshop/consent/machine.json",
+    "lexon": "lexon/consent_agreement.lex"
+  },
+  "lexonLaw": {
+    "$comment": "The compiling register: one Lexon text that is both legal prose and parseable structure. Gate: node lexon/check.mjs (grammar + round-trip + promise typing + relation claims with falsifiability twins).",
+    "law": "lexon/consent_agreement.lex",
+    "claims": "lexon/consent_agreement.claims.json",
+    "keyClaims": [
+      "Consented = Proffered AND Accepted (invitation pattern)",
+      "Admit gated on Consented; Export gated on Export Scope; Withdraw gated on Revoked",
+      "absence: no transfer clause routes anything to the Workshop Holder"
+    ]
+  }
+}

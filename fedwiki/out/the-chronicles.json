@@ -1,0 +1,118 @@
+{
+  "title": "The Chronicles",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "31b68feea1f402af",
+      "text": "# The Chronicles\n\nThe workshop's session records — verdict-first, reversals at win-prominence (GR-7). The lab notebook, pre-formatted."
+    },
+    {
+      "type": "markdown",
+      "id": "32e908474f8c8c2c",
+      "text": "## 2026-07-17 — The Fitting\n\nhh_workshop exists, conforms, and runs. The babblefish recursion (sci-fi → poem → white paper → recurse) is now a mechanically fitted harness instance: 31-claim register, seed-triptych canary, baseline translation-debt **32** (= 3·31 − 61, `frontier.json`), census gate with the probe *form* drawn Fiat-Shamir, pure-data seats, and a local-model driver. Every gate green: `node tools/check.mjs` → 8/8, including offline replay of every recorded run.\n\n*(2026-07-17_the-fitting.md)*"
+    },
+    {
+      "type": "markdown",
+      "id": "32524a5f3df7bf2e",
+      "text": "## 2026-07-18 (latest) — The Boards\n\nboth boards the First Person flagged are rebuilt. The web screen is now a real board (full-viewport stage, filters, search, neighborhood light-up) instead of a hairball in a letterbox; and the Game of 42 is **reset for this use case** — the workshop's own derived 42 at `/game/`, with the hosted always-on game demoted to `/game/full/` as the elder sibling. All routes live on the running Towel.\n\n*(2026-07-18_the-boards.md)*"
+    },
+    {
+      "type": "markdown",
+      "id": "411165fec1ae62c1",
+      "text": "## 2026-07-18 (night) — The Cycles\n\nthe autonomous layer is running. The workshop now has its dream cycle (measure everything, fold nothing), its keystone queue (everything waiting on a human, derived to one page), a labeled **sample cohort** for demos, and auto-research rounds cycling in the background — all inside the split that keeps it honest: *automate the measuring and the proposing; never the folding or the door.*\n\n*(2026-07-18_the-cycles.md)*"
+    },
+    {
+      "type": "markdown",
+      "id": "43a2be0ffdcad612",
+      "text": "## 2026-07-18 (the line) — The First Inputs: 0→1\n\nthe system is hosted locally and every input type a first person can bring — voice, poem, story, formal note — has now walked the pipes end to end, and the generative expressions visibly evolved while the frontier honestly did not move. This chronicle is the line drawn before the test run.\n\n*(2026-07-18_the-first-inputs.md)*"
+    },
+    {
+      "type": "markdown",
+      "id": "201f1618b3c637a4",
+      "text": "## 2026-07-18 — The Hand, the Game, and the Letters\n\nthe workshop now has its control surface, its game, its public-goods framing, and its door-knockers. All gates stay green (9/9).\n\n*(2026-07-18_the-hand-and-the-letters.md)*"
+    },
+    {
+      "type": "markdown",
+      "id": "e4c56c8e493ddb2a",
+      "text": "## 2026-07-18 (later) — The Towel and the Web\n\nthe workshop's expressions are now generative websites — a spellweb-lane knowledge graph DERIVED from the ledgers (never authored), a self-contained generative site, and a one-command fedwiki auto-build — all served by the control surface, which the First Person renamed: **the Hand is now the Towel** 🧣 (the most massively useful thing an interstellar hitchhiker can have). Gates stay green.\n\n*(2026-07-18_the-towel-and-the-web.md)*"
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "The Chronicles",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "31b68feea1f402af",
+            "text": "# The Chronicles\n\nThe workshop's session records — verdict-first, reversals at win-prominence (GR-7). The lab notebook, pre-formatted."
+          },
+          {
+            "type": "markdown",
+            "id": "32e908474f8c8c2c",
+            "text": "## 2026-07-17 — The Fitting\n\nhh_workshop exists, conforms, and runs. The babblefish recursion (sci-fi → poem → white paper → recurse) is now a mechanically fitted harness instance: 31-claim register, seed-triptych canary, baseline translation-debt **32** (= 3·31 − 61, `frontier.json`), census gate with the probe *form* drawn Fiat-Shamir, pure-data seats, and a local-model driver. Every gate green: `node tools/check.mjs` → 8/8, including offline replay of every recorded run.\n\n*(2026-07-17_the-fitting.md)*"
+          },
+          {
+            "type": "markdown",
+            "id": "32524a5f3df7bf2e",
+            "text": "## 2026-07-18 (latest) — The Boards\n\nboth boards the First Person flagged are rebuilt. The web screen is now a real board (full-viewport stage, filters, search, neighborhood light-up) instead of a hairball in a letterbox; and the Game of 42 is **reset for this use case** — the workshop's own derived 42 at `/game/`, with the hosted always-on game demoted to `/game/full/` as the elder sibling. All routes live on the running Towel.\n\n*(2026-07-18_the-boards.md)*"
+          },
+          {
+            "type": "markdown",
+            "id": "411165fec1ae62c1",
+            "text": "## 2026-07-18 (night) — The Cycles\n\nthe autonomous layer is running. The workshop now has its dream cycle (measure everything, fold nothing), its keystone queue (everything waiting on a human, derived to one page), a labeled **sample cohort** for demos, and auto-research rounds cycling in the background — all inside the split that keeps it honest: *automate the measuring and the proposing; never the folding or the door.*\n\n*(2026-07-18_the-cycles.md)*"
+          },
+          {
+            "type": "markdown",
+            "id": "43a2be0ffdcad612",
+            "text": "## 2026-07-18 (the line) — The First Inputs: 0→1\n\nthe system is hosted locally and every input type a first person can bring — voice, poem, story, formal note — has now walked the pipes end to end, and the generative expressions visibly evolved while the frontier honestly did not move. This chronicle is the line drawn before the test run.\n\n*(2026-07-18_the-first-inputs.md)*"
+          },
+          {
+            "type": "markdown",
+            "id": "201f1618b3c637a4",
+            "text": "## 2026-07-18 — The Hand, the Game, and the Letters\n\nthe workshop now has its control surface, its game, its public-goods framing, and its door-knockers. All gates stay green (9/9).\n\n*(2026-07-18_the-hand-and-the-letters.md)*"
+          },
+          {
+            "type": "markdown",
+            "id": "e4c56c8e493ddb2a",
+            "text": "## 2026-07-18 (later) — The Towel and the Web\n\nthe workshop's expressions are now generative websites — a spellweb-lane knowledge graph DERIVED from the ledgers (never authored), a self-contained generative site, and a one-command fedwiki auto-build — all served by the control surface, which the First Person renamed: **the Hand is now the Towel** 🧣 (the most massively useful thing an interstellar hitchhiker can have). Gates stay green.\n\n*(2026-07-18_the-towel-and-the-web.md)*"
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197551
+    }
+  ]
+}

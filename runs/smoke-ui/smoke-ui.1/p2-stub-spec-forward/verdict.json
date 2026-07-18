@@ -1,0 +1,8 @@
+{
+  "leverId": "stub-spec-forward",
+  "status": "MIRAGE",
+  "metric": 0,
+  "gateResult": "0/31",
+  "failingCheck": "no triptych mounted — a smoke round has no probe text, so no declared claim can be recovered (T5: the gate is zero)",
+  "evidence": "stub deterministic assay: the probe form was named by the Gap but carries no mounted text in a smoke round; nothing recoverable, nothing validated."
+}

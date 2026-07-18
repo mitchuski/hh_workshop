@@ -1,0 +1,15 @@
+{
+  "players": [
+    {
+      "slug": "the-first-person-seed",
+      "name": "The First Person (seed)",
+      "persona": "Privacy Guide",
+      "tongues": [
+        "paper",
+        "poem"
+      ],
+      "did": "did:key:z6MkvNR1UxEoTSwouf4WT68V9rZcdDTaZouL72WjRob6eLwu",
+      "kappa": "sha256:ad8e8046afdcf2257ae908d6d4910728e8ef93f22f98e3d4a528c709148a71b4"
+    }
+  ]
+}

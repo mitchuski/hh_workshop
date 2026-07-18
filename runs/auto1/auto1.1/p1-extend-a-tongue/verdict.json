@@ -1,0 +1,15 @@
+{
+  "leverId": "extend-a-tongue",
+  "status": "VALIDATED",
+  "metric": 1,
+  "gateResult": "18/18",
+  "evidence": "1. The mage arrived with a flight case and trolley, pushed by Ilse.\n2. The cohort was in a borrowed seminar room that would later prove significant.\n3. They chose the name *anemone.mesh* for their machine, as whoever holds something names it.\n4. Fourteen laptops attempted to resolve the name, but thirteen succeeded.\n5. Tomas's laptop initially failed to connect due to network issues.\n6. The front end only responded to the specific name, creating a hard failure when the venue’s router couldn’t speak it.\n7. Ilse used a resolver to provide a deterministic address for *anemone.mesh*.\n8. Ilse's lesson was that they had outsourced a crucial function to an unreliable external source.\n9. Perfect agreements require no outside validation, making them untrustworthy.\n10. Consent was the first step in accessing the roster, with nobody scanned or probed.\n11. Understanding replaced passwords as the key to deeper access within the mage.\n12. The mage’s knowledge base consisted solely of what the room produced, creating a mirror of their collective understanding.\n13. Feeding the mage involved incorporating the room's corpus and grounding it in live data.\n14. Ilse documented the week's progress in a steward's book for future cohorts.\n15. The roster sealed when fourteen understandings were written and consumed, signifying shared comprehension.\n16. The trolley carried the machine, resolver, and names towards the next room.\n17. Understanding and expression are intertwined; expression opens doors and feeds the mirror.\n18. The loop of understanding, expression, reflection, and renewal continues.",
+  "coverage": {
+    "mode": "census",
+    "detection": "always — every claim probed"
+  },
+  "probeDeclared": {
+    "form": "narrative",
+    "declaredClaims": 20
+  }
+}

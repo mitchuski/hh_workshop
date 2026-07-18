@@ -1,0 +1,98 @@
+{
+  "title": "lexon/ — the workshop's law, compiling",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "92ff9b320f290277",
+      "text": "# lexon/ — the workshop's law, compiling\n\nThe workshop's legal-shaped invariants written in **Lexon** — controlled\nnatural language a lawyer can read AND a machine can parse — and held green\nby the same gate the `lexon_pvm` harness uses. This is the fourth face of\nthe consent layer: where `workshop/consent/` carries plain-language, legal,\nand machine-JSON registers as three files, a Lexon law is **one text that is\nboth the legal prose and the parseable structure** — the babblefish thesis\napplied to law itself."
+    },
+    {
+      "type": "markdown",
+      "id": "2b888744972fda84",
+      "text": "## What \"compiling\" means here (the regime, honestly)\n\nThere is **no public Lexon compiler for this platform** (the reference\ncompiler is a macOS-only alpha, source unpublished). This lane runs the\n**spec-checker regime** vendored from `lexon_pvm`: a hand-written validator\nof an *attested subset* of Lexon (every grammar production is backed by a\nlexon.org golden fixture). \"Compiles\" = passes:\n\n1. **the base gate** (`tools/lexon_check.mjs`) — parse into subject-verb-\n   object triples · noun binding (definitions immutable) · **round-trip**\n   (triples re-serialize to canonical sentences that re-parse identically) ·\n   promise typing (every action edge typed promise/commitment, polarity +);\n2. **every relation claim** (`tools/relation_check.mjs`) — the structural\n   fact each law exists to state, verified on the clause graph **with a\n   falsifiability twin**: a minimally mutated contract must still gate-pass\n   yet fail the claim, or the claim proves nothing. Negative expectations\n   (claims that must come back ABSENT) prove the gate can refuse.\n\nRun it: `node lexon/check.mjs` — also wired into `node tools/check.mjs`."
+    },
+    {
+      "type": "markdown",
+      "id": "eaf32936c1b255a1",
+      "text": "## The three laws\n\n| law | what it compiles | the load-bearing claims |\n|---|---|---|\n| `consent_agreement.lex` | the myTerms/IEEE-7012 bilateral (First Person proffers, Workshop Holder accepts; per-expression corpus/export scope; revocation with mandatory return) | `Consented = Proffered ∧ Accepted` (the invitation pattern); Admit gated on Consented; **absence: no transfer clause routes anything to the Workshop Holder** — the extraction shape is structurally impossible, not merely forbidden |\n| `steward_fold.lex` | the weekly steward's duties (STEWARD.md as law) | Admit gated on Consented; `Complete = Pack Hash ∧ Fold Record`; Handover gated on Verified; absence: nothing routes to the Steward |\n| `babblefish_gate.lex` | the harness's own gate discipline (T2/T5/D1 as law) | Draw gated on Committed (**grind-proofing: the draw cannot precede the commit**); Validate gated on Recovered; Fold gated on Validated; **absence: nothing routes to the Proposer or the Assayer** — the seats cannot be paid off |\n\nEach law's `.claims.json` uses `{expect, claim}` rows — `RELATION PASS`\nrows are the law's asserted structure; `RELATION ABSENT` rows are the\ncounter-claims that must fail (a gate that cannot refuse is worth less than\nnone)."
+    },
+    {
+      "type": "markdown",
+      "id": "8b797f159bd90283",
+      "text": "## House grammar (the attested subset — imitate exactly)\n\nTypes: `person amount text time binary data contract number account` ·\nVerbs: `pay return appoint fix certify register grant declare file send\nterminate set` · Shape: `LEX <Title>.` · `\"Name\" is a <type>.` definitions ·\none recital (no modal) · `CLAUSE: <Name>.` blocks · `may`/`must` ·\nconditions `, if <Binary> is declared:` or `, if this <Noun> is\n<Predicate>:` · conjunctions via `\"P\" is defined as: the A is fixed and the\nB is fixed.` · **never an em dash** (the upstream census refuses them)."
+    },
+    {
+      "type": "markdown",
+      "id": "fefd6983ab713807",
+      "text": "## Provenance & the loop back\n\nChecker + goldens vendored verbatim from `C:\\Users\\mitch\\lexon_pvm` @\n`4d9a3ad` (see `../VENDOR.md`). The upstream LEXICON already carries the\n7012 family (LEXPVM-T-055/059/060/067) these laws are stylistic kin to.\n**Possible upstream fold (the First Person's call, lexon_pvm's own keystone\ndiscipline):** the workshop's terms — babblefish recursion, understanding-\nas-key, steward, translation-debt — are candidates for lexon_pvm census\nterms; these three laws are ready-made draft expressions for that fold.\nIn the course itself, Lexon is a natural **fourth tongue** for advanced\ncohorts (understanding → narrative → poem → paper → *law*); staged, not yet\nin the harness gate."
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM; the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue binding the FM specs to the agentprivacy corpus; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "lexon/ — the workshop's law, compiling",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "92ff9b320f290277",
+            "text": "# lexon/ — the workshop's law, compiling\n\nThe workshop's legal-shaped invariants written in **Lexon** — controlled\nnatural language a lawyer can read AND a machine can parse — and held green\nby the same gate the `lexon_pvm` harness uses. This is the fourth face of\nthe consent layer: where `workshop/consent/` carries plain-language, legal,\nand machine-JSON registers as three files, a Lexon law is **one text that is\nboth the legal prose and the parseable structure** — the babblefish thesis\napplied to law itself."
+          },
+          {
+            "type": "markdown",
+            "id": "2b888744972fda84",
+            "text": "## What \"compiling\" means here (the regime, honestly)\n\nThere is **no public Lexon compiler for this platform** (the reference\ncompiler is a macOS-only alpha, source unpublished). This lane runs the\n**spec-checker regime** vendored from `lexon_pvm`: a hand-written validator\nof an *attested subset* of Lexon (every grammar production is backed by a\nlexon.org golden fixture). \"Compiles\" = passes:\n\n1. **the base gate** (`tools/lexon_check.mjs`) — parse into subject-verb-\n   object triples · noun binding (definitions immutable) · **round-trip**\n   (triples re-serialize to canonical sentences that re-parse identically) ·\n   promise typing (every action edge typed promise/commitment, polarity +);\n2. **every relation claim** (`tools/relation_check.mjs`) — the structural\n   fact each law exists to state, verified on the clause graph **with a\n   falsifiability twin**: a minimally mutated contract must still gate-pass\n   yet fail the claim, or the claim proves nothing. Negative expectations\n   (claims that must come back ABSENT) prove the gate can refuse.\n\nRun it: `node lexon/check.mjs` — also wired into `node tools/check.mjs`."
+          },
+          {
+            "type": "markdown",
+            "id": "eaf32936c1b255a1",
+            "text": "## The three laws\n\n| law | what it compiles | the load-bearing claims |\n|---|---|---|\n| `consent_agreement.lex` | the myTerms/IEEE-7012 bilateral (First Person proffers, Workshop Holder accepts; per-expression corpus/export scope; revocation with mandatory return) | `Consented = Proffered ∧ Accepted` (the invitation pattern); Admit gated on Consented; **absence: no transfer clause routes anything to the Workshop Holder** — the extraction shape is structurally impossible, not merely forbidden |\n| `steward_fold.lex` | the weekly steward's duties (STEWARD.md as law) | Admit gated on Consented; `Complete = Pack Hash ∧ Fold Record`; Handover gated on Verified; absence: nothing routes to the Steward |\n| `babblefish_gate.lex` | the harness's own gate discipline (T2/T5/D1 as law) | Draw gated on Committed (**grind-proofing: the draw cannot precede the commit**); Validate gated on Recovered; Fold gated on Validated; **absence: nothing routes to the Proposer or the Assayer** — the seats cannot be paid off |\n\nEach law's `.claims.json` uses `{expect, claim}` rows — `RELATION PASS`\nrows are the law's asserted structure; `RELATION ABSENT` rows are the\ncounter-claims that must fail (a gate that cannot refuse is worth less than\nnone)."
+          },
+          {
+            "type": "markdown",
+            "id": "8b797f159bd90283",
+            "text": "## House grammar (the attested subset — imitate exactly)\n\nTypes: `person amount text time binary data contract number account` ·\nVerbs: `pay return appoint fix certify register grant declare file send\nterminate set` · Shape: `LEX <Title>.` · `\"Name\" is a <type>.` definitions ·\none recital (no modal) · `CLAUSE: <Name>.` blocks · `may`/`must` ·\nconditions `, if <Binary> is declared:` or `, if this <Noun> is\n<Predicate>:` · conjunctions via `\"P\" is defined as: the A is fixed and the\nB is fixed.` · **never an em dash** (the upstream census refuses them)."
+          },
+          {
+            "type": "markdown",
+            "id": "fefd6983ab713807",
+            "text": "## Provenance & the loop back\n\nChecker + goldens vendored verbatim from `C:\\Users\\mitch\\lexon_pvm` @\n`4d9a3ad` (see `../VENDOR.md`). The upstream LEXICON already carries the\n7012 family (LEXPVM-T-055/059/060/067) these laws are stylistic kin to.\n**Possible upstream fold (the First Person's call, lexon_pvm's own keystone\ndiscipline):** the workshop's terms — babblefish recursion, understanding-\nas-key, steward, translation-debt — are candidates for lexon_pvm census\nterms; these three laws are ready-made draft expressions for that fold.\nIn the course itself, Lexon is a natural **fourth tongue** for advanced\ncohorts (understanding → narrative → poem → paper → *law*); staged, not yet\nin the harness gate."
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM; the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue binding the FM specs to the agentprivacy corpus; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197537
+    }
+  ]
+}

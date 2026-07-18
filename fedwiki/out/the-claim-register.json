@@ -1,0 +1,118 @@
+{
+  "title": "The Claim Register",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "3f1c14f7aadeb85f",
+      "text": "# The Claim Register\n\nThe frozen census the babblefish gate probes — N=31, debt 32 of 93 (claim, form) pairs. Grows only by keystone-accepted addition; the cohort graduates owning this file. See [[hh-workshop]] and [[the-knowledge-web]]."
+    },
+    {
+      "type": "markdown",
+      "id": "f6a233bb1aaafbb2",
+      "text": "## A · The babblefish recursion\n\n- **C1** · One understanding can be rendered across three forms — sci-fi\n  narrative, poem, white paper — each a translation of the same invariant\n  content, not a new content. (LAN §4⅞)\n- **C2** · The recursion is cyclic and plural-entry: narrative → poem → paper →\n  recurse, and anyone may enter at any form; the loop carries them around the\n  others. (LAN §4⅞)\n- **C3** · \"Babblefish\" names the joy of the same truth speaking in many\n  tongues; fidelity across tongues is the point, not ornament. (LAN §4⅞)\n- **C4** · A rendering that is beautiful but no longer carries the mechanism is\n  a drift, not a translation; only a rendering that survives blind\n  interrogation in every tongue counts as carried understanding. (LAN §4⅞ +\n  the harness mirage discipline, GROUND_RULES GR-5)"
+    },
+    {
+      "type": "markdown",
+      "id": "165212189401779b",
+      "text": "## B · Understanding as key\n\n- **C5** · Access to the shared mage is earned by expressing understanding,\n  never issued by login or credential. (LAN §4⅞)\n- **C6** · The lock and the lesson are one: to go deeper into the mage you must\n  understand more deeply. (LAN §4⅞)\n- **C7** · An expression is simultaneously the participant's key and the mage's\n  food. (LAN §4⅞)\n- **C8** · Write access arrives as graduated, host-scoped permission — the\n  cookie jar — opened by the trust artefact, and the agent never sees the raw\n  credential. (LAN §4¾ rung 6)\n- **C9** · Proof of understanding is the room's seal made legible: the artefact\n  that says *this room reached the shared mind together*. (LAN §4)"
+    },
+    {
+      "type": "markdown",
+      "id": "98cd2258c82cd681",
+      "text": "## C · The shared mage and its training\n\n- **C10** · The mage is a shared, air-gapped local model; the room's thinking\n  never leaves the room. (LAN §4⅞)\n- **C11** · The mage is co-held — a witness the room bears together, not any\n  one person's tool. (LAN §4)\n- **C12** · First-person expressions are the training corpus: the mage becomes\n  a mirror of the room, made of their words. (LAN §4⅞)\n- **C13** · The good first training pass is retrieval/context-grounding; true\n  weight fine-tuning is the perfect, grown into later, hardware permitting.\n  (LAN §4⅞, the two named unknowns)\n- **C14** · The mage must be portable: it travels to venues whose networks the\n  workshop does not control. (LAN §4)\n- **C15** · The loop closes on itself: understand → express → the expression\n  feeds the mage → the mage reflects the room back → understanding deepens →\n  recurse. (LAN §4⅞)"
+    },
+    {
+      "type": "markdown",
+      "id": "73a9a40ddfc055bb",
+      "text": "## D · Consent and the agreement layer\n\n- **C16** · Consent is the first stake: the participant *offers* their address;\n  nobody probes them. The rite is an invitation, never a scan. (LAN §4¾)\n- **C17** · The trust artefact issued by the rite is a myTerms agreement (IEEE\n  Std 7012-2025): the individual proposes the terms; the other side accepts,\n  counters once, or declines. (LAN §4¾¾)\n- **C18** · A 7012 agreement is strictly bilateral — First Person ↔ Second\n  Party; agents, devices, and trust communities are the fabric around the\n  agreement, never parties to it. (LAN §4¾¾)\n- **C19** · Every agreement exists in three registers: plain language, legal,\n  and machine-readable. (LAN §4¾¾)\n- **C20** · Nothing a participant expresses enters the corpus or leaves the\n  room without their recorded consent; a violated consent makes the result not\n  exist, whatever the score says. (LAN §4¾ + this instance's hard constraint)\n- **C21** · Verifiable trust communities measure fidelity from *outside* the\n  agreement — they are the witness from beyond the system. (LAN §4¾¾)"
+    },
+    {
+      "type": "markdown",
+      "id": "3551b4df3f247e21",
+      "text": "## E · The naming lesson\n\n- **C22** · Naming outsourced to venue infrastructure is a load-bearing\n  dependency you discover missing only when standing in a strange room.\n  (LAN §3)\n- **C23** · Name-keyed routing turns a soft naming failure into a hard one:\n  when only one literal string is served, the bare name and the raw address\n  both die. (LAN §1–§3, the 502 trap)\n- **C24** · Each shared model carries ONE good name of its own; whoever holds\n  it names it; there is no canonical string, and everything else is a path\n  under the one name. (LAN §4½)\n- **C25** · Resolution must be deterministic and identical for every client:\n  carry your own naming layer; never depend on venue mDNS. (LAN §5½)\n- **C26** · An intermittent name is more dangerous than a dead one — it passes\n  every test at home and fails in front of the room. Never trust a warm\n  browser; test from a clean resolver, on more than one client. (LAN §1, §5½)\n- **C27** · Shared names must never use `.localhost`: browsers force that TLD\n  to loopback and ignore the hosts file (RFC 6761). (LAN §5¾, §6)\n- **C28** · The front door behind the chosen name must serve a catch-all, so a\n  near-miss degrades soft instead of hard. (LAN §4½, §6)"
+    },
+    {
+      "type": "markdown",
+      "id": "6e15753f0896fc77",
+      "text": "## F · The proverb (Gödel-deepened)\n\n- **C29** · Any agreement complete enough to need no one outside it has either\n  stopped listening or begun to lie. (LAN §3)\n- **C30** · A trust that certifies itself is the one you cannot trust.\n  (LAN §3, lintel form)\n- **C31** · Incompleteness is the permanent, healthy condition of a living\n  system; truth a system cannot prove about itself must be witnessed from\n  outside. So build incomplete, on purpose. (LAN §3)"
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "The Claim Register",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "3f1c14f7aadeb85f",
+            "text": "# The Claim Register\n\nThe frozen census the babblefish gate probes — N=31, debt 32 of 93 (claim, form) pairs. Grows only by keystone-accepted addition; the cohort graduates owning this file. See [[hh-workshop]] and [[the-knowledge-web]]."
+          },
+          {
+            "type": "markdown",
+            "id": "f6a233bb1aaafbb2",
+            "text": "## A · The babblefish recursion\n\n- **C1** · One understanding can be rendered across three forms — sci-fi\n  narrative, poem, white paper — each a translation of the same invariant\n  content, not a new content. (LAN §4⅞)\n- **C2** · The recursion is cyclic and plural-entry: narrative → poem → paper →\n  recurse, and anyone may enter at any form; the loop carries them around the\n  others. (LAN §4⅞)\n- **C3** · \"Babblefish\" names the joy of the same truth speaking in many\n  tongues; fidelity across tongues is the point, not ornament. (LAN §4⅞)\n- **C4** · A rendering that is beautiful but no longer carries the mechanism is\n  a drift, not a translation; only a rendering that survives blind\n  interrogation in every tongue counts as carried understanding. (LAN §4⅞ +\n  the harness mirage discipline, GROUND_RULES GR-5)"
+          },
+          {
+            "type": "markdown",
+            "id": "165212189401779b",
+            "text": "## B · Understanding as key\n\n- **C5** · Access to the shared mage is earned by expressing understanding,\n  never issued by login or credential. (LAN §4⅞)\n- **C6** · The lock and the lesson are one: to go deeper into the mage you must\n  understand more deeply. (LAN §4⅞)\n- **C7** · An expression is simultaneously the participant's key and the mage's\n  food. (LAN §4⅞)\n- **C8** · Write access arrives as graduated, host-scoped permission — the\n  cookie jar — opened by the trust artefact, and the agent never sees the raw\n  credential. (LAN §4¾ rung 6)\n- **C9** · Proof of understanding is the room's seal made legible: the artefact\n  that says *this room reached the shared mind together*. (LAN §4)"
+          },
+          {
+            "type": "markdown",
+            "id": "98cd2258c82cd681",
+            "text": "## C · The shared mage and its training\n\n- **C10** · The mage is a shared, air-gapped local model; the room's thinking\n  never leaves the room. (LAN §4⅞)\n- **C11** · The mage is co-held — a witness the room bears together, not any\n  one person's tool. (LAN §4)\n- **C12** · First-person expressions are the training corpus: the mage becomes\n  a mirror of the room, made of their words. (LAN §4⅞)\n- **C13** · The good first training pass is retrieval/context-grounding; true\n  weight fine-tuning is the perfect, grown into later, hardware permitting.\n  (LAN §4⅞, the two named unknowns)\n- **C14** · The mage must be portable: it travels to venues whose networks the\n  workshop does not control. (LAN §4)\n- **C15** · The loop closes on itself: understand → express → the expression\n  feeds the mage → the mage reflects the room back → understanding deepens →\n  recurse. (LAN §4⅞)"
+          },
+          {
+            "type": "markdown",
+            "id": "73a9a40ddfc055bb",
+            "text": "## D · Consent and the agreement layer\n\n- **C16** · Consent is the first stake: the participant *offers* their address;\n  nobody probes them. The rite is an invitation, never a scan. (LAN §4¾)\n- **C17** · The trust artefact issued by the rite is a myTerms agreement (IEEE\n  Std 7012-2025): the individual proposes the terms; the other side accepts,\n  counters once, or declines. (LAN §4¾¾)\n- **C18** · A 7012 agreement is strictly bilateral — First Person ↔ Second\n  Party; agents, devices, and trust communities are the fabric around the\n  agreement, never parties to it. (LAN §4¾¾)\n- **C19** · Every agreement exists in three registers: plain language, legal,\n  and machine-readable. (LAN §4¾¾)\n- **C20** · Nothing a participant expresses enters the corpus or leaves the\n  room without their recorded consent; a violated consent makes the result not\n  exist, whatever the score says. (LAN §4¾ + this instance's hard constraint)\n- **C21** · Verifiable trust communities measure fidelity from *outside* the\n  agreement — they are the witness from beyond the system. (LAN §4¾¾)"
+          },
+          {
+            "type": "markdown",
+            "id": "3551b4df3f247e21",
+            "text": "## E · The naming lesson\n\n- **C22** · Naming outsourced to venue infrastructure is a load-bearing\n  dependency you discover missing only when standing in a strange room.\n  (LAN §3)\n- **C23** · Name-keyed routing turns a soft naming failure into a hard one:\n  when only one literal string is served, the bare name and the raw address\n  both die. (LAN §1–§3, the 502 trap)\n- **C24** · Each shared model carries ONE good name of its own; whoever holds\n  it names it; there is no canonical string, and everything else is a path\n  under the one name. (LAN §4½)\n- **C25** · Resolution must be deterministic and identical for every client:\n  carry your own naming layer; never depend on venue mDNS. (LAN §5½)\n- **C26** · An intermittent name is more dangerous than a dead one — it passes\n  every test at home and fails in front of the room. Never trust a warm\n  browser; test from a clean resolver, on more than one client. (LAN §1, §5½)\n- **C27** · Shared names must never use `.localhost`: browsers force that TLD\n  to loopback and ignore the hosts file (RFC 6761). (LAN §5¾, §6)\n- **C28** · The front door behind the chosen name must serve a catch-all, so a\n  near-miss degrades soft instead of hard. (LAN §4½, §6)"
+          },
+          {
+            "type": "markdown",
+            "id": "6e15753f0896fc77",
+            "text": "## F · The proverb (Gödel-deepened)\n\n- **C29** · Any agreement complete enough to need no one outside it has either\n  stopped listening or begun to lie. (LAN §3)\n- **C30** · A trust that certifies itself is the one you cannot trust.\n  (LAN §3, lintel form)\n- **C31** · Incompleteness is the permanent, healthy condition of a living\n  system; truth a system cannot prove about itself must be witnessed from\n  outside. So build incomplete, on purpose. (LAN §3)"
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197546
+    }
+  ]
+}

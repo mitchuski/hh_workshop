@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hh_workshop — the Towel</title>
+<style>
+  :root {
+    --bg:#0e1116; --panel:#161b22; --line:#2a3038; --ink:#d7dde6; --dim:#8b949e;
+    --amber:#e0a526; --sapphire:#5b8def; --green:#4caf7d; --red:#e05252;
+    --s1:6px; --s2:10px; --s3:16px; --s4:24px; --s5:36px;
+  }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14.5px/1.55 ui-monospace,Consolas,monospace }
+
+  header { padding:var(--s3) var(--s4); border-bottom:1px solid var(--line); display:flex; gap:var(--s3); align-items:baseline; flex-wrap:wrap }
+  header h1 { font-size:16px; margin:0; font-weight:600; white-space:nowrap } header h1 em { color:var(--amber); font-style:normal }
+  header .sub { color:var(--dim); font-size:12px; min-width:0 }
+  @media (min-width:1100px) { header .sub { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1 } }
+
+  nav { display:flex; gap:2px; padding:0 var(--s3); border-bottom:1px solid var(--line); flex-wrap:wrap }
+  nav button { background:none; border:none; border-bottom:2px solid transparent; color:var(--dim); padding:12px 15px; font:inherit; cursor:pointer }
+  nav button:hover { color:var(--ink) }
+  nav button.on { color:var(--ink); border-bottom-color:var(--amber) }
+
+  main { padding:var(--s4) }
+  section { display:none; margin:0 auto; max-width:1100px }
+  section.on { display:block }
+  section.reading { max-width:880px }
+  section.wide { max-width:1400px }
+
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:var(--s3) 18px; margin:0 0 var(--s3) }
+  .card h3 { margin:0 0 var(--s2); font-size:13px; color:var(--sapphire); font-weight:600; letter-spacing:.03em }
+  .card .hint { color:var(--dim); font-size:12.5px; margin:0 0 var(--s2) }
+  .dim { color:var(--dim) } .ok { color:var(--green) } .bad { color:var(--red) }
+
+  /* stat tiles: fixed small things; text cards take the rest */
+  .row { display:flex; gap:var(--s3); flex-wrap:wrap; align-items:stretch }
+  .row .card { margin:0 }
+  .row { margin-bottom:var(--s3) }
+  .stat { flex:0 0 230px }
+  .stat .num { font-size:34px; line-height:1.1; color:var(--amber); margin:2px 0 var(--s1) }
+  .stat .lbl { color:var(--dim); font-size:12px }
+  .grow { flex:2 1 340px }
+
+  /* forms are forms */
+  .fields { display:flex; gap:var(--s3); flex-wrap:wrap; align-items:flex-end; margin-bottom:var(--s2) }
+  .field { display:flex; flex-direction:column; gap:4px }
+  .field label { color:var(--dim); font-size:11.5px; letter-spacing:.04em }
+  input,select { background:#0e1116; border:1px solid var(--line); color:var(--ink); border-radius:6px; padding:8px 10px; font:inherit }
+  input:focus,select:focus { outline:none; border-color:var(--sapphire) }
+  .actions { display:flex; gap:var(--s2); flex-wrap:wrap; margin:var(--s2) 0 }
+  button.act { background:#1f2733; border:1px solid var(--line); color:var(--ink); border-radius:6px; padding:9px 14px; font:inherit; cursor:pointer }
+  button.act:hover { border-color:var(--sapphire) }
+  button.act.primary { border-color:var(--amber) }
+
+  /* outputs are the protagonist: start quiet, grow when live */
+  pre { background:#0b0e12; border:1px solid var(--line); border-radius:6px; padding:var(--s2) 12px; overflow:auto; white-space:pre-wrap; font-size:12.5px; line-height:1.5; margin:var(--s2) 0 0 }
+  pre.out { max-height:3.2em; color:var(--dim); transition:max-height .25s }
+  pre.out.live { max-height:46vh; color:var(--ink) }
+  pre.out.err { max-height:46vh; color:var(--ink); border-color:var(--red); border-width:2px }
+  pre.doc { max-height:62vh }
+
+  table { border-collapse:collapse; width:100% }
+  td,th { border-bottom:1px solid var(--line); padding:7px 10px; text-align:left; font-size:13px; vertical-align:top }
+  th { color:var(--dim); font-weight:600 }
+  td.r,th.r { text-align:right }
+  td.trunc { max-width:340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+
+  /* the steward chain as a timeline of hands */
+  .entry { border-left:3px solid var(--amber); padding:var(--s1) 0 var(--s1) var(--s3); margin:0 0 var(--s3) }
+  .entry h4 { margin:0 0 4px; font-size:13.5px; font-weight:600 }
+  .entry .meta { color:var(--dim); font-size:12px; margin-bottom:var(--s1) }
+  .entry .body { font-size:13px } .entry .body div { margin:3px 0 }
+  .entry code { background:#0b0e12; border:1px solid var(--line); border-radius:4px; padding:1px 6px; font-size:11.5px; word-break:break-all }
+
+  ul.doors { margin:var(--s2) 0; padding-left:var(--s4) }
+  ul.doors li { margin:var(--s2) 0; color:var(--dim) } ul.doors li::marker { content:'🚪 ' }
+  a { color:var(--sapphire) }
+  .pill { display:inline-block; border:1px solid var(--line); border-radius:99px; padding:2px 10px; margin:2px 6px 2px 0; font-size:12px; color:var(--dim) }
+  iframe.board { width:100%; height:max(420px, 66vh); border:0; background:#0e1116; display:block }
+  .hudgloss { display:none; position:fixed; top:104px; right:var(--s4); z-index:9; width:360px; max-height:70vh; overflow:auto;
+    background:#161b22f2; border:1px solid var(--line); border-radius:10px; padding:var(--s3) 18px; backdrop-filter:blur(6px) }
+  .hudgloss h3 { margin:0 0 var(--s2); font-size:13px; color:var(--sapphire) }
+  .hudgloss dt { color:var(--amber); margin-top:var(--s2); font-size:13px }
+  .hudgloss dd { margin:2px 0 0; color:var(--dim); font-size:12.5px }
+  #mage-dot { font-size:12px }
+  ol a { cursor:pointer }
+</style>
+</head>
+<body>
+<header>
+  <h1>hh_workshop · <em>the Towel</em> 🧣</h1>
+  <span class="sub">the most massively useful thing — this is what you carry. (The room's GET-only window lights at :4242 via <code>node tools/console.mjs</code>.) The door stays shut: no push, no cast, no publish here (T6/GR-8).</span>
+  <span id="mage-dot" class="dim" title="is the shared model answering?">○ mage</span>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<script>
+const TABS = ['home','mirror','game','rounds','steward','artefacts','laws','oasis','web','frontier','doors']
+// task-first labels for newcomers; the canon names live inside each tab
+const LABEL = { home:'start', mirror:'the mirror', game:'the 42', rounds:'the gate', steward:'the fold', artefacts:'the books', laws:'the laws', oasis:'the wiki', web:'the web', frontier:'progress', doors:'the doors' }
+const $ = (s) => document.querySelector(s)
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
+let S = null
+
+async function api(p, body) {
+  const r = await fetch(p, body ? { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body) } : undefined)
+  const j = await r.json().catch(() => ({}))
+  if (!r.ok) throw new Error(j.error || r.status)
+  return j
+}
+async function runAction(action, params, outSel) {
+  const out = $(outSel); out.classList.remove('err'); out.classList.add('live'); out.textContent = `→ ${action} …`
+  try {
+    const j = await api('/api/run', { action, params })
+    const poll = async () => {
+      const job = await api('/api/job/' + j.id)
+      out.textContent = `$ ${job.cmd}\n\n${job.output}${job.status === 'running' ? '\n…' : `\n[${job.status}]`}`
+      if (job.status === 'failed') out.classList.add('err')
+      out.scrollTop = out.scrollHeight
+      if (job.status === 'running') setTimeout(poll, 900); else refresh()
+    }
+    poll()
+  } catch (e) { out.classList.add('err'); out.textContent = 'ERROR: ' + e.message }
+}
+
+function nav() {
+  $('#nav').innerHTML = TABS.map(t => `<button data-t="${t}">${LABEL[t]}</button>`).join('') +
+    `<span style="flex:1"></span><button id="glossbtn" title="what do the words mean?">? words</button>`
+  $('#nav').onclick = (e) => {
+    if (e.target.id === 'glossbtn') { $('#gloss').style.display = $('#gloss').style.display === 'block' ? 'none' : 'block'; return }
+    const t = e.target.dataset?.t; if (t) show(t)
+  }
+}
+function show(t) {
+  document.querySelectorAll('nav button').forEach(b => b.classList.toggle('on', b.dataset.t === t))
+  document.querySelectorAll('main section').forEach(s => s.classList.toggle('on', s.id === 's-' + t))
+  if (t === 'game') loadGame()
+}
+const goto = (t) => show(t)
+
+const field = (id, label, val, size = 14, ph = '') =>
+  `<span class="field"><label for="${id}">${label}</label><input id="${id}" value="${esc(val)}" size="${size}" placeholder="${esc(ph)}"></span>`
+
+function layout() {
+  $('#main').innerHTML = `
+  <div class="hudgloss" id="gloss">
+    <h3>the words <button style="float:right;background:none;border:none;color:var(--dim);cursor:pointer" onclick="$('#gloss').style.display='none'">✕</button></h3>
+    <dl>
+      <dt>the mage</dt><dd>the shared local AI in the room. It runs on this machine, never the cloud — it is made of the cohort's own consented writing.</dd>
+      <dt>a triptych</dt><dd>one understanding written three ways: a story, a poem, a formal paper.</dd>
+      <dt>a tongue</dt><dd>one of those three forms.</dd>
+      <dt>the gate</dt><dd>the blind exam: a hash picks ONE of your three tongues, and a reader who has never seen the answer key must recover your claims from that text alone.</dd>
+      <dt>the fold</dt><dd>the weekly act of feeding consented writing to the mage. Run by the steward; its hash is read aloud.</dd>
+      <dt>the steward</dt><dd>the student holding the mage's training this week. Everyone takes one week.</dd>
+      <dt>debt / progress</dt><dd>how many (claim, tongue) pairs are not yet carried. Lower is better; it only moves when the gate validates work.</dd>
+      <dt>κ (kappa)</dt><dd>a content fingerprint — the hash of the thing itself, so anyone can re-check it later.</dd>
+      <dt>the seal</dt><dd>the room's state made one form — the board's centre disc.</dd>
+      <dt>the wiki / the oasis</dt><dd>pages the workshop can share outward to the hitchhikers.earth federation — only ever by a person, by hand.</dd>
+      <dt>the door</dt><dd>anything that leaves this machine. No button here opens one; a person does, on purpose.</dd>
+    </dl>
+  </div>
+
+  <section id="s-home" class="reading on">
+    <div class="card"><h3>don't panic</h3>
+      <p class="hint" style="font-size:13.5px">This machine is the workshop: a shared local AI (the mage) your cohort trains, a blind exam (the gate) your writing faces, and a record (the chain) that proves it all happened. Nothing here touches the internet. Pick your path:</p></div>
+    <div class="card"><h3>🎒 I'm a student</h3>
+      <ol style="margin:6px 0; padding-left:22px; line-height:2">
+        <li>Sign your <b>consent line</b> with the facilitator — your words, your signature, your right to withdraw. Nothing of yours is used before this.</li>
+        <li><b>Join the roster</b> on <a onclick="goto('game')" href="#">the 42</a> — pick a persona and the tongues you like writing in.</li>
+        <li><b>Write</b> — enter at any tongue: story, poem, or paper. Talk it through with <a onclick="goto('mirror')" href="#">the mirror</a> — the mage reflects, never grades.</li>
+        <li><b>Face the gate</b> — submit your triptych on <a onclick="goto('rounds')" href="#">the gate</a>. The tongue you didn't polish is the one it reads.</li>
+      </ol></div>
+    <div class="card"><h3>🔑 I'm the steward this week</h3>
+      <ol style="margin:6px 0; padding-left:22px; line-height:2">
+        <li>Collect the week's voice notes and drafts; check each has its author's consent line.</li>
+        <li>On <a onclick="goto('steward')" href="#">the fold</a>: transcribe → pack → <b>verify the chain in front of the room</b>.</li>
+        <li>Read the pack hash aloud. Sign the log. Hand over the key.</li>
+      </ol></div>
+    <div class="card"><h3>🎓 I'm the professor / facilitator</h3>
+      <ol style="margin:6px 0; padding-left:22px; line-height:2">
+        <li>Before the room arrives: <a onclick="goto('frontier')" href="#">progress</a> → <b>run ALL gates</b> — one green wall says the instrument is honest today.</li>
+        <li>Assessment posture: the gate answers <i>"does the understanding survive translation?"</i> — replayable by anyone, offline. Marks remain your own act, informed by validated triptychs and each student's register contributions.</li>
+        <li>Provenance for the department: every fold and verdict re-derives from saved bytes — the chain on <a onclick="goto('steward')" href="#">the fold</a>, the record on <a onclick="goto('frontier')" href="#">progress</a>.</li>
+        <li>What never happens by itself: <a onclick="goto('doors')" href="#">the doors</a>.</li>
+        <li>Pitching this to a colleague? <a href="/demo/" target="_blank"><b>the sample cohort ↗</b></a> — a fictional week 5, clearly labeled, so the boards aren't empty at first sight. Your review list: <b>the keystone queue</b> below.</li>
+      </ol></div>
+    <div class="card"><h3>🌙 the cycles (run themselves; wake a human only when red)</h3>
+      <div class="actions">
+        <button class="act" onclick="runAction('dream',{},'#out-h')">the dream cycle — measure everything, fold nothing</button>
+        <button class="act" onclick="runAction('queue',{},'#out-h')">the keystone queue — what waits on a human</button>
+        <button class="act" onclick="runAction('demo',{},'#out-h')">regenerate the sample cohort</button>
+      </div>
+      <pre id="out-h" class="out">the split that keeps it honest: automate the measuring and the proposing — never the folding or the door.</pre></div>
+    <div class="card"><h3>the room's other screens</h3>
+      <span class="pill"><a href="/game/board" target="_blank">the board — the workshop's 42 ↗</a></span>
+      <span class="pill"><a href="/web/graph.html" target="_blank">the web — everything, connected ↗</a></span>
+      <span class="pill"><a href="/web/claims.html" target="_blank">the register — what we claim to understand ↗</a></span></div>
+  </section>
+
+  <section id="s-mirror" class="reading">
+    <div class="card"><h3>the mirror — talk to the mage</h3>
+      <p class="hint">This is <b>hh-mage</b>: the base model wearing the facilitator persona and the room's consent-gated context pack. It reflects, connects, and asks back — it never grades (that's the gate's job, and it knows it). Conversation lives on this page only; talk is not corpus.</p>
+      <div id="mirror-log" style="max-height:52vh; overflow:auto; margin-bottom:var(--s2)"></div>
+      <div class="fields" style="align-items:stretch">
+        <input id="mirror-in" placeholder="say what you understand — the mirror answers in the room's own words" style="flex:1" onkeydown="if(event.key==='Enter')mirrorSend()">
+        <button class="act primary" onclick="mirrorSend()">speak</button>
+      </div></div>
+  </section>
+
+  <section id="s-frontier">
+    <div class="card"><h3>progress — the frontier</h3>
+      <p class="hint" style="margin:0">How far the cohort's understanding carries across the three tongues. The number only moves when the blind gate validates work — visibility is instant, credit is earned.</p></div>
+    <div class="row">
+      <div class="card stat"><h3>translation-debt</h3><div class="num" id="debt">–</div><div class="lbl" id="debt-how"></div></div>
+      <div class="card stat"><h3>the web</h3><div class="num" id="webn">–</div><div class="lbl" id="webl">nodes · <a href="/web/graph.html" target="_blank">open ↗</a></div></div>
+      <div class="card grow"><h3>open target</h3><div id="ot" class="dim"></div></div>
+    </div>
+    <div class="card"><h3>actions</h3>
+      <div class="actions">
+        <button class="act" onclick="runAction('measure',{},'#out-f')">measure debt</button>
+        <button class="act primary" onclick="runAction('check',{},'#out-f')">run ALL gates</button>
+      </div>
+      <pre id="out-f" class="out">numbers come from the counting rule, never from memory (GR-1).</pre></div>
+    <div class="card"><h3>the claim register</h3><pre id="register" class="doc dim">…</pre></div>
+  </section>
+
+  <section id="s-rounds">
+    <div class="card"><h3>run a round</h3>
+      <p class="hint">the probe form is drawn where no one can tune it — the tongue you didn't polish is the lesson.</p>
+      <div class="fields">
+        ${field('runid','run id','w1',6)}
+        ${field('model','model (the BASE, never hh-mage)','gemma3:12b',14)}
+        ${field('trip','triptych','artifact/t1-the-stewards-week',26)}
+        ${field('maxr','max rounds','1',4)}
+      </div>
+      <div class="actions">
+        <button class="act primary" onclick="runAction('live',{runId:$('#runid').value,model:$('#model').value,triptych:$('#trip').value,maxRounds:$('#maxr').value},'#out-r')">live round — the mage holds the seats</button>
+        <button class="act" onclick="runAction('smoke',{runId:'smoke-ui'},'#out-r')">stub smoke round</button>
+        <button class="act" onclick="runAction('verifyrun',{},'#out-r')">verify ALL runs offline</button>
+      </div>
+      <pre id="out-r" class="out">a VALIDATED without a replayable trail is not a win (GR-4).</pre></div>
+    <div class="card"><h3>recorded runs</h3><table id="runs"></table></div>
+  </section>
+
+  <section id="s-steward">
+    <div class="card"><h3>the fold — this week's steward</h3>
+      <p class="hint">admit nothing without its consent line — the packer refuses you anyway (hard constraint b).</p>
+      <div class="fields">${field('audio','audio note (path)','',36,'C:\\\\…\\\\voice-memo.m4a')}</div>
+      <div class="actions">
+        <button class="act" onclick="runAction('transcribe',{file:$('#audio').value},'#out-s')">transcribe → candidate</button>
+        <button class="act primary" onclick="runAction('pack',{},'#out-s')">corpus pack (fold)</button>
+        <button class="act" onclick="runAction('packverify',{},'#out-s')">verify the chain</button>
+      </div>
+      <pre id="out-s" class="out">the fold is read aloud; the chain is public to itself.</pre></div>
+    <div class="card"><h3>the chain of hands</h3><div id="chain"></div></div>
+  </section>
+
+  <section id="s-artefacts">
+    <div class="card"><h3>bind the books</h3>
+      <p class="hint">every copy carries the steward chain — provenance printed into the artefact.</p>
+      <div class="actions"><button class="act primary" onclick="runAction('books',{},'#out-a')">bind: poems · papers · anthology</button></div>
+      <pre id="out-a" class="out">bound from counted triptychs only — the books never carry what the gate hasn't seen.</pre>
+      <div id="books" style="margin-top:var(--s2)"></div></div>
+    <div class="card"><h3>corpus</h3><div id="corpus"></div></div>
+  </section>
+
+  <section id="s-laws">
+    <div class="card"><h3>the law compiles</h3>
+      <p class="hint">law and code held to one voice — grammar gate + relation claims + falsifiability twins.</p>
+      <div class="actions"><button class="act primary" onclick="runAction('lexon',{},'#out-l')">compile the laws (26 checks)</button></div>
+      <pre id="out-l" class="out">an absence claim proves what the contract makes impossible.</pre>
+      <div id="laws" style="margin-top:var(--s2)"></div></div>
+  </section>
+
+  <section id="s-oasis">
+    <div class="card"><h3>the spool — offline, the whole story at a venue</h3>
+      <p class="hint">spool → local farm → the cast toward the oasis: legs 2–4 in OASIS_LOOP.md; 3 and 4 are the First Person's.</p>
+      <div class="actions">
+        <button class="act primary" onclick="runAction('wikibuild',{},'#out-o')">auto-build the whole wiki</button>
+        <button class="act" onclick="runAction('export-triptych',{dir:'canon/seed-triptych'},'#out-o')">export seed triptych</button>
+        <button class="act" onclick="runAction('export-provenance',{},'#out-o')">export steward chain</button>
+        <button class="act" onclick="runAction('spool',{},'#out-o')">list spool (dry)</button>
+      </div>
+      <pre id="out-o" class="out">cross-site links travel as reference items, never [[ ]].</pre>
+      <div id="spool" style="margin-top:var(--s2)"></div></div>
+  </section>
+
+  <section id="s-game" class="wide">
+    <div class="card"><h3>the workshop's 42 — <a href="/game/board" target="_blank">open full ↗</a> <span class="dim" style="font-weight:400">· <a href="/game/full/" target="_blank">the always-on game (elder sibling) ↗</a></span></h3>
+      <p class="hint">the board is DERIVED: six axes, seven stations each, and a station lights only when the ledgers say the room performed its trust task. Nothing is placed by hand; the seal κ re-derives on every load.</p></div>
+    <div class="card" style="padding:0; overflow:hidden"><iframe class="board" src="/game/board?embed=1" title="the workshop's 42"></iframe></div>
+    <div class="row">
+      <div class="card grow"><h3>roster — consent-gated (a ledger row must exist first)</h3>
+        <div class="fields">
+          ${field('g-name','name','',16)}
+          ${field('g-persona','persona','',16,'e.g. Vagari 🌳')}
+          <span class="field"><label for="g-t">tongues (multi)</label><select id="g-t" multiple size="3"><option>narrative</option><option>poem</option><option>paper</option></select></span>
+        </div>
+        <div class="actions"><button class="act primary" onclick="addPlayer()">join the roster</button></div>
+        <p class="hint">no consent line yet? That's step 1 — see <a onclick="goto('home')" href="#">start</a>. You sign it yourself; nobody signs for you.</p>
+        <pre id="out-g" class="out">joining mints a room-scoped key and a κ fingerprint for your persona — yours to verify, forever.</pre>
+        <table id="g-roster"></table></div>
+      <div class="card grow"><h3>mint a trust edge — real events only</h3>
+        <div class="fields">
+          <span class="field"><label for="g-src">from</label><select id="g-src"></select></span>
+          <span class="field"><label for="g-rel">event</label><select id="g-rel"></select></span>
+          <span class="field"><label for="g-dst">to</label><select id="g-dst"></select></span>
+        </div>
+        <div class="actions"><button class="act" onclick="mintEdge()">sign edge</button>
+          <button class="act" onclick="loadPairs()">draw pairs</button></div>
+        <p class="hint">mentor-assay · steward-fold · pair-swap · keystone-fold · seal-witness. No self-edges (C30).</p>
+        <div id="g-pairs" class="dim"></div>
+        <table id="g-edges"></table></div>
+    </div>
+  </section>
+
+  <section id="s-web" class="wide">
+    <div class="row">
+      <div class="card grow"><h3>the generative websites — derived, never authored</h3>
+        <p class="hint">every expression regenerates from the ledgers: the web, the site, the wiki spool, the game, the books. Re-run = re-true. The snapshot: copy <code>web/out/site/</code> anywhere static.</p>
+        <div class="actions">
+          <button class="act primary" onclick="runAction('site',{},'#out-w')">regenerate site + graph</button>
+          <button class="act" onclick="runAction('graph',{},'#out-w')">re-derive graph only</button>
+          <button class="act" onclick="runAction('wikibuild',{},'#out-w')">auto-build fedwiki spool</button>
+        </div>
+        <pre id="out-w" class="out">web/graph.mjs walks claims · triptychs · lexon triples · roster · trust edges · runs · folds · corpus · spool · books · chronicles.</pre></div>
+      <div class="card stat"><h3>open them</h3>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px">
+          <a href="/web/" target="_blank">the site ↗</a>
+          <a href="/web/graph.html" target="_blank">the web (graph) ↗</a>
+          <a href="/web/claims.html" target="_blank">the carried matrix ↗</a>
+          <a href="/game/" target="_blank">the Game of 42 ↗</a>
+        </div></div>
+    </div>
+    <div class="card" style="padding:0; overflow:hidden"><iframe class="board" src="/web/graph.html?embed=1" title="the web"></iframe></div>
+  </section>
+
+  <section id="s-doors" class="reading">
+    <div class="card"><h3>the door — the First Person's, never buttons</h3>
+      <ul class="doors" id="doors"></ul>
+      <p class="hint">This surface can only do what the repo's own scripts can do. Everything outward is listed here and performed by the First Person, by hand, on purpose.</p></div>
+  </section>`
+}
+
+const fmtTally = (t) => t ? `<span class="ok">${t.VALIDATED ?? 0} ✓</span> · ${t.MIRAGE ?? 0} mirage · ${t.BLOCKED ?? 0} blocked` : ''
+
+function renderChain(entries) {
+  return entries.map(e => {
+    const lines = e.split('\n')
+    const head = lines[0].replace(/^## /, '')
+    const body = lines.slice(1).filter(l => l.trim())
+      .map(l => l.replace(/^- /, '').trim())
+      .map(l => l.replace(/`([^`]+)`/g, (_, c) => `<code>${esc(c)}</code>`))
+      .map(l => `<div>${l.startsWith('<code>') || /[<>]/.test(l) ? l : esc(l)}</div>`).join('')
+    const m = /^(Week [^·]+(?:· fold \d+ )?)· ([\d-]+) · steward: (.+)$/.exec(head)
+    return `<div class="entry">
+      <h4>${esc(m ? m[1].trim() : head)}</h4>
+      <div class="meta">${m ? `${esc(m[2])} · steward: ${esc(m[3])}` : ''}</div>
+      <div class="body">${body}</div></div>`
+  }).join('')
+}
+
+async function refresh() {
+  S = await api('/api/state')
+  const md = $('#mage-dot')
+  if (S.mage?.up) { md.textContent = `● mage (${S.mage.models} model${S.mage.models === 1 ? '' : 's'})`; md.className = 'ok' }
+  else { md.textContent = '○ mage asleep'; md.className = 'dim'; md.title = 'the local model endpoint is not answering — see mage/MACHINE_SETUP.md' }
+  const f = S.frontier || {}
+  $('#debt').textContent = f.best?.metric ?? '–'
+  $('#debt-how').textContent = `baseline ${f.baseline?.metric} · ${f.baseline?.date || ''}`
+  $('#ot').textContent = f.openTarget ? `${f.openTarget.id} · ${f.openTarget.statement}` : ''
+  $('#runs').innerHTML = '<tr><th>run</th><th>status</th><th class="r">rounds</th><th>tally</th><th>models</th></tr>' +
+    S.runs.map(r => `<tr><td>${esc(r.runId)}</td><td class="${r.status==='COMPLETE'?'ok':'bad'}">${esc(r.status)}</td><td class="r">${r.rounds}</td><td>${fmtTally(r.tally)}</td><td class="dim trunc">${esc(r.models?.proposer||'')}</td></tr>`).join('')
+  $('#chain').innerHTML = renderChain(S.stewardLog)
+  $('#books').innerHTML = S.books.map(b => `<span class="pill"><a href="/api/doc?f=artifact/PROVENANCE.md" style="color:inherit; text-decoration:none">artifact/${esc(b)}</a></span>`).join('') || '<span class="dim">no books bound yet</span>'
+  $('#corpus').innerHTML = S.corpus.map(c => `<span class="pill">${esc(c)}</span>`).join('')
+  $('#laws').innerHTML = S.laws.map(l => `<span class="pill">lexon/${esc(l)}</span>`).join('')
+  $('#spool').innerHTML = S.spool.map(s => `<span class="pill">${esc(s)}</span>`).join('') || '<span class="dim">spool empty</span>'
+  $('#doors').innerHTML = S.doors.map(d => `<li>${esc(d)}</li>`).join('')
+  fetch('/api/doc?f=canon/UNDERSTANDING.md').then(r => r.text()).then(t => { $('#register').textContent = t })
+  try {
+    const r = await fetch('/web/graph.json')
+    if (r.ok) { const g = await r.json(); $('#webn').textContent = g.nodes.length; $('#webl').innerHTML = `${g.edges.length} edges · <a href="/web/graph.html" target="_blank">open ↗</a>` }
+    else { $('#webn').textContent = '–' }
+  } catch { $('#webn').textContent = '–' }
+}
+
+async function loadGame() {
+  const g = await api('/api/game/graph')
+  $('#g-roster').innerHTML = '<tr><th>name</th><th>persona</th><th>tongues</th><th>κ</th></tr>' +
+    g.nodes.map(n => `<tr><td>${esc(n.name)}</td><td>${esc(n.persona||'—')}</td><td>${(n.tongues||[]).map(esc).join(' · ')}</td><td class="dim trunc">${esc((n.kappa||'').slice(7,19))}…</td></tr>`).join('')
+  const optsFor = (sel) => { sel.innerHTML = g.nodes.map(n => `<option value="${esc(n.slug)}">${esc(n.name)}</option>`).join('') }
+  optsFor($('#g-src')); optsFor($('#g-dst'))
+  $('#g-rel').innerHTML = g.relations.map(r => `<option>${esc(r)}</option>`).join('')
+  $('#g-edges').innerHTML = '<tr><th>edge</th><th>event</th><th>signature</th><th>when</th></tr>' +
+    (g.edges.length ? g.edges.map(e => `<tr><td>${esc(e.sourceSlug)} → ${esc(e.targetSlug)}</td><td>${esc(e.relation)}</td><td class="${e.verified?'ok':'bad'}">${e.verified?'verifies':'BAD'}</td><td class="dim">${esc((e.at||'').slice(0,10))}</td></tr>`).join('') : '<tr><td colspan="4" class="dim">no edges yet — they are earned, not declared</td></tr>')
+}
+async function addPlayer() {
+  const tongues = [...$('#g-t').selectedOptions].map(o => o.value)
+  const out = $('#out-g'); out.classList.remove('err'); out.classList.add('live')
+  try { const p = await api('/api/game/roster', { name: $('#g-name').value, persona: $('#g-persona').value, tongues }); out.textContent = `welcome, ${p.name}\n${p.did}\nκ ${p.kappa}`; loadGame() }
+  catch (e) { out.classList.add('err'); out.textContent = 'REFUSED: ' + e.message }
+}
+async function mintEdge() {
+  const out = $('#out-g'); out.classList.remove('err'); out.classList.add('live')
+  try { const e = await api('/api/game/edge', { source: $('#g-src').value, target: $('#g-dst').value, relation: $('#g-rel').value }); out.textContent = `edge minted: ${e.sourceSlug} —${e.relation}→ ${e.targetSlug}\nsig ${e.sig.slice(0,24)}…`; loadGame() }
+  catch (e) { out.classList.add('err'); out.textContent = 'REFUSED: ' + e.message }
+}
+async function loadPairs() {
+  const p = await api('/api/game/pairs')
+  $('#g-pairs').innerHTML = (p.pairs||[]).map(x => `<div>${esc(x.a)} ⟷ ${esc(x.b||'(assay seat)')} <span class="dim">— ${esc(x.why)}</span></div>`).join('') + `<div class="dim" style="margin-top:4px">draw seed ${esc(p.seed||'')} — from the roster hash; nobody tunes the pairing.</div>`
+}
+
+// ---- the mirror -------------------------------------------------------------
+const mirrorMsgs = []
+function mirrorRender() {
+  $('#mirror-log').innerHTML = mirrorMsgs.map(m =>
+    `<div style="margin:10px 0; ${m.role === 'user' ? 'color:var(--ink)' : 'color:var(--dim); border-left:3px solid var(--sapphire); padding-left:12px'}">${esc(m.content)}</div>`).join('')
+  const log = $('#mirror-log'); log.scrollTop = log.scrollHeight
+}
+async function mirrorSend() {
+  const inp = $('#mirror-in'); const text = inp.value.trim()
+  if (!text) return
+  inp.value = ''; mirrorMsgs.push({ role: 'user', content: text })
+  mirrorMsgs.push({ role: 'assistant', content: '…' }); mirrorRender()
+  try {
+    const j = await api('/api/mirror', { messages: mirrorMsgs.filter(m => m.content !== '…') })
+    mirrorMsgs[mirrorMsgs.length - 1] = { role: 'assistant', content: j.reply }
+  } catch (e) { mirrorMsgs[mirrorMsgs.length - 1] = { role: 'assistant', content: '(' + e.message + ')' } }
+  mirrorRender()
+}
+
+nav(); layout(); show('home'); refresh()
+</script>
+</body>
+</html>

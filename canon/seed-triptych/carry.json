@@ -1,0 +1,9 @@
+{
+  "triptych": "seed",
+  "title": "The Name That Died / Carry Your Own Names / The Portable Proof-of-Understanding Workshop",
+  "status": "canary",
+  "authoredWith": "canon/UNDERSTANDING.md (same session; passes the census by construction)",
+  "narrative": ["C5", "C6", "C7", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C22", "C23", "C24", "C25", "C26", "C28", "C29", "C30", "C31"],
+  "poem": ["C5", "C6", "C7", "C12", "C24", "C25", "C26", "C29", "C30", "C31"],
+  "paper": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24", "C25", "C26", "C27", "C28", "C29", "C30", "C31"]
+}

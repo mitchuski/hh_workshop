@@ -1,0 +1,10 @@
+[
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Draw", "condition": "Committed" } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Assay", "condition": "Drawn" } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Validate", "condition": "Recovered" } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Fold", "condition": "Validated" } },
+  { "expect": "RELATION PASS", "claim": { "type": "ordering", "clause": "Draw", "sequence": ["fix:Probe Form", "declare:Drawn"] } },
+  { "expect": "RELATION PASS", "claim": { "type": "absence", "to": "Proposer" } },
+  { "expect": "RELATION PASS", "claim": { "type": "absence", "to": "Assayer" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "gate", "clause": "Commit", "condition": "Drawn" } }
+]

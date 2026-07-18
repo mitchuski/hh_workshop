@@ -1,0 +1,110 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>The Collected Papers</title><style>
+  @page { margin: 22mm; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a; max-width: 34em; margin: 3em auto; line-height: 1.6; padding: 0 1em; }
+  h1 { font-size: 1.9em; letter-spacing: .01em; margin: 0 0 .2em; }
+  h2 { font-size: 1.35em; margin-top: 2.2em; page-break-before: always; }
+  h2:first-of-type { page-break-before: avoid; }
+  h3 { font-size: 1.05em; }
+  .subtitle { color: #666; font-style: italic; margin-bottom: 3em; }
+  .piece-meta { color: #777; font-size: .85em; margin: -0.4em 0 1.6em; }
+  .stanza { white-space: normal; margin: 1.1em 0; }
+  hr { border: 0; border-top: 1px solid #ccc; margin: 2.5em auto; width: 38%; }
+  .provenance { margin-top: 4em; page-break-before: always; }
+  .log { font-family: Consolas, monospace; font-size: .72em; white-space: pre-wrap; background: #f6f5f2; padding: 1em; border-radius: 4px; }
+  code { font-family: Consolas, monospace; font-size: .9em; background: #f4f2ee; padding: 0 .25em; }
+  @media print { body { margin: 0 auto; } }
+</style></head>
+<body>
+<h1>The Collected Papers</h1>
+<p class="subtitle">the formal tongue — the same understanding, made checkable</p>
+<h2>The Portable Proof-of-Understanding Workshop: A Specification</h2>
+<p class="piece-meta">canon/seed-triptych · canary · the canary</p>
+<h2>The Portable Proof-of-Understanding Workshop: A Specification</h2>
+<p><em>Seed white paper · the canary's third tongue. The formal register of the same understanding the narrative dramatizes and the poem compresses. Declares all 31 claims of <code>canon/UNDERSTANDING.md</code>; each section notes the claims it states.</em></p>
+<h3>Abstract</h3>
+<p>We specify a facilitated course built around a shared, air-gapped local language model (the <em>mage</em>), in which access is earned by expressed understanding, participant expressions form the model's training corpus, and one understanding is deliberately rendered across three forms — science- fiction narrative, poem, and formal paper — whose mutual fidelity is verified by a blind gate. We further specify the consent layer (IEEE Std 7012-2025), the portable naming layer the workshop must carry, and the structural incompleteness principle that governs the whole design.</p>
+<h3>1. The babblefish recursion (C1–C4)</h3>
+<p><strong>C1.</strong> A single body of understanding is rendered across three forms — sci-fi narrative, poem, white paper. Each rendering is a <em>translation</em> of the same invariant content, never a new content.</p>
+<p><strong>C2.</strong> The recursion is cyclic and plural-entry: narrative → poem → paper → recurse, and a participant may enter at any form; the loop carries them around the other two.</p>
+<p><strong>C3.</strong> The name "babblefish" denotes the design goal: the same truth speaking in many tongues. Cross-form fidelity is the object of the exercise, not a stylistic bonus.</p>
+<p><strong>C4.</strong> A rendering that reads well but no longer carries the mechanism is classified as <em>drift</em>, not translation. Only renderings that survive blind interrogation in each declared tongue count as carried understanding; this is the workshop's mirage discipline.</p>
+<h3>2. Understanding as key (C5–C9)</h3>
+<p><strong>C5.</strong> Access to the mage is earned by expressing understanding. There are no logins; no credential issues access.</p>
+<p><strong>C6.</strong> Access depth is monotone in understanding: to go deeper into the mage one must understand more deeply. The lock and the lesson are one mechanism.</p>
+<p><strong>C7.</strong> Each admitted expression functions twice: it is the participant's key (access) and the mage's food (corpus).</p>
+<p><strong>C8.</strong> Write access is granted as graduated, host-scoped permission — the "cookie jar" — opened by the trust artefact of §4. The raw credential is brokered and never enters any participant's or agent's context.</p>
+<p><strong>C9.</strong> The terminal artefact of the joining rite is the <em>seal</em>: a legible record that the assembled room reached the shared mind together. Proof of understanding is this seal, not a deployment.</p>
+<h3>3. The shared mage and its training loop (C10–C15)</h3>
+<p><strong>C10.</strong> The mage is a shared local model, air-gapped by default: the room's thinking never leaves the room. Sovereignty is the substrate, not a feature.</p>
+<p><strong>C11.</strong> The mage is co-held. It is a witness the room bears together — not the property or instrument of any single member.</p>
+<p><strong>C12.</strong> The training corpus is the set of consented first-person expressions. Over the course, the mage becomes a mirror of the room: it is made of their words.</p>
+<p><strong>C13.</strong> Training is staged: the <em>good</em> first pass is retrieval/context- grounding (the mage reads the room's corpus live); the <em>perfect</em> is true weight fine-tuning (LoRA-class), hardware-gated and adopted later. Ship the good; grow into the perfect.</p>
+<p><strong>C14.</strong> The whole assembly is portable. It must operate in venues whose network infrastructure the workshop does not control.</p>
+<p><strong>C15.</strong> The loop closes: understand → express → the expression is admitted (key + food) → the mage reflects the room's understanding back → understanding deepens → recurse.</p>
+<h3>4. Consent and the agreement layer (C16–C21)</h3>
+<p><strong>C16.</strong> Consent precedes contact. A participant <em>offers</em> their address to the roster; no device is scanned or probed. The rite is an invitation, never an attack.</p>
+<p><strong>C17.</strong> The trust artefact is a <strong>myTerms</strong> agreement under <strong>IEEE Std 7012-2025</strong> (Machine Readable Personal Privacy Terms): the individual <em>proposes</em> the terms; the counterparty accepts, counter-offers once, or declines.</p>
+<p><strong>C18.</strong> A 7012 agreement is strictly bilateral: First Person ↔ Second Party. Agents, devices, and trust communities are the fabric around the agreement, never parties to it.</p>
+<p><strong>C19.</strong> Every agreement exists in three registers: plain-language (human-readable), legal (lawyer-readable), and machine-readable.</p>
+<p><strong>C20.</strong> No expression enters the corpus, and nothing leaves the room, without a recorded consent line. A result resting on violated consent does not exist, whatever any metric reports.</p>
+<p><strong>C21.</strong> Fidelity to the agreement is measured by verifiable trust communities standing <em>outside</em> it. They are the witness from beyond the system — the structural answer to §6.</p>
+<h3>5. The carried naming layer (C22–C28)</h3>
+<p><strong>C22.</strong> Name resolution outsourced to venue infrastructure is a load-bearing dependency whose absence is discovered only in a strange room. The workshop therefore treats naming as part of what it carries.</p>
+<p><strong>C23.</strong> Name-keyed routing (serving only one literal hostname) converts a soft failure into a hard one: when the name dies, the bare name and the raw IP both return errors. This trap is prohibited by design.</p>
+<p><strong>C24.</strong> Naming contract: each shared model carries exactly ONE good name, chosen by whoever holds it. There is no canonical global string; all services are paths under the one name.</p>
+<p><strong>C25.</strong> Resolution must be deterministic and identical for every client. The workshop carries its own resolver; venue mDNS is never load-bearing.</p>
+<p><strong>C26.</strong> An intermittently resolving name is more dangerous than a dead one: it passes tests in friendly conditions and fails in the venue. Diagnosis discipline: never trust a warm browser; test from a clean resolver on more than one client.</p>
+<p><strong>C27.</strong> Shared names must not use the <code>.localhost</code> TLD: browsers force it to loopback and bypass the hosts file (RFC 6761).</p>
+<p><strong>C28.</strong> The front door behind the chosen name serves a catch-all, so that a near-miss degrades to a soft signpost, never a hard error.</p>
+<h3>6. The incompleteness principle (C29–C31)</h3>
+<p><strong>C29.</strong> Any agreement complete enough to need no one outside it has either stopped listening or begun to lie.</p>
+<p><strong>C30.</strong> Lintel form: a trust that certifies itself is the one you cannot trust.</p>
+<p><strong>C31.</strong> Incompleteness is the permanent, healthy condition of a living system (Gödel): truths a system cannot prove about itself must be witnessed from outside. The workshop is therefore built incomplete on purpose — open doors, outside witnesses, one good name and no throne.</p>
+<h3>7. Verification note</h3>
+<p>This paper is the canary of the instance's gate: authored together with the claim register, it passes the census by construction and exists so that a total failure is never ambiguous — a bad candidate can be told apart from an impossible gate.</p>
+
+<section class="provenance">
+<h2>Provenance</h2>
+<p>These pages were rendered inside a facilitated workshop around a shared,
+air-gapped local model — the mage — and every rendering here passed, or seeds,
+a blind translation gate (<code>harness.config.mjs</code>, the babblefish
+census). The authors of these pages are the mage's first trainers: their
+consented expressions are its corpus, and the steward chain below is the
+re-derivable record of every fold (<code>node tools/corpus_pack.mjs --verify</code>).</p>
+<pre class="log"># steward_log.md — the chain of hands
+
+One entry per fold. The steward of the week signs what the mage ate and the
+hash the pack re-derives to (`node tools/corpus_pack.mjs --verify` must match
+the latest entry). This chain, bound into every book by `bind_book.mjs`, IS
+the cohort's provenance as this mage's first trainers.
+
+Handover rite: outgoing steward runs `--verify` green in front of the room,
+reads their entry aloud, and hands the incoming steward the flight-case key.
+
+---
+
+## Week 0 · 2026-07-17 · steward: the First Person (pre-course seed)
+
+- folded: `corpus/seed-canon-note.md` (consent: ledger row 2026-07-17, scope both)
+- pack sha256: `eef33247ed29027bc729a8bd2cd0b5fad2548e840c8aef465e4eb782b637a029`
+- mage state: context-grounded (option A — retrieval; see MACHINE_SETUP.md);
+  Modelfile regenerated, base model TBD on the mage box
+- note: the zeroth fold. Everything before the cohort's first week is seed,
+  and says so.
+
+## Week 0 · fold 2 · 2026-07-18 · steward: the First Person (the 0→1 pass)
+
+- folded: `corpus/audio-note-poem-scarcity.md` (a spoken voice note →
+  local whisper transcript → consent row 2026-07-18, scope both)
+- pack sha256: `e0db8cd7ff44d51beac757e0e83867a10679c4f0be939d6b77987cdadfd707d9`
+- also this week (not corpus): triptych `artifact/t1-the-stewards-week`
+  SUBMITTED (status "submitted" — the register does not move until the
+  gate validates it); consent row for its export recorded
+- mage state: context re-grounded on 2 consented files; Modelfile
+  regenerated
+- note: the first non-seed input walked every pipe — voice → transcript →
+  consent → fold → the mirror deepens. The note itself asked for the
+  steward triptych; the triptych now exists and awaits the gate.</pre>
+</section>
+</body></html>

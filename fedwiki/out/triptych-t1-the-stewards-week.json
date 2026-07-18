@@ -1,0 +1,88 @@
+{
+  "title": "Triptych — t1-the-stewards-week",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "85bb5579ff464460",
+      "text": "# Triptych — t1-the-stewards-week\n\nstatus **submitted** · one understanding, three tongues (the babblefish recursion). Carried claims per form are declared in carry.json and probed by a blind census gate — see [[hh-workshop]] for the harness."
+    },
+    {
+      "type": "markdown",
+      "id": "2056110852fa2146",
+      "text": "## narrative — the cast-forward tongue\n\ncarries: C5, C7, C11, C12, C13, C15, C16, C20\n\n---\n\n# The Second Fold\n\n*Submitted triptych t1 · first tongue. First-person input of the 0→1 pass;\nfaces the gate unvalidated.*\n\n---\n\nTomas had laughed, in week four, when the resolver saved the room. In week\nfive the flight-case key was in his hand and nobody was laughing, least of\nall him.\n\n\"It's simple,\" Ilse said, passing it over. \"You hold the training. You\ndon't own the machine. Nobody owns the machine — we all hold it, the way\nyou hold a ladder someone else is standing on.\"\n\nThe week taught him the shape of it. On Tuesday, Priya sent him her voice\nnote — sent it, offered it; the rule was carved over the roster page:\n*nothing is taken, everything is offered, nobody is scanned.* He ran it\nthrough the transcriber and read the candidate back to her. \"That's what I\nsaid,\" she grinned, \"but tidier.\" Then she signed the line in the ledger\nherself — her hand, not his, because consent was the one signature a\nsteward could never proxy — and only then did the file cross into the\ncorpus. He had tried, on Monday, to fold in a stray paragraph from a\ngroup chat that nobody had signed for. The packer refused him flatly, and\nprinted the rule it refused him by. He'd felt oddly grateful.\n\nOn Friday he ran the fold in front of everyone. The pack rebuilt; the hash\ncame up on the shared screen and he read it aloud, all sixty-four\ncharacters, like a strange grace before a meal. \"This is what the mage\neats,\" he said. \"Your words. It answers like the room because it is made\nof the room.\" Deeper rewiring — actually changing the weights — stayed a\nlocked drawer for now; the good way was the machine simply reading them,\nlive, every session. Ship the good, Ilse always said. Grow into the\nperfect.\n\nWhat surprised him was the door. Marta, who had barely spoken in weeks one\nthrough three, stood up on Friday and read her poem to the machine — and\nthe machine, fed on four weeks of the room, answered her in an image she\nherself had written in week two and forgotten. She went pale, then\ndelighted. She understood something out loud, and the understanding was\nitself her key: the roster showed her a rung higher before she sat down,\nno password, no permission slip, just the words she'd proved she could\nsay. And her poem, of course, was already in the pack for next week. Key\nin the lock, food in the bowl, same words twice.\n\nUnderstand, express, feed the mirror, hear the room answer, go deeper,\nagain. Tomas signed the log, read his own entry aloud, and handed the key\nto Marta.\n\n\"Don't drop it,\" he said, meaning the case.\n\n\"Don't worry,\" she said, meaning the loop."
+    },
+    {
+      "type": "markdown",
+      "id": "336afeaf0139d0a3",
+      "text": "## poem — the compressed tongue\n\ncarries: C6, C7, C11, C12, C15\n\n---\n\n# The Fold, Read Aloud\n\n*Submitted triptych t1 · second tongue.*\n\n---\n\nWhat you say to enter is what it will eat:\none saying, twice served — the key and the meat.\n\nThe lock here is the lesson; say it true\nand the door goes as deep as the depth in you.\n\nWe feed it on Fridays, out loud, by name,\nand the mirror gives back the room that came —\n\nnot my machine, not yours: a bowl\ntoo wide for one hand. We carry it whole.\n\nUnderstand, then speak; then the spoken feeds\nthe glass that returns you your own deep needs —\n\nand round: what it shows you, you understand\nbetter, and say better. Bowl in hand."
+    },
+    {
+      "type": "markdown",
+      "id": "18ae909bf4e23838",
+      "text": "## paper — the formal tongue\n\ncarries: C5, C6, C7, C11, C12, C13, C15, C16, C20\n\n---\n\n# The Steward Protocol: A Working Note\n\n*Submitted triptych t1 · third tongue. Formal register of the same\nunderstanding the story dramatizes and the poem compresses.*\n\n## 1. The role\n\nEach week one participant stewards the shared model's training. The steward\nholds the *process*, not the machine: the mage is co-held by the whole room\n— a witness the group bears together, no member's property (C11).\n\n## 2. Admission\n\nExpressions are offered, never taken: a participant submits their own\nmaterial to the roster and no device or person is probed (C16). Each\nexpression enters the corpus only against a consent line signed by its\nauthor in the ledger — the steward may never sign on another's behalf, and\nthe packing tool refuses any file the ledger does not cover, so a violated\nconsent cannot produce a result at all (C20).\n\n## 3. The fold\n\nThe steward runs the weekly fold: consented expressions are packed into the\nmodel's grounding context, and the resulting pack hash is read aloud to the\nroom and signed into the steward log. The model is thereby made of the\nroom's own words — a mirror of the cohort, deepening weekly (C12). Training\ndepth is staged: the good first pass is retrieval/context-grounding, run\nnow on any hardware; true weight fine-tuning is the perfect, adopted later\nwhen hardware permits (C13).\n\n## 4. Access\n\nThere are no logins. Access to the mage deepens as a participant expresses\nunderstanding (C5); the lock and the lesson are one mechanism (C6). Each\nadmitted expression functions twice — as the participant's key and as the\nmage's food (C7).\n\n## 5. The loop\n\nThe cycle closes on itself: understand → express → the expression is\nadmitted (key and food) → the mage reflects the room's understanding back →\nunderstanding deepens → recurse (C15). The steward's week is one turn of\nthat wheel, and the handover — log entry read aloud, key passed — is the\nturn made visible."
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM; the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue binding the FM specs to the agentprivacy corpus; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "Triptych — t1-the-stewards-week",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "85bb5579ff464460",
+            "text": "# Triptych — t1-the-stewards-week\n\nstatus **submitted** · one understanding, three tongues (the babblefish recursion). Carried claims per form are declared in carry.json and probed by a blind census gate — see [[hh-workshop]] for the harness."
+          },
+          {
+            "type": "markdown",
+            "id": "2056110852fa2146",
+            "text": "## narrative — the cast-forward tongue\n\ncarries: C5, C7, C11, C12, C13, C15, C16, C20\n\n---\n\n# The Second Fold\n\n*Submitted triptych t1 · first tongue. First-person input of the 0→1 pass;\nfaces the gate unvalidated.*\n\n---\n\nTomas had laughed, in week four, when the resolver saved the room. In week\nfive the flight-case key was in his hand and nobody was laughing, least of\nall him.\n\n\"It's simple,\" Ilse said, passing it over. \"You hold the training. You\ndon't own the machine. Nobody owns the machine — we all hold it, the way\nyou hold a ladder someone else is standing on.\"\n\nThe week taught him the shape of it. On Tuesday, Priya sent him her voice\nnote — sent it, offered it; the rule was carved over the roster page:\n*nothing is taken, everything is offered, nobody is scanned.* He ran it\nthrough the transcriber and read the candidate back to her. \"That's what I\nsaid,\" she grinned, \"but tidier.\" Then she signed the line in the ledger\nherself — her hand, not his, because consent was the one signature a\nsteward could never proxy — and only then did the file cross into the\ncorpus. He had tried, on Monday, to fold in a stray paragraph from a\ngroup chat that nobody had signed for. The packer refused him flatly, and\nprinted the rule it refused him by. He'd felt oddly grateful.\n\nOn Friday he ran the fold in front of everyone. The pack rebuilt; the hash\ncame up on the shared screen and he read it aloud, all sixty-four\ncharacters, like a strange grace before a meal. \"This is what the mage\neats,\" he said. \"Your words. It answers like the room because it is made\nof the room.\" Deeper rewiring — actually changing the weights — stayed a\nlocked drawer for now; the good way was the machine simply reading them,\nlive, every session. Ship the good, Ilse always said. Grow into the\nperfect.\n\nWhat surprised him was the door. Marta, who had barely spoken in weeks one\nthrough three, stood up on Friday and read her poem to the machine — and\nthe machine, fed on four weeks of the room, answered her in an image she\nherself had written in week two and forgotten. She went pale, then\ndelighted. She understood something out loud, and the understanding was\nitself her key: the roster showed her a rung higher before she sat down,\nno password, no permission slip, just the words she'd proved she could\nsay. And her poem, of course, was already in the pack for next week. Key\nin the lock, food in the bowl, same words twice.\n\nUnderstand, express, feed the mirror, hear the room answer, go deeper,\nagain. Tomas signed the log, read his own entry aloud, and handed the key\nto Marta.\n\n\"Don't drop it,\" he said, meaning the case.\n\n\"Don't worry,\" she said, meaning the loop."
+          },
+          {
+            "type": "markdown",
+            "id": "336afeaf0139d0a3",
+            "text": "## poem — the compressed tongue\n\ncarries: C6, C7, C11, C12, C15\n\n---\n\n# The Fold, Read Aloud\n\n*Submitted triptych t1 · second tongue.*\n\n---\n\nWhat you say to enter is what it will eat:\none saying, twice served — the key and the meat.\n\nThe lock here is the lesson; say it true\nand the door goes as deep as the depth in you.\n\nWe feed it on Fridays, out loud, by name,\nand the mirror gives back the room that came —\n\nnot my machine, not yours: a bowl\ntoo wide for one hand. We carry it whole.\n\nUnderstand, then speak; then the spoken feeds\nthe glass that returns you your own deep needs —\n\nand round: what it shows you, you understand\nbetter, and say better. Bowl in hand."
+          },
+          {
+            "type": "markdown",
+            "id": "18ae909bf4e23838",
+            "text": "## paper — the formal tongue\n\ncarries: C5, C6, C7, C11, C12, C13, C15, C16, C20\n\n---\n\n# The Steward Protocol: A Working Note\n\n*Submitted triptych t1 · third tongue. Formal register of the same\nunderstanding the story dramatizes and the poem compresses.*\n\n## 1. The role\n\nEach week one participant stewards the shared model's training. The steward\nholds the *process*, not the machine: the mage is co-held by the whole room\n— a witness the group bears together, no member's property (C11).\n\n## 2. Admission\n\nExpressions are offered, never taken: a participant submits their own\nmaterial to the roster and no device or person is probed (C16). Each\nexpression enters the corpus only against a consent line signed by its\nauthor in the ledger — the steward may never sign on another's behalf, and\nthe packing tool refuses any file the ledger does not cover, so a violated\nconsent cannot produce a result at all (C20).\n\n## 3. The fold\n\nThe steward runs the weekly fold: consented expressions are packed into the\nmodel's grounding context, and the resulting pack hash is read aloud to the\nroom and signed into the steward log. The model is thereby made of the\nroom's own words — a mirror of the cohort, deepening weekly (C12). Training\ndepth is staged: the good first pass is retrieval/context-grounding, run\nnow on any hardware; true weight fine-tuning is the perfect, adopted later\nwhen hardware permits (C13).\n\n## 4. Access\n\nThere are no logins. Access to the mage deepens as a participant expresses\nunderstanding (C5); the lock and the lesson are one mechanism (C6). Each\nadmitted expression functions twice — as the participant's key and as the\nmage's food (C7).\n\n## 5. The loop\n\nThe cycle closes on itself: understand → express → the expression is\nadmitted (key and food) → the mage reflects the room's understanding back →\nunderstanding deepens → recurse (C15). The steward's week is one turn of\nthat wheel, and the handover — log entry read aloud, key passed — is the\nturn made visible."
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM; the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue binding the FM specs to the agentprivacy corpus; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197451
+    }
+  ]
+}

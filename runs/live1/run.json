@@ -1,0 +1,32 @@
+{
+  "name": "hh_workshop",
+  "runId": "live1",
+  "status": "COMPLETE",
+  "rounds": 1,
+  "tally": {
+    "VALIDATED": 2,
+    "MIRAGE": 0,
+    "BLOCKED": 0
+  },
+  "confirmed": [
+    {
+      "leverId": "extend-a-tongue",
+      "status": "VALIDATED",
+      "metric": 1,
+      "gateResult": "20/20",
+      "evidence": "1: The mage arrived with a flight case on a luggage trolley pushed by Ilse, who was the steward for the week. (C5)\n2: The machine's name, *anemone.mesh*, was chosen collectively and served as paths to its functions. (C6)\n3: Tomas’s browser initially failed to resolve the server address due to a lack of network gossip. (C7)\n4: Ilse used a resolver, their own naming layer, to bypass the venue's unreliable network. (C9)\n5: The lesson learned was that they had outsourced a crucial function to an external and untrustworthy system. (C10)\n6: A perfect agreement requires no outside validation, making it inherently untrustworthy. (C11)\n7: Participants offered their addresses to the roster voluntarily, demonstrating consent. (C12)\n8: Understanding the machine was the key to accessing its deeper functions. (C13)\n9: The mage incorporated the room’s collective expressions – stories, poems, papers – into its own workings. (C14)\n10: The mage initially operated in a 'good' mode, with full rewiring requiring more hardware and patience. (C15)\n11: The machine acted as a mirror reflecting the room’s shared understanding. (C16)\n12: The roster signified that the room had achieved a collective mental state. (C22)\n13: The trolley carried the entire system – machine, resolver, names – to the next location. (C23)\n14: Understanding and expression are intertwined; expression opens doors and feeds the mirror. (C24)\n15: The process involves understanding, expressing, feeding the mirror, and repeating the cycle. (C25)\n16: Ilse documented the week's progress in a steward’s book for future cohorts. (C26)\n17: The fourteenth laptop resolving the name marked the completion of the initial phase. (C28)\n18: The machine’s operation was based on mutual understanding and consent, not passwords or scans. (C29)\n19: The room sealed itself as a collective artifact reflecting their shared mental state. (C30)\n20: The trolley wheels squeaked all the way to the bus stop, carrying the entire loop towards the next location. (C31)"
+    }
+  ],
+  "models": {
+    "proposer": "gemma3:12b",
+    "prover": "gemma3:12b"
+  },
+  "phiInference": 0,
+  "measured": {
+    "debt": 32,
+    "claims": 31
+  },
+  "sourceHash": "a1190ac03a061ecb7863009f4fd1cd0d2549fb6ca8333a30bdcffbf190d78bf0",
+  "triptych": "The Name That Died / Carry Your Own Names / The Portable Proof-of-Understanding Workshop",
+  "keystoneTodo": "fold VALIDATED levers (frontier.json first, prose second — GR-1); file killedLeverDrafts (GR-6); review + file the chronicle drafts (GR-7); node engine/conform.mjs green before and after (G0); door items listed for the First Person, never opened (G4/T6)"
+}

@@ -1,0 +1,8 @@
+[
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Admit", "condition": "Consented" } },
+  { "expect": "RELATION PASS", "claim": { "type": "conjunction", "predicate": "Complete", "conjuncts": ["Pack Hash", "Fold Record"] } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Verify", "condition": "Complete" } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Handover", "condition": "Verified" } },
+  { "expect": "RELATION PASS", "claim": { "type": "absence", "to": "Steward" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "gate", "clause": "Pack", "condition": "Consented" } }
+]

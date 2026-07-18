@@ -1,0 +1,9 @@
+[
+  { "expect": "RELATION PASS", "claim": { "type": "conjunction", "predicate": "Consented", "conjuncts": ["Proffered", "Accepted"] } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Admit", "condition": "Consented" } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Export", "condition": "Export Scope" } },
+  { "expect": "RELATION PASS", "claim": { "type": "gate", "clause": "Withdraw", "condition": "Revoked" } },
+  { "expect": "RELATION PASS", "claim": { "type": "absence", "to": "Workshop Holder" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "absence", "to": "Federation" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "gate", "clause": "Proffer", "condition": "Accepted" } }
+]

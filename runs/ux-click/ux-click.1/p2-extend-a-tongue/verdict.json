@@ -1,0 +1,15 @@
+{
+  "leverId": "extend-a-tongue",
+  "status": "VALIDATED",
+  "metric": 1,
+  "gateResult": "8/8",
+  "evidence": "1: Ilse explained that they hold the training but don't own the machine, emphasizing shared responsibility.\n2: Priya offered her voice note to be transcribed and added to the corpus, following the rule of offering rather than taking.\n3: The packer refused Tomas’s attempt to add an unsigned paragraph to the pack, reinforcing the importance of consent.\n4: Reading the hash aloud was likened to a grace before a meal, highlighting its significance in the process.\n5: Marta's poem elicited a response from the machine using an image she had previously written, demonstrating understanding and access.\n6: The roster indicated Marta’s advancement without requiring a password or permission slip, signifying earned progress.\n7: Tomas passed the key to Marta, symbolizing the continuation of the process and responsibility.\n8: Marta acknowledged the loop, indicating her understanding of the cyclical nature of their work.",
+  "coverage": {
+    "mode": "census",
+    "detection": "always — every claim probed"
+  },
+  "probeDeclared": {
+    "form": "poem",
+    "declaredClaims": 5
+  }
+}

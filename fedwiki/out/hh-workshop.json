@@ -1,0 +1,78 @@
+{
+  "title": "HH Workshop",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "3b966dc6cfed76aa",
+      "text": "# HH Workshop\n\nA facilitated masters-cohort course around a shared, air-gapped local mage: the **babblefish recursion** — sci-fi narrative → poem → white paper → recurse — with a blind, hash-drawn gate checking that understanding survives translation. Understanding is the key; expressions are both key and food; a rotating steward trains the room's own mage; the cohort graduates owning its evaluation harness, three bound books, and verifiable provenance as the mage's first trainers.\n\ntranslation-debt: **32** of 93 (claim, form) pairs · 113-node knowledge web"
+    },
+    {
+      "type": "markdown",
+      "id": "91230d1dc4b0d61d",
+      "text": "## The pages\n\n- [[the-claim-register]] — the frozen census the gate probes\n- [[the-knowledge-web]] — the workshop as a derived graph (the data rides in the page)\n- [[the-steward-chain]] — provenance: who trained the mage on what, when\n- [[the-workshop-law]] — the law, compiling (Lexon) · [[law-babblefish-gate]] · [[law-workshop-consent]] · [[law-fold]]\n- [[the-roster]] — the cohort's personas and earned trust edges\n- [[the-chronicles]] — the session records\n- triptych pages — one per counted rendering"
+    },
+    {
+      "type": "markdown",
+      "id": "aa62b356a0feab8a",
+      "text": "## The rite\n\nOne good name per mage; carry your own resolver; consent is the first stake; the seal says *this room reached the shared mind together*. A trust that certifies itself is the one you cannot trust — so the doors stay human and the witnesses stay outside."
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "HH Workshop",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "3b966dc6cfed76aa",
+            "text": "# HH Workshop\n\nA facilitated masters-cohort course around a shared, air-gapped local mage: the **babblefish recursion** — sci-fi narrative → poem → white paper → recurse — with a blind, hash-drawn gate checking that understanding survives translation. Understanding is the key; expressions are both key and food; a rotating steward trains the room's own mage; the cohort graduates owning its evaluation harness, three bound books, and verifiable provenance as the mage's first trainers.\n\ntranslation-debt: **32** of 93 (claim, form) pairs · 113-node knowledge web"
+          },
+          {
+            "type": "markdown",
+            "id": "91230d1dc4b0d61d",
+            "text": "## The pages\n\n- [[the-claim-register]] — the frozen census the gate probes\n- [[the-knowledge-web]] — the workshop as a derived graph (the data rides in the page)\n- [[the-steward-chain]] — provenance: who trained the mage on what, when\n- [[the-workshop-law]] — the law, compiling (Lexon) · [[law-babblefish-gate]] · [[law-workshop-consent]] · [[law-fold]]\n- [[the-roster]] — the cohort's personas and earned trust edges\n- [[the-chronicles]] — the session records\n- triptych pages — one per counted rendering"
+          },
+          {
+            "type": "markdown",
+            "id": "aa62b356a0feab8a",
+            "text": "## The rite\n\nOne good name per mage; carry your own resolver; consent is the first stake; the seal says *this room reached the shared mind together*. A trust that certifies itself is the one you cannot trust — so the doors stay human and the witnesses stay outside."
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197551
+    }
+  ]
+}

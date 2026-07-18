@@ -1,0 +1,78 @@
+{
+  "title": "Law — Fold",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "ed8e064d329bf8ae",
+      "text": "# Law — Fold\n\nA workshop law in Lexon: prose a lawyer reads, structure a machine parses. Compiles under the spec-checker regime (`node lexon/check.mjs`). See [[the-workshop-law]]."
+    },
+    {
+      "type": "markdown",
+      "id": "d0ab8f408ec1c8b2",
+      "text": "```lex\nLEX Fold.\n\n\"First Person\" is a person.\n\"Steward\" is a person.\n\"Successor\" is a person.\n\"Expression\" is a data.\n\"Fold Record\" is a text.\n\"Pack Hash\" is a text.\n\"Fold\" is a text.\n\"Consented\" is a binary.\n\"Verified\" is a binary.\n\nThe First Person appoints the Steward, and fixes the Fold.\n\nCLAUSE: Admit.\nThe Steward may, if Consented is declared: register the Expression.\n\nCLAUSE: Pack.\nThe Steward may fix the Pack Hash, and file the Fold Record.\n\nCLAUSE: Ready.\n\"Complete\" is defined as: the Pack Hash is fixed and the Fold Record is fixed.\n\nCLAUSE: Verify.\nThe Steward may, if this Fold is Complete: declare Verified.\n\nCLAUSE: Handover.\nThe Steward may, if Verified is declared: appoint the Successor.\n\nCLAUSE: Close.\nThe First Person may terminate this contract.\n```"
+    },
+    {
+      "type": "markdown",
+      "id": "7d546b9a253b9e9a",
+      "text": "## Relation claims\n\n- `{\"type\":\"gate\",\"clause\":\"Admit\",\"condition\":\"Consented\"}` — must come back **PASS**\n- `{\"type\":\"conjunction\",\"predicate\":\"Complete\",\"conjuncts\":[\"Pack Hash\",\"Fold Record\"]}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Verify\",\"condition\":\"Complete\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Handover\",\"condition\":\"Verified\"}` — must come back **PASS**\n- `{\"type\":\"absence\",\"to\":\"Steward\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Pack\",\"condition\":\"Consented\"}` — must come back **ABSENT**\n\nEvery PASS claim is verified with a falsifiability twin; every ABSENT claim proves the gate can refuse."
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "Law — Fold",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "ed8e064d329bf8ae",
+            "text": "# Law — Fold\n\nA workshop law in Lexon: prose a lawyer reads, structure a machine parses. Compiles under the spec-checker regime (`node lexon/check.mjs`). See [[the-workshop-law]]."
+          },
+          {
+            "type": "markdown",
+            "id": "d0ab8f408ec1c8b2",
+            "text": "```lex\nLEX Fold.\n\n\"First Person\" is a person.\n\"Steward\" is a person.\n\"Successor\" is a person.\n\"Expression\" is a data.\n\"Fold Record\" is a text.\n\"Pack Hash\" is a text.\n\"Fold\" is a text.\n\"Consented\" is a binary.\n\"Verified\" is a binary.\n\nThe First Person appoints the Steward, and fixes the Fold.\n\nCLAUSE: Admit.\nThe Steward may, if Consented is declared: register the Expression.\n\nCLAUSE: Pack.\nThe Steward may fix the Pack Hash, and file the Fold Record.\n\nCLAUSE: Ready.\n\"Complete\" is defined as: the Pack Hash is fixed and the Fold Record is fixed.\n\nCLAUSE: Verify.\nThe Steward may, if this Fold is Complete: declare Verified.\n\nCLAUSE: Handover.\nThe Steward may, if Verified is declared: appoint the Successor.\n\nCLAUSE: Close.\nThe First Person may terminate this contract.\n```"
+          },
+          {
+            "type": "markdown",
+            "id": "7d546b9a253b9e9a",
+            "text": "## Relation claims\n\n- `{\"type\":\"gate\",\"clause\":\"Admit\",\"condition\":\"Consented\"}` — must come back **PASS**\n- `{\"type\":\"conjunction\",\"predicate\":\"Complete\",\"conjuncts\":[\"Pack Hash\",\"Fold Record\"]}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Verify\",\"condition\":\"Complete\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Handover\",\"condition\":\"Verified\"}` — must come back **PASS**\n- `{\"type\":\"absence\",\"to\":\"Steward\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Pack\",\"condition\":\"Consented\"}` — must come back **ABSENT**\n\nEvery PASS claim is verified with a falsifiability twin; every ABSENT claim proves the gate can refuse."
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197548
+    }
+  ]
+}

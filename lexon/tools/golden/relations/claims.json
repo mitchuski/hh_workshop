@@ -1,0 +1,12 @@
+[
+  { "expect": "RELATION PASS",   "claim": { "type": "gate",        "clause": "Draw",  "condition": "Opened" } },
+  { "expect": "RELATION PASS",   "claim": { "type": "ordering",    "clause": "Chain", "sequence": ["pay:Fee", "declare:Sealed"] } },
+  { "expect": "RELATION PASS",   "claim": { "type": "conjunction", "predicate": "Ready", "conjuncts": ["Opened", "Sealed"] } },
+  { "expect": "RELATION PASS",   "claim": { "type": "absence",     "to": "Adversary" } },
+  { "expect": "RELATION PASS",   "claim": { "type": "absence",     "to": "Adversary", "what": "Scroll" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "absence",     "to": "Witness",   "what": "Scroll" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "gate",        "clause": "Chain", "condition": "Opened" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "absence",     "to": "Witness" } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "conjunction", "predicate": "Ready", "conjuncts": ["Opened", "Sealed", "Vault"] } },
+  { "expect": "RELATION ABSENT", "claim": { "type": "absence",     "to": "Nobody" } }
+]

@@ -1,0 +1,68 @@
+{
+  "title": "The Roster",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "5292632b6fc21d9c",
+      "text": "# The Roster\n\nThe cohort's personas — consent-gated at join (no ledger row, no seat); each entry carries a room-scoped did:key and a κ-address. 0 earned trust edge(s) minted so far (mentor-assay · steward-fold · pair-swap · keystone-fold · seal-witness). See [[hh-workshop]]."
+    },
+    {
+      "type": "markdown",
+      "id": "f2b87a10294c94c5",
+      "text": "- **The First Person (seed)** · persona Privacy Guide · tongues paper, poem\n  - `did:key:z6MkvNR1UxEoTSwouf4WT68V9rZcdDTaZouL72WjRob6eLwu`\n  - κ `sha256:ad8e8046afdcf2257ae908d6d4910728e8ef93f22f98e3d4a528c709148a71b4`"
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "The Roster",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "5292632b6fc21d9c",
+            "text": "# The Roster\n\nThe cohort's personas — consent-gated at join (no ledger row, no seat); each entry carries a room-scoped did:key and a κ-address. 0 earned trust edge(s) minted so far (mentor-assay · steward-fold · pair-swap · keystone-fold · seal-witness). See [[hh-workshop]]."
+          },
+          {
+            "type": "markdown",
+            "id": "f2b87a10294c94c5",
+            "text": "- **The First Person (seed)** · persona Privacy Guide · tongues paper, poem\n  - `did:key:z6MkvNR1UxEoTSwouf4WT68V9rZcdDTaZouL72WjRob6eLwu`\n  - κ `sha256:ad8e8046afdcf2257ae908d6d4910728e8ef93f22f98e3d4a528c709148a71b4`"
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197550
+    }
+  ]
+}

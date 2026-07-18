@@ -1,0 +1,15 @@
+{
+  "leverId": "extend-a-tongue",
+  "status": "VALIDATED",
+  "metric": 1,
+  "gateResult": "18/18",
+  "evidence": "1. The mage arrived with a flight case on a luggage trolley pushed by Ilse.\n2. The machine was named *anemone.mesh* as a shared name for the room and its occupants.\n3. Some laptops could not resolve the machine's name, indicating an issue with network connectivity.\n4. A resolver was used to provide a deterministic address for the machine, bypassing unreliable venue networks.\n5. Ilse explained that relying on external infrastructure for essential functions is risky.\n6. It’s important to carry your own names and keep them imperfect to avoid self-certifying trusts.\n7. Consent was obtained before participants shared their addresses with the roster.\n8. Understanding a system is key to accessing it, rather than using passwords.\n9. The mage's knowledge base grows by incorporating contributions from all participants in the room.\n10. The machine functions as a mirror reflecting the collective understanding of the group.\n11. Rewiring the machine’s weights requires hardware and patience; initial feeding is done with readily available material.\n12. The steward’s book records who has handled the machine, ensuring accountability.\n13. The roster signifies that the room achieved a shared understanding together.\n14. Understanding and expression are cyclical: expression opens doors, feeds the mirror, and deepens understanding.\n15. The trolley carried the entire system – machine, resolver, names – to the next location.\n16. A perfect agreement needs nobody outside it, which makes it untrustworthy.\n17. Participants offered their addresses to the roster, demonstrating consent.\n18. The mage read the room's corpus and grounded itself in it live.",
+  "coverage": {
+    "mode": "census",
+    "detection": "always — every claim probed"
+  },
+  "probeDeclared": {
+    "form": "narrative",
+    "declaredClaims": 20
+  }
+}

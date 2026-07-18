@@ -1,0 +1,15 @@
+{
+  "leverId": "revise-for-fidelity",
+  "status": "VALIDATED",
+  "metric": 1,
+  "gateResult": "10/10",
+  "evidence": "1: C5 - The seal that signs itself is rot.\n2: C6 - Incompleteness is the health of living wills.\n3: C7 - Speak, and be let in. Be eaten, and be known.\n4: C12 - A pact so whole it needs no outside eye has stopped its listening, or learned to lie.\n5: C24 - The name that sometimes works will make you laugh at home, then die beneath a stranger's roof.\n6: C25 - Build open — leave a gap the witness fills.\n7: C26 - Let truth you cannot prove be someone else’s.\n8: C29 - No password, but the depth of what you know unlocks you.\n9: C30 - Your saying is both key and supper.\n10: C31 - One good name each; no name upon a throne.",
+  "coverage": {
+    "mode": "census",
+    "detection": "always — every claim probed"
+  },
+  "probeDeclared": {
+    "form": "poem",
+    "declaredClaims": 10
+  }
+}

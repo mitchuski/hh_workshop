@@ -1,0 +1,24 @@
+{
+  "authority": "This file is the single source of truth for numbers (GR-1). No metric appears in prose except as a citation of this file. Keystone-only writes.",
+  "updated": "2026-07-17",
+  "objective": {
+    "metric": "translation-debt — (claim, form) pairs not yet carried; node tools/measure_debt.mjs; lower is better",
+    "gate": "babblefish census over canon/UNDERSTANDING.md (N=31); probe form drawn Fiat-Shamir from the committed triptych; assayer blind to canon; any declared claim not recovered = zero",
+    "hardConstraint": "no canon drift (additive-only register, keystone-accepted) + consent-first (no expression enters corpus/ or any export without a CONSENT_LEDGER.md line)"
+  },
+  "baseline": {
+    "metric": 32,
+    "date": "2026-07-17",
+    "how": "node tools/measure_debt.mjs → debt = 3*31 - 61: the seed triptych alone; carry.json declares narrative 20, poem 10, paper 31 (claim,form) pairs, union 61 of 93"
+  },
+  "best": {
+    "metric": 32,
+    "leverIds": [],
+    "evidence": "nothing has beaten the seed triptych yet; the canary is the baseline"
+  },
+  "openTarget": {
+    "id": "OT-1",
+    "statement": "debt 32 → 0 across the course: each week's validated triptychs add (claim,form) pairs. The poem is the scarcest tongue (10/31 carried) — the compression exercise is where most debt lives.",
+    "status": "OPEN"
+  }
+}

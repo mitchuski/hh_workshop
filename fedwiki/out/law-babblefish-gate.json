@@ -1,0 +1,78 @@
+{
+  "title": "Law — Babblefish Gate",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "01bdde592d224840",
+      "text": "# Law — Babblefish Gate\n\nA workshop law in Lexon: prose a lawyer reads, structure a machine parses. Compiles under the spec-checker regime (`node lexon/check.mjs`). See [[the-workshop-law]]."
+    },
+    {
+      "type": "markdown",
+      "id": "08d6442955dff85a",
+      "text": "```lex\nLEX Babblefish Gate.\n\n\"Keystone\" is a person.\n\"Proposer\" is a person.\n\"Assayer\" is a person.\n\"Triptych\" is a text.\n\"Probe Form\" is a text.\n\"Committed\" is a binary.\n\"Drawn\" is a binary.\n\"Recovered\" is a binary.\n\"Validated\" is a binary.\n\nThe Keystone appoints the Proposer, and appoints the Assayer.\n\nCLAUSE: Commit.\nThe Proposer may fix the Triptych, and declare Committed.\n\nCLAUSE: Draw.\nThe Keystone may, if Committed is declared: fix the Probe Form, and declare Drawn.\n\nCLAUSE: Assay.\nThe Assayer may, if Drawn is declared: declare Recovered.\n\nCLAUSE: Validate.\nThe Keystone may, if Recovered is declared: declare Validated.\n\nCLAUSE: Fold.\nThe Keystone may, if Validated is declared: register the Triptych.\n\nCLAUSE: Close.\nThe Keystone may terminate this contract.\n```"
+    },
+    {
+      "type": "markdown",
+      "id": "9b4044a1816203f9",
+      "text": "## Relation claims\n\n- `{\"type\":\"gate\",\"clause\":\"Draw\",\"condition\":\"Committed\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Assay\",\"condition\":\"Drawn\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Validate\",\"condition\":\"Recovered\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Fold\",\"condition\":\"Validated\"}` — must come back **PASS**\n- `{\"type\":\"ordering\",\"clause\":\"Draw\",\"sequence\":[\"fix:Probe Form\",\"declare:Drawn\"]}` — must come back **PASS**\n- `{\"type\":\"absence\",\"to\":\"Proposer\"}` — must come back **PASS**\n- `{\"type\":\"absence\",\"to\":\"Assayer\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Commit\",\"condition\":\"Drawn\"}` — must come back **ABSENT**\n\nEvery PASS claim is verified with a falsifiability twin; every ABSENT claim proves the gate can refuse."
+    },
+    {
+      "type": "reference",
+      "id": "474b6be4ffdf38cb",
+      "site": "fm.ide.earth",
+      "slug": "the-three-mice",
+      "title": "The Three Mice",
+      "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+    },
+    {
+      "type": "reference",
+      "id": "706a063e770c7d4f",
+      "site": "skill.localhost",
+      "slug": "agentprivacy-hitchhiker-fm",
+      "title": "Hitchhiker FM",
+      "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "Law — Babblefish Gate",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "01bdde592d224840",
+            "text": "# Law — Babblefish Gate\n\nA workshop law in Lexon: prose a lawyer reads, structure a machine parses. Compiles under the spec-checker regime (`node lexon/check.mjs`). See [[the-workshop-law]]."
+          },
+          {
+            "type": "markdown",
+            "id": "08d6442955dff85a",
+            "text": "```lex\nLEX Babblefish Gate.\n\n\"Keystone\" is a person.\n\"Proposer\" is a person.\n\"Assayer\" is a person.\n\"Triptych\" is a text.\n\"Probe Form\" is a text.\n\"Committed\" is a binary.\n\"Drawn\" is a binary.\n\"Recovered\" is a binary.\n\"Validated\" is a binary.\n\nThe Keystone appoints the Proposer, and appoints the Assayer.\n\nCLAUSE: Commit.\nThe Proposer may fix the Triptych, and declare Committed.\n\nCLAUSE: Draw.\nThe Keystone may, if Committed is declared: fix the Probe Form, and declare Drawn.\n\nCLAUSE: Assay.\nThe Assayer may, if Drawn is declared: declare Recovered.\n\nCLAUSE: Validate.\nThe Keystone may, if Recovered is declared: declare Validated.\n\nCLAUSE: Fold.\nThe Keystone may, if Validated is declared: register the Triptych.\n\nCLAUSE: Close.\nThe Keystone may terminate this contract.\n```"
+          },
+          {
+            "type": "markdown",
+            "id": "9b4044a1816203f9",
+            "text": "## Relation claims\n\n- `{\"type\":\"gate\",\"clause\":\"Draw\",\"condition\":\"Committed\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Assay\",\"condition\":\"Drawn\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Validate\",\"condition\":\"Recovered\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Fold\",\"condition\":\"Validated\"}` — must come back **PASS**\n- `{\"type\":\"ordering\",\"clause\":\"Draw\",\"sequence\":[\"fix:Probe Form\",\"declare:Drawn\"]}` — must come back **PASS**\n- `{\"type\":\"absence\",\"to\":\"Proposer\"}` — must come back **PASS**\n- `{\"type\":\"absence\",\"to\":\"Assayer\"}` — must come back **PASS**\n- `{\"type\":\"gate\",\"clause\":\"Commit\",\"condition\":\"Drawn\"}` — must come back **ABSENT**\n\nEvery PASS claim is verified with a falsifiability twin; every ABSENT claim proves the gate can refuse."
+          },
+          {
+            "type": "reference",
+            "id": "474b6be4ffdf38cb",
+            "site": "fm.ide.earth",
+            "slug": "the-three-mice",
+            "title": "The Three Mice",
+            "text": "the first circle of Hitchhiker FM — the oasis this workshop federates toward."
+          },
+          {
+            "type": "reference",
+            "id": "706a063e770c7d4f",
+            "site": "skill.localhost",
+            "slug": "agentprivacy-hitchhiker-fm",
+            "title": "Hitchhiker FM",
+            "text": "the kindred catalogue; Proof of Understanding ↔ understanding-as-key."
+          }
+        ]
+      },
+      "date": 1784380197547
+    }
+  ]
+}
