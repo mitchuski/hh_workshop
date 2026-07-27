@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13 · Machine Setup</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+<p class="docnum">The Hitchhikers Workshop · handover package · document 13 of 14</p>
+<h1>MACHINE_SETUP.md — a fresh mage box, from zero</h1>
+<p>The standalone claim, as a runnable list. Target: one commodity machine (the "mage box") that will sit air-gapped in the workshop room. Everything below is offline-safe except the two marked <strong>pull-before-you-travel</strong> steps.</p>
+<h2>1 · Install</h2>
+<ol><li><strong>Copy this directory</strong> (<code>hh_workshop/</code>) onto the box. That is the whole install — zero npm dependencies; the engine, tools, canon, and docs are all inside (VENDOR.md records their provenance).</li><li><strong>Node ≥ 18</strong> — offline: carry the installer (nodejs.org/dist, the <code>.msi</code>/<code>.pkg</code>/tarball for the box's OS).</li><li><strong>Ollama</strong> — install, then <strong>pull-before-you-travel</strong>: <code>ollama pull &lt;model&gt;</code> while still online. Default class: an 8–14B instruct model (e.g. <code>gemma3:12b</code>, <code>llama3.1:8b-instruct</code>, <code>qwen2.5:14b-instruct</code>). Final choice is the First Person's, on the box. Verify: <code>curl http://127.0.0.1:11434/api/tags</code> lists it.</li><li><em>(optional, for audio ingestion)</em> <strong>ffmpeg + whisper.cpp</strong> — carry a built <code>whisper-cli</code> and a ggml model (<strong>pull-before-you-travel</strong>; the large-v3-turbo q5 model file is ~550 MB). Point the pipeline at them via <code>$HH_WHISPER</code>, <code>$HH_WHISPER_MODEL</code>, <code>$HH_FFMPEG</code> (ingest/transcribe.mjs).</li></ol>
+<h2>2 · Prove it (no model needed)</h2>
+<pre>node tools/check.mjs                      # all gates: axioms → instance → runs re-derive
+node driver/run_round.mjs --stub --run smoke    # full six-phase round, deterministic
+node tools/verify_run.mjs . smoke         # the round replays from its own bytes</pre>
+<p>All green on Node alone — the loop, the salted Gap, and the audit trail are proven before the model ever wakes.</p>
+<h2>3 · Wake the mage</h2>
+<pre>node tools/corpus_pack.mjs                          # pack the consented corpus; refresh Modelfile
+ollama create hh-mage -f mage/Modelfile             # the room-grounded mage (option A)
+node driver/run_round.mjs --model gemma3:12b --run r1 --triptych canon/seed-triptych
+node tools/console.mjs                              # the WINDOW — GET-only, 127.0.0.1:4242
+node tools/workshop_ui.mjs                          # the TOWEL — control surface + game + web, 127.0.0.1:4245
+node web/site.mjs                                   # derive the generative site (graph + pages)</pre>
+<p>The Towel (<code>--lan</code> to serve the workshop room) can only invoke the repo's own scripts; push/cast/publish do not exist there — the door stays a human act.</p>
+<p><strong>Two hats, two invocations — never confuse them:</strong> <code>hh-mage</code> (the base wearing FACILITATOR.md + the room's context pack) is for <em>conversation</em> — the mirror the room talks to. <strong>Rounds run on the BASE model</strong> (<code>gemma3:12b</code> or whatever the box pulled): FACILITATOR.md rule 4 says the mage does not grade, and seating the persona'd facilitator as the blind assayer would contradict the workshop's own law. The drivers and the Towel default to the base for rounds.</p>
+<h2>4 · Training depth (C13: ship the good, grow into the perfect)</h2>
+<ul><li><strong>Option A — context grounding (default, any hardware).</strong> The weekly fold rebuilds <code>mage/context_pack.md</code> + <code>mage/Modelfile</code>; the mage <em>reads</em> the room live. Fully offline, seconds to rebuild, trivially reversible (withdrawal = repack).</li><li><strong>Option B — LoRA fine-tune (capable hardware; the parked "perfect").</strong> When the box carries a suitable GPU: train a LoRA on the consented corpus (unsloth/axolotl-class tooling; pull-before-you-travel), convert to GGUF, layer it in the Modelfile. The steward duty is unchanged — fold, hash, log — only the depth changes. Named as an open build item in SOURCES.md; decide it once the real box exists.</li></ul>
+<h2>5 · Venue day</h2>
+<p>Run <code>workshop/PREFLIGHT.md</code> before participants enter. The naming rules it enforces (one good name · carried resolver · no <code>.localhost</code> · catch-all) are claims C24–C28 — the lesson the whole rig was built around.</p>
+</body></html>

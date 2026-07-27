@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hitchhikers Workshop — Handover Package</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+
+<div style="margin-top:6em; text-align:center">
+  <p class="docnum">handover package</p>
+  <h1 style="font-size:2.2em">The Hitchhikers Workshop</h1>
+  <p style="font-style:italic; font-size:1.1em; margin-top:.6em">the babblefish recursion — one understanding, three tongues,<br>a blind gate that checks it survives translation</p>
+  <hr>
+  <p>A public-goods research instrument for a masters cohort and a shared,<br>air-gapped local mage. Everything described is built, verified, and<br>replayable offline on one commodity machine.</p>
+</div>
+<h2>Contents</h2>
+<table>
+<tr><th></th><th>document</th><th>what it carries</th></tr>
+<tr><td>01</td><td><strong>The Delivery Brief</strong></td><td>the whole work and how a cohort plays out, week 0 to the leaving</td></tr>
+<tr><td>02</td><td><strong>The University One-Pager</strong></td><td>the one-page pitch — read this first if time is short</td></tr>
+<tr><td>03</td><td><strong>The Curriculum</strong></td><td>the ten-week arc, week by week</td></tr>
+<tr><td>04</td><td><strong>The Opening Ceremony</strong></td><td>the week-one rite, run-of-show</td></tr>
+<tr><td>05</td><td><strong>Understanding as Key</strong></td><td>the access ladder — how access deepens with demonstrated understanding</td></tr>
+<tr><td>06</td><td><strong>The Pre-Flight Checklist</strong></td><td>venue day: everything checked before the room arrives</td></tr>
+<tr><td>07</td><td><strong>The Consent Architecture</strong></td><td>one agreement in four registers: plain language, legal, machine-readable, and Lexon</td></tr>
+<tr><td>08</td><td><strong>Letter — to the International-Law Chair</strong></td><td>draft letter; sending remains a human act</td></tr>
+<tr><td>09</td><td><strong>Letter — to the Cryptography Chair</strong></td><td>draft letter; sending remains a human act</td></tr>
+<tr><td>10</td><td><strong>The Auto-Research Pattern</strong></td><td>the public-goods auto-research pattern: the moving ceiling, the dream cycle, the mage lineage</td></tr>
+<tr><td>11</td><td><strong>The Suite Mapping</strong></td><td>how these methods seat into the wider agentprivacy suite</td></tr>
+<tr><td>12</td><td><strong>Provenance — What the Students Keep</strong></td><td>the students’ verifiable record as the mage’s first trainers</td></tr>
+<tr><td>13</td><td><strong>Machine Setup</strong></td><td>a fresh machine from zero — no internet, no framework checkout</td></tr>
+<tr><td>14</td><td><strong>The Front Door (README)</strong></td><td>the instrument’s front door: quickstart, the five answers, the map</td></tr>
+</table>
+<h2>How a skeptic checks</h2>
+<pre>node tools/check.mjs                 # nine gates: axioms → laws → every run re-derives
+node tools/verify_run.mjs . &lt;run&gt;    # replay any verdict from saved bytes, no model, no net
+node tools/corpus_pack.mjs --verify  # the training chain re-derives to the signed hash
+node lexon/check.mjs                 # the law compiles; the absence claims hold
+node tools/dream_cycle.mjs           # the standing watch — measure everything, fold nothing</pre>
+<p>The full instrument (code, canon, runs, interfaces) travels as the
+<code>hh_workshop</code> repository: <code>github.com/mitchuski/hh_workshop</code> —
+the public upstream harness is <code>github.com/mitchuski/agentprivacy-harness</code>.</p>
+<hr>
+<p style="text-align:center"><em>Mitchell Travers · mitchell@soulbis.com · bound 2026-07-27</em></p>
+<p style="text-align:center"><em>"This document travels at the speed of trust."</em></p>
+
+</body></html>

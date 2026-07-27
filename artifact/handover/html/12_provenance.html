@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12 · Provenance — What the Students Keep</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+<p class="docnum">The Hitchhikers Workshop · handover package · document 12 of 14</p>
+<h1>PROVENANCE.md — the students who began the training</h1>
+<p>What a cohort walks away with is not only the books — it is a <strong>re-derivable claim</strong>: <em>we are the people whose words this mage is made of.</em> This file says how that claim is carried and how a stranger checks it.</p>
+<h2>The chain</h2>
+<pre>consent line (CONSENT_LEDGER.md, signed by the speaker)
+  → corpus/ file (admitted by the week's steward)
+    → context pack (tools/corpus_pack.mjs — deterministic bytes, sha256)
+      → steward_log.md entry (week · steward · files folded · pack hash)
+        → the mage (Modelfile / context grounding the room talks to)
+          → the books (bind_book.mjs prints the steward chain into every copy)</pre>
+<p>Three properties make it provenance and not a story:</p>
+<ol><li><strong>Consented at the root</strong> — no unconsented word can enter the chain; the packer and the exporter refuse at the pipe (hard constraint b).</li><li><strong>Re-derivable at every link</strong> — <code>node tools/corpus_pack.mjs --verify</code> re-hashes the corpus and must match the latest steward entry; a moved corpus with an unlogged fold fails loudly.</li><li><strong>Named hands</strong> — every fold names its steward. The rotation means every student's name enters the chain at least once: the cohort is not "acknowledged", it is <em>structural</em>.</li></ol>
+<h2>What each student takes away</h2>
+<ul><li>the bound artefacts (<code>book_of_poems.html</code>, <code>collected_papers.html</code>, <code>story_anthology.html</code> — print to PDF), each carrying the steward chain;</li><li>their triptychs, with gate verdicts a third party can replay offline (<code>node tools/verify_run.mjs . &lt;runId&gt;</code>);</li><li>their line(s) in <code>mage/steward_log.md</code> — their week holding the mirror;</li><li>their consent rows — which they may also withdraw (INGEST.md): provenance here includes the right to leave.</li></ul>
+<h2>For the university partner</h2>
+<p>This chain is the course's assessment story inverted: instead of the institution grading the students, the students build the evaluator (the harness config is cohort-amended through the keystone), train the examiner's opposite (the mage is their mirror, and it never grades), and leave holding a verifiable record that the whole apparatus began with them.</p>
+</body></html>

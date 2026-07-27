@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · The Pre-Flight Checklist</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+<p class="docnum">The Hitchhikers Workshop · handover package · document 06 of 14</p>
+<h1>PREFLIGHT.md — venue checklist + naming contract + failure playbook</h1>
+<p>Run <strong>on arrival, before participants enter</strong>. Two minutes when everything is healthy; the whole point is discovering when it isn't (C22: you find the missing dependency standing in a strange room — this list makes you find it <em>first</em>).</p>
+<h2>The 2-minute pre-flight</h2>
+<ul><li>[ ] Mage powered; <code>curl http://127.0.0.1:11434/api/tags</code> answers **on the</li></ul>
+<p>mage box** (model present — pulled before travel, never at the venue).</p>
+<ul><li>[ ] Carried naming layer up; the one good name resolves from a **clean</li></ul>
+<p>resolver*<em> (<code>ping &lt;name&gt;</code> in a </em>fresh* shell — never a warm browser, C26) on <strong>two different client machines</strong> (one PC, one Mac if mixed).</p>
+<ul><li>[ ] Raw-IP fallback answers something soft (the catch-all — C28), not a 502.</li><li>[ ] Client-to-client reachability: one laptop pings another. If this fails,</li></ul>
+<p>the venue has client/AP isolation → carried switch/AP or overlay; no LAN trick will help (playbook, CEREMONY.md §5).</p>
+<ul><li>[ ] <code>node tools/check.mjs</code> green on the mage box (axioms → runs re-derive).</li><li>[ ] <code>node tools/corpus_pack.mjs --verify</code> green (the chain is intact before</li></ul>
+<p>the room watches it extend).</p>
+<ul><li>[ ] Roster page empty and serving; consent registers printed/loadable</li></ul>
+<p>(workshop/consent/).</p>
+<h2>Naming contract (carried, not negotiated per venue)</h2>
+<ul><li>ONE good name for this mage instance — chosen by the cohort, held by the holder, no canonical string (C24). Services are <strong>paths</strong> under it.</li><li>Resolution comes from <strong>our resolver</strong>, deterministic and identical for every client (C25). Venue mDNS may work; it is never <em>load-bearing</em>.</li><li>Never <code>.localhost</code> for a shared name (RFC 6761 forces it to loopback — C27). Plain TLD (<code>.mesh</code> and friends) per instance.</li><li>DHCP: the mage box gets a static/reserved address the resolver leans on.</li></ul>
+<h2>Failure playbook (what the room sees → the move)</h2>
+<table><tr><th>the room sees</th><th>it is</th><th>the move</th></tr><tr><td>"can't find the server" on SOME laptops</td><td>mDNS intermittency (C26)</td><td>switch everyone to the carried name; verify from clean shells</td></tr><tr><td>name dead AND raw IP 502s</td><td>name-keyed vhost (C23)</td><td>catch-all front door; never one literal string</td></tr><tr><td>nothing reaches anything</td><td>client isolation</td><td>carried AP/switch; else the overlay/tunnel</td></tr><tr><td>worked at home, dead here</td><td>outsourced naming (C22)</td><td>this checklist, next time run FIRST</td></tr><tr><td>it loads in the browser but ping fails</td><td>warm cache lying (C26)</td><td>trust the clean resolver, not the browser</td></tr></table>
+<p><strong>The meta-rule:</strong> a flaky pass is a fail. A name that resolves <em>sometimes</em> ships the failure to the exact moment the room is watching.</p>
+</body></html>

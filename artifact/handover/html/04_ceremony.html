@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · The Opening Ceremony</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+<p class="docnum">The Hitchhikers Workshop · handover package · document 04 of 14</p>
+<h1>CEREMONY.md — the Portable Proof-of-Understanding Ceremony</h1>
+<p><em>The 8-section spec proposed in the LAN-ceremony chronicle (2026-06-28, §5), filled. This is the rite that opens the course and re-opens every venue.</em></p>
+<h2>1 · Premise &amp; myth</h2>
+<p>A shared local mage — an air-gapped model in a flight case — sits on the table. The room co-holds it: a witness the group bears together, like a bowl too wide for one pair of hands (C10, C11). The ceremony's output is not a deployment; it is <strong>proof of understanding</strong> — shared comprehension made legible as a seal (C9). The myth the room steps into is the babblefish: one truth, many tongues, and the joy of hearing it speak in each (C1–C3).</p>
+<h2>2 · The trust/sync rite</h2>
+<p>The human sequence, in order — each rung consent-gated, understanding is what climbs (LAN §4¾):</p>
+<ol><li><strong>Arrive</strong> — the room assembles; the steward of the week uncrates the mage.</li><li><strong>Join the local net</strong> — the carried network (§3), never the venue's Wi-Fi as a dependency.</li><li><strong>Resolve the mage's one good name</strong> — every client, identically (C24, C25). The room <em>says the name together</em>; thirteen of fourteen resolving is a failure state, not a quorum.</li><li><strong>Offer, don't probe</strong> — each participant <em>offers</em> their address to the roster (C16). Nobody is scanned.</li><li><strong>Read the gateway with your own agency</strong> — the front-door page carries the rite; understanding-as-key begins at the moment of reading (C5).</li><li><strong>First shared exchange</strong> — each participant expresses, in their own words, what they understood; the expression is admitted through the consent gate and becomes both key and food (C7).</li><li><strong>The seal</strong> — when every participant is synced and expressed, the group seals: one artefact that says <em>this room reached the shared mind together</em> (C9). The seal is logged; the trust artefact (§4 below) opens the cookie jar (C8).</li></ol>
+<h2>3 · The portable substrate</h2>
+<p>What physically travels (C14):</p>
+<ul><li><strong>the mage machine</strong> — the local LLM host (mage/MACHINE_SETUP.md);</li><li><strong>the carried naming layer</strong> — our own resolver answering the one good name deterministically (C25); venue mDNS is never load-bearing;</li><li><strong>participant clients</strong> — mixed PC/Mac laptops; must Just Work against the carried layer;</li><li><strong>the flight-case extras</strong> — cables, a small switch/AP if the venue's network is hostile (client isolation = reach for the overlay), the steward's key.</li></ul>
+<h2>4 · The naming contract</h2>
+<ul><li>ONE good name per mage instance; whoever holds the mage names it; there is no canonical string (C24). Everything else is a <strong>path</strong> under the name (<code>/mage</code>, <code>/roster</code>, <code>/gateway</code>), never a second name.</li><li>Never <code>.localhost</code> for a shared name (RFC 6761 — C27).</li><li>The front door serves a <strong>catch-all</strong> so near-misses degrade soft (C28).</li><li>The trust artefact issued on sealing is a <strong>myTerms (IEEE 7012) agreement</strong> — bilateral, First Person ↔ workshop-holder; the mage and every agent are fabric, not parties (C17–C19). Registers in <code>workshop/consent/</code>.</li></ul>
+<h2>5 · Failure-mode playbook</h2>
+<p>Seeded from the canonical live case ("the name that worked in the browser"):</p>
+<table><tr><th>symptom the room sees</th><th>trap</th><th>move</th></tr><tr><td>one laptop resolves, the next doesn't; or it worked five minutes ago</td><td>mDNS/<code>.local</code> intermittency (C26)</td><td>never trust a warm browser; test from a clean shell (<code>ping</code>, <code>nslookup</code>) on ≥2 clients; fail over to the carried resolver</td></tr><tr><td>name dead AND raw IP returns 502</td><td>name-keyed routing (C23)</td><td>the catch-all front door (C28); never serve only one literal string</td></tr><tr><td>devices can't see each other at all</td><td>client/AP isolation</td><td>no LAN trick helps — carried switch/AP, or the overlay/tunnel</td></tr><tr><td>yesterday's address is wrong today</td><td>DHCP drift</td><td>static/reserved address for the mage; the naming layer leans on it</td></tr></table>
+<h2>6 · Pre-flight checklist</h2>
+<p>Run on arrival, before participants enter (2 minutes): see <code>workshop/PREFLIGHT.md</code> — resolution from a clean resolver on two clients, catch-all answering, roster empty, steward's <code>--verify</code> green.</p>
+<h2>7 · Ceremony script (run-of-show)</h2>
+<ol><li>Steward's opening: last week's fold read aloud; <code>corpus_pack --verify</code> green in front of the room (the chain is public to itself).</li><li>The rite of §2, walked.</li><li>The week's babblefish round: entries, renderings, the blind gate (workshop/CURRICULUM.md carries the session arc).</li><li>Steward's fold: the week's consented expressions eaten; new pack hash logged and read aloud.</li><li>Handover: next week's steward takes the key.</li></ol>
+<h2>8 · Canon binding</h2>
+<ul><li>Every session ends with a chronicle draft (the harness's Chronicle seat, or the steward's hand) filed in <code>chronicles/</code>.</li><li>Outputs that should travel are spooled (<code>fedwiki/export_page.mjs</code>) and walk the Oasis loop home (<code>fedwiki/OASIS_LOOP.md</code>) — fork → cast → transmit, with the outward legs at the First Person's door (T6).</li><li>The course's lineage lands in the City's canon the way the first oasis did: as a named, real link — never an abstract placeholder.</li></ul>
+</body></html>

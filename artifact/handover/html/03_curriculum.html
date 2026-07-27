@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · The Curriculum</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+<p class="docnum">The Hitchhikers Workshop · handover package · document 03 of 14</p>
+<h1>CURRICULUM.md — the course arc</h1>
+<p>A masters-cohort course (8–12 weeks works; the arc below is written for 10) around the shared mage: <strong>sci-fi casting forward → poems compressing into human-readable → formal papers</strong>, each week feeding the machine the room trains. The cohort ends holding its own evaluation harness, three bound books, and the provenance chain (artifact/PROVENANCE.md).</p>
+<h2>The weekly shape (every week, after week 1)</h2>
+<ol><li><strong>Steward handover</strong> — outgoing steward's <code>corpus_pack --verify</code> green in front of the room; incoming steward takes the key (mage/STEWARD.md).</li><li><strong>Ingest</strong> — the week's audio notes and drafts through <code>ingest/transcribe.mjs</code> → consent lines → corpus (INGEST.md).</li><li><strong>Express</strong> — participants work their triptychs with the mage as mirror (never as grader — FACILITATOR.md rule 4).</li><li><strong>The babblefish round</strong> — submitted triptychs face the blind gate (<code>node driver/run_round.mjs --model &lt;mage&gt; --run w&lt;N&gt; --triptych &lt;dir&gt;</code>). The probe form is drawn where no one can tune it: <em>the tongue you didn't polish is the lesson.</em></li><li><strong>Fold</strong> — the keystone pair folds VALIDATED levers (frontier first, prose second); the steward folds the week's corpus; both hashes read aloud.</li><li><strong>Seal</strong> — the week closes with the group seal (CEREMONY.md §7).</li></ol>
+<h2>The arc</h2>
+<table><tr><th>weeks</th><th>movement</th><th>what happens</th></tr><tr><td>1</td><td><strong>The Rite</strong></td><td>full ceremony (CEREMONY.md); the room reads the seed triptych + register; everyone's first expression = their Traveler key</td></tr><tr><td>2–3</td><td><strong>Casting forward</strong></td><td>sci-fi entry: each participant drafts a narrative carrying claims they choose; first live rounds; lexicon workshop — the cohort proposes its first new claims to the keystone</td></tr><tr><td>4–5</td><td><strong>Compressing</strong></td><td>poem entry: the scarcest tongue (frontier OT-1); pairs swap — compress <em>each other's</em> narrative; Mentor rungs open (blind-assayer service)</td></tr><tr><td>6–7</td><td><strong>Formalizing</strong></td><td>paper entry: formal renderings; citations discipline; triptychs complete and face the census</td></tr><tr><td>8</td><td><strong>The turn: own the evaluation</strong></td><td>the cohort re-fits the five answers (metric · gate · hard constraint · canary · Gap recipe) in a keystone session — the course's stated goal: they graduate owning the examiner, not just passing it. Register amendments folded; conform must stay green before and after (G0)</td></tr><tr><td>9</td><td><strong>Binding</strong></td><td><code>bind_book.mjs</code> — the Book of Poems, the Collected Papers, the Story Anthology; provenance page checked by a stranger (someone outside the cohort replays the chain)</td></tr><tr><td>10</td><td><strong>The Oasis leg</strong></td><td>consented pages spooled and carried to the federation (OASIS_LOOP.md); closing seal; the mage's flight case shuts on a corpus that is <em>them</em></td></tr></table>
+<h2>The trust ladder → mechanics</h2>
+<p>Rungs are earned by expressed understanding (never by credential — C5), and audited by the enumerable checklist in UNDERSTANDING_KEY.md:</p>
+<table><tr><th>rung</th><th>earned by</th></tr><tr><td><strong>Traveler</strong></td><td>consented + first expression admitted (week 1 seal)</td></tr><tr><td><strong>Contributor</strong></td><td>at least one form carrying ≥1 claim through the gate</td></tr><tr><td><strong>Author</strong></td><td>a full triptych VALIDATED by the census</td></tr><tr><td><strong>Mentor</strong></td><td>serving as blind assayer for another's triptych (the human seat of the prover — reads the probe form cold, never the canon)</td></tr><tr><td><strong>Fellow</strong></td><td>proposing a claim the keystone accepts into the register — their words become part of what every later triptych is measured against</td></tr></table>
+<p><strong>Steward rotation is orthogonal to the ladder</strong>: every student takes exactly one week holding the mage's training, whatever their rung — the chain in <code>mage/steward_log.md</code> must end the course with every name in it.</p>
+<h2>Assessment posture (for the university partner)</h2>
+<p>The harness produces the artefacts a program can assess — validated triptychs, fold history, the amended register — but the <em>grading</em> of record stays the institution's own act. The workshop's gate answers "does the understanding survive translation?", which is a different and complementary question to "what mark does this earn?" (UNIVERSITY_ONEPAGER.md).</p>
+</body></html>

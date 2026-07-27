@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · The Consent Architecture</title><style>
+  @page { margin: 22mm }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; max-width:38em; margin:3em auto; line-height:1.65; padding:0 1em }
+  h1 { font-size:1.8em; line-height:1.25; margin:0 0 .3em } h2 { font-size:1.25em; margin-top:2.4em } h3 { font-size:1.05em } h4 { font-size:1em }
+  hr { border:0; border-top:1px solid #ccc; margin:2.5em auto; width:38% }
+  blockquote { margin:1.4em 1.6em; font-style:italic; color:#333 }
+  pre { font-family:Consolas, monospace; font-size:.8em; background:#f6f5f2; padding:1em; border-radius:4px; overflow-x:auto; white-space:pre-wrap }
+  code { font-family:Consolas, monospace; font-size:.88em; background:#f4f2ee; padding:0 .25em }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:1.2em 0 }
+  th,td { border-bottom:1px solid #ddd; text-align:left; padding:.45em .6em; vertical-align:top } th { color:#555 }
+  em { color:#222 } ol li, ul li { margin:.45em 0 }
+  .docnum { color:#888; font-size:.85em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4em }
+  .section-break { page-break-before: always }
+  @media print { body { margin:0 auto } h2 { page-break-after: avoid } }
+</style></head><body>
+<p class="docnum">The Hitchhikers Workshop · handover package · document 07 of 14</p>
+<h1>The Consent Architecture</h1>
+<h1>Consent — plain language register</h1>
+<p><em>One agreement, three registers (C19) — plus a fourth that is two at once: this human-readable page, the legal stub, the machine-readable JSON, and the <strong>Lexon law</strong> (<code>lexon/consent_agreement.lex</code>), a controlled-natural-language text a lawyer can read that a machine also parses — mechanically checked (<code>node lexon/check.mjs</code>) so the law and the code stay one voice. If any register disagrees with another, we stop and fix it — none of them silently wins.</em></p>
+<h2>What you are agreeing to (and what you aren't)</h2>
+<p><strong>You propose; we accept.</strong> Under this workshop's standard (IEEE 7012 / MyTerms), <em>you</em> are the one offering terms — the workshop accepts them, counter-offers once, or declines. Not the other way around (C17). The agreement is between <strong>you and the workshop-holder</strong> only. The mage, the harness, and every agent in the room are furniture around the agreement, not parties to it (C18).</p>
+<p><strong>What "corpus" scope means.</strong> The local machine (the mage) may read your consented expressions — your drafts, poems, papers, transcribed audio notes — so it can reflect the room back. It is air-gapped: nothing it reads leaves the room (C10).</p>
+<p><strong>What "export" scope means.</strong> The named piece may travel — into the bound books and/or the federation wiki. Nothing travels without this scope.</p>
+<p><strong>You sign per piece, not per person.</strong> One ledger row per expression (corpus/CONSENT_LEDGER.md), signed by you. No blanket capture; a group recording only enters trimmed to the voices that consented.</p>
+<p><strong>You can leave.</strong> Withdrawal = your file is deleted, your ledger row struck (visibly), and the machine's next context pack simply no longer contains you. Provenance includes the right to leave (INGEST.md).</p>
+<p><strong>Nobody probes you.</strong> You <em>offer</em> your device's address to join the room's network; nothing scans you (C16).</p>
+<h2>What the workshop promises back</h2>
+<ul><li>The machine never grades you; a blind gate grades renderings, and humans hold the doors (FACILITATOR.md rule 4).</li><li>Your name enters the steward chain when you hold the mage's week — that record is yours to keep and to verify, forever, offline.</li></ul>
+<hr>
+<h1>Consent — legal register (STUB · requires counsel review before first cohort)</h1>
+<blockquote><p><strong>Status: DRAFT STUB.</strong> This register must be reviewed by qualified counsel (and, for a university deployment, the institution's ethics board) before any participant signs. It exists so the three-register structure (C19) is complete from day one; it is not yet legal advice or a binding instrument.</p></blockquote>
+<ol><li><strong>Parties.</strong> This Agreement is bilateral between the individual participant ("First Person") and the workshop-holder ("Second Party"). Software agents, devices, and trust communities are expressly not parties (IEEE Std 7012-2025 posture).</li><li><strong>Offer.</strong> Terms are proposed by the First Person from the workshop's standard registers; the Second Party may accept, make one counter-offer, or decline.</li><li><strong>Licence, per expression.</strong> For each expression listed against the First Person's name in the Consent Ledger, the First Person grants the Second Party a revocable, non-exclusive licence limited to the recorded scope: (a) <em>corpus</em> — local machine-reading/grounding on air-gapped hardware within the workshop; (b) <em>export</em> — inclusion in the workshop's bound artefacts and/or federated wiki publication. No other use is licensed.</li><li><strong>Revocation.</strong> The First Person may revoke per expression at any time; the Second Party shall delete the corpus copy, strike the ledger entry, and rebuild the machine context without it within [N] days. Copies already in printed artefacts or federated forks are governed by [to be drafted].</li><li><strong>No automated assessment of the person.</strong> Machine outputs are not used as the assessment of record of the First Person.</li><li><strong>Records.</strong> The Consent Ledger and steward log constitute the record of licences and processing; both are inspectable by the First Person.</li><li><strong>Governing law / institution-specific terms.</strong> [To be completed with counsel / the partner institution.]</li><li><strong>Controlled-language rendering.</strong> The structural content of clauses 2–4 is also rendered as a Lexon controlled-natural-language contract (<code>lexon/consent_agreement.lex</code>), mechanically verified for internal coherence (<code>node lexon/check.mjs</code>), including the structural absence of any transfer route to the Second Party. In case of conflict between registers, the parties' recorded intent governs and all registers are corrected together.</li></ol>
+<hr>
+<h1>lexon/ — the workshop's law, compiling</h1>
+<p>The workshop's legal-shaped invariants written in <strong>Lexon</strong> — controlled natural language a lawyer can read AND a machine can parse — and held green by the same gate the <code>lexon_pvm</code> harness uses. This is the fourth face of the consent layer: where <code>workshop/consent/</code> carries plain-language, legal, and machine-JSON registers as three files, a Lexon law is <strong>one text that is both the legal prose and the parseable structure</strong> — the babblefish thesis applied to law itself.</p>
+<h2>What "compiling" means here (the regime, honestly)</h2>
+<p>There is <strong>no public Lexon compiler for this platform</strong> (the reference compiler is a macOS-only alpha, source unpublished). This lane runs the <strong>spec-checker regime</strong> vendored from <code>lexon_pvm</code>: a hand-written validator of an <em>attested subset</em> of Lexon (every grammar production is backed by a lexon.org golden fixture). "Compiles" = passes:</p>
+<ol><li><strong>the base gate</strong> (<code>tools/lexon_check.mjs</code>) — parse into subject-verb- object triples · noun binding (definitions immutable) · <strong>round-trip</strong> (triples re-serialize to canonical sentences that re-parse identically) · promise typing (every action edge typed promise/commitment, polarity +);</li><li><strong>every relation claim</strong> (<code>tools/relation_check.mjs</code>) — the structural fact each law exists to state, verified on the clause graph <strong>with a falsifiability twin</strong>: a minimally mutated contract must still gate-pass yet fail the claim, or the claim proves nothing. Negative expectations (claims that must come back ABSENT) prove the gate can refuse.</li></ol>
+<p>Run it: <code>node lexon/check.mjs</code> — also wired into <code>node tools/check.mjs</code>.</p>
+<h2>The three laws</h2>
+<table><tr><th>law</th><th>what it compiles</th><th>the load-bearing claims</th></tr><tr><td><code>consent_agreement.lex</code></td><td>the myTerms/IEEE-7012 bilateral (First Person proffers, Workshop Holder accepts; per-expression corpus/export scope; revocation with mandatory return)</td><td><code>Consented = Proffered ∧ Accepted</code> (the invitation pattern); Admit gated on Consented; <strong>absence: no transfer clause routes anything to the Workshop Holder</strong> — the extraction shape is structurally impossible, not merely forbidden</td></tr><tr><td><code>steward_fold.lex</code></td><td>the weekly steward's duties (STEWARD.md as law)</td><td>Admit gated on Consented; <code>Complete = Pack Hash ∧ Fold Record</code>; Handover gated on Verified; absence: nothing routes to the Steward</td></tr><tr><td><code>babblefish_gate.lex</code></td><td>the harness's own gate discipline (T2/T5/D1 as law)</td><td>Draw gated on Committed (<strong>grind-proofing: the draw cannot precede the commit</strong>); Validate gated on Recovered; Fold gated on Validated; <strong>absence: nothing routes to the Proposer or the Assayer</strong> — the seats cannot be paid off</td></tr></table>
+<p>Each law's <code>.claims.json</code> uses <code>{expect, claim}</code> rows — <code>RELATION PASS</code> rows are the law's asserted structure; <code>RELATION ABSENT</code> rows are the counter-claims that must fail (a gate that cannot refuse is worth less than none).</p>
+<h2>House grammar (the attested subset — imitate exactly)</h2>
+<p>Types: <code>person amount text time binary data contract number account</code> · Verbs: <code>pay return appoint fix certify register grant declare file send terminate set</code> · Shape: <code>LEX &lt;Title&gt;.</code> · <code>"Name" is a &lt;type&gt;.</code> definitions · one recital (no modal) · <code>CLAUSE: &lt;Name&gt;.</code> blocks · <code>may</code>/<code>must</code> · conditions <code>, if &lt;Binary&gt; is declared:</code> or <code>, if this &lt;Noun&gt; is &lt;Predicate&gt;:</code> · conjunctions via <code>"P" is defined as: the A is fixed and the B is fixed.</code> · <strong>never an em dash</strong> (the upstream census refuses them).</p>
+<h2>Provenance &amp; the loop back</h2>
+<p>Checker + goldens vendored verbatim from <code>C:\Users\mitch\lexon_pvm</code> @ <code>4d9a3ad</code> (see <code>../VENDOR.md</code>). The upstream LEXICON already carries the 7012 family (LEXPVM-T-055/059/060/067) these laws are stylistic kin to. <strong>Possible upstream fold (the First Person's call, lexon_pvm's own keystone discipline):</strong> the workshop's terms — babblefish recursion, understanding- as-key, steward, translation-debt — are candidates for lexon_pvm census terms; these three laws are ready-made draft expressions for that fold. In the course itself, Lexon is a natural <strong>fourth tongue</strong> for advanced cohorts (understanding → narrative → poem → paper → <em>law</em>); staged, not yet in the harness gate.</p>
+<h3>The laws, verbatim (.lex sources)</h3>
+<h4>consent_agreement.lex</h4><pre>LEX Workshop Consent.
+
+"First Person" is a person.
+"Workshop Holder" is a person.
+"Federation" is a person.
+"Expression" is a data.
+"Agreement" is a text.
+"Terms" is a text.
+"Proffered" is a binary.
+"Accepted" is a binary.
+"Corpus Scope" is a binary.
+"Export Scope" is a binary.
+"Revoked" is a binary.
+
+The First Person fixes the Terms, fixes the Agreement, and appoints the Workshop Holder.
+
+CLAUSE: Proffer.
+The First Person may declare Proffered.
+
+CLAUSE: Accept.
+The Workshop Holder may, if Proffered is declared: declare Accepted.
+
+CLAUSE: Standing.
+"Consented" is defined as: Proffered is declared and Accepted is declared.
+
+CLAUSE: Scope Corpus.
+The First Person may declare Corpus Scope.
+
+CLAUSE: Scope Export.
+The First Person may declare Export Scope.
+
+CLAUSE: Admit.
+The Workshop Holder may, if this Agreement is Consented: register the Expression.
+
+CLAUSE: Export.
+The Workshop Holder may, if Export Scope is declared: send the Expression to the Federation.
+
+CLAUSE: Revoke.
+The First Person may declare Revoked.
+
+CLAUSE: Withdraw.
+The Workshop Holder must, if Revoked is declared: return the Expression to the First Person.
+
+CLAUSE: Close.
+The First Person may, if Revoked is declared: terminate this contract.
+</pre>
+<h4>steward_fold.lex</h4><pre>LEX Fold.
+
+"First Person" is a person.
+"Steward" is a person.
+"Successor" is a person.
+"Expression" is a data.
+"Fold Record" is a text.
+"Pack Hash" is a text.
+"Fold" is a text.
+"Consented" is a binary.
+"Verified" is a binary.
+
+The First Person appoints the Steward, and fixes the Fold.
+
+CLAUSE: Admit.
+The Steward may, if Consented is declared: register the Expression.
+
+CLAUSE: Pack.
+The Steward may fix the Pack Hash, and file the Fold Record.
+
+CLAUSE: Ready.
+"Complete" is defined as: the Pack Hash is fixed and the Fold Record is fixed.
+
+CLAUSE: Verify.
+The Steward may, if this Fold is Complete: declare Verified.
+
+CLAUSE: Handover.
+The Steward may, if Verified is declared: appoint the Successor.
+
+CLAUSE: Close.
+The First Person may terminate this contract.
+</pre>
+<h4>babblefish_gate.lex</h4><pre>LEX Babblefish Gate.
+
+"Keystone" is a person.
+"Proposer" is a person.
+"Assayer" is a person.
+"Triptych" is a text.
+"Probe Form" is a text.
+"Committed" is a binary.
+"Drawn" is a binary.
+"Recovered" is a binary.
+"Validated" is a binary.
+
+The Keystone appoints the Proposer, and appoints the Assayer.
+
+CLAUSE: Commit.
+The Proposer may fix the Triptych, and declare Committed.
+
+CLAUSE: Draw.
+The Keystone may, if Committed is declared: fix the Probe Form, and declare Drawn.
+
+CLAUSE: Assay.
+The Assayer may, if Drawn is declared: declare Recovered.
+
+CLAUSE: Validate.
+The Keystone may, if Recovered is declared: declare Validated.
+
+CLAUSE: Fold.
+The Keystone may, if Validated is declared: register the Triptych.
+
+CLAUSE: Close.
+The Keystone may terminate this contract.
+</pre>
+</body></html>
